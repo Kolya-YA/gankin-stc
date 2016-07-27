@@ -1,0 +1,45 @@
+<?php
+//created with TranslatePhpMessage module 0.5 at September 17, 2013, 3:15:39
+return array (
+  'private' => 'Privat - 1 Person',
+  'two_person' => 'Group - 2 Personen',
+  'group' => 'Group - ab 2 Personen',
+  'surf' => '',
+  'windsurf' => '',
+  'kitesurf' => '',
+  'paddlesurf' => '',
+  'beginner' => '',
+  'intermediate' => '',
+  'sport' => '',
+  'location' => 'Ort',
+  'type' => 'Typ',
+  'pick_date' => 'Übernahme Datum:',
+  'return_date' => '',
+  'count' => '
+Quantität 
+
+ ',
+  'all_regions' => '',
+  'select_one' => '',
+  'equip_form' => '',
+  'search_btn' => 'Suchen',
+  'date_from' => 'Datum von',
+  'date_to' => 'Datum bis',
+  'amount' => 'Anzahl der Studenten',
+  'age' => 'Alter',
+  'sex' => 'Geschlecht',
+  'lesson' => 'Klasse',
+  'level' => 'Niveau',
+  'language' => 'Sprache',
+  'duration' => 'Dauer (Stunden)',
+  'school_form' => '',
+  'days_to_rent' => 'Tage zu mieten',
+  'surf_schools' => 'Surf-Schulen',
+  'surf_equipment' => 'Surf-Ausrüstung',
+  'new_search_btn' => 'Neue Suche',
+  'board' => '',
+  'kite' => '',
+  'wing' => '',
+  'hilevel_info' => 'Es ist nur Privatunterricht für intrmaediate und Sport Level',
+)
+?>

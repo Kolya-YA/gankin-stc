@@ -1,0 +1,32 @@
+<?php
+//created with TranslatePhpMessage module 0.5 at September 17, 2013, 3:03:02
+return array (
+  'login' => '',
+  'login_btn' => '',
+  'remember' => 'Das nächste Mal merken',
+  'username' => 'Benutzername',
+  'password' => 'Kennwort',
+  'register' => 'Registrieren',
+  'login_text' => '',
+  'recover' => 'Password Recovery',
+  'password_match' => '',
+  'password_confirm' => 'Passwort-Bestätigung',
+  'registration' => 'Registrierung',
+  'register_btn' => '',
+  'login_exists' => '',
+  'email_exists' => '',
+  'confirm_email' => '',
+  'confirmation' => 'Konto Bestätigung',
+  'confirm_fail' => 'falsch Bestätigungscode',
+  'confirm_success' => '',
+  'logout' => '',
+  'recovery_sent' => '',
+  'email_notexists' => '',
+  'login_notexist' => '',
+  'recover_btn' => '',
+  'email_login' => 'Geben Sie Ihre E-Mail oder Login',
+  'code_expired' => '',
+  'password_changed' => '',
+  'password_not_match' => '',
+)
+?>

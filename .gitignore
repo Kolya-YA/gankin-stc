@@ -1,3 +1,17 @@
+# IDE
+.idea
+nbproject
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# Mac DS_Store Files
+.DS_Store
+
+#yii
 .htaccess
 assets/*
 !assets/.gitignore
@@ -9,3 +23,4 @@ protected/config/main.php
 protected/config/*local.php
 framework/*
 tmp/*
+sxd/

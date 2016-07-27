@@ -1,0 +1,7 @@
+User-Agent: *
+Disallow: /assets/
+Disallow: /protected/
+Disallow: /themes/
+Disallow: /webstat/
+Disallow: /user/
+Sitemap: http://surf-tarifa.com/sitemap.xml.php

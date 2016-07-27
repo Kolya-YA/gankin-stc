@@ -1,0 +1,33 @@
+<?php
+//created with TranslatePhpMessage module 0.5 at July 7, 2014, 17:11:09
+return array (
+  'login' => '',
+  'login_btn' => '',
+  'remember' => 'Recordarme la próxima vez',
+  'username' => 'Nombre de usuario',
+  'password' => 'contraseña',
+  'register' => 'registrar',
+  'login_text' => 'login texto',
+  'recover' => 'Olvidé la contraseña',
+  'password_match' => 'Las contraseñas deben coincidir',
+  'password_confirm' => 'confirmar contrasenia',
+  'registration' => 'inscripcion',
+  'register_btn' => 'regisro',
+  'login_exists' => 'El usuario con este inicio de sesión ya existe',
+  'email_exists' => 'El usuario con este correo electrónico ya existe',
+  'confirm_email' => 'Mail de confirmación ha sido enviado a su correo electrónico. Siga el enlace en el correo para terminar el registro.',
+  'confirmation' => 'Confirmacion de Quenta',
+  'confirm_fail' => 'Código de confirmación incorrecto',
+  'confirm_success' => 'Confirmación completa',
+  'logout' => 'salir',
+  'recovery_sent' => 'chequea tu email para recuperar correo',
+  'email_notexists' => 'El usuario con este correo electrónico no existe',
+  'login_notexist' => 'El usuario con este inicio de sesión no existe',
+  'recover_btn' => 'recuperar',
+  'email_login' => 'Ingrese su correo electrónico o login',
+  'code_expired' => 'Código ha caducado',
+  'password_changed' => 'Contraseña cambiada',
+  'password_not_match' => 'Las contraseñas no coinciden',
+  'new_user' => 'Si usted no tiene una cuenta, haga clic',
+)
+?>
