@@ -4,4 +4,4 @@ Disallow: /protected/
 Disallow: /themes/
 Disallow: /webstat/
 Disallow: /user/
-Sitemap: http://surf-tarifa.com/sitemap.xml.php
+Sitemap: https://surf-tarifa.com/sitemap.xml.php

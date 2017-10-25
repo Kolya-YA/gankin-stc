@@ -1,0 +1,9 @@
+*+html{overflow:auto;}
+/************************/
+.class {behavior:url(js/PIE.htc);}
+
+ul.sf-menu>li,
+nav
+{
+    border: none !important;
+}

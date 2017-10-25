@@ -1,0 +1,37 @@
+{
+  "name": "surf-tarifa-com",
+  "version": "1.0.0",
+  "description": "Tarifa Records",
+  "main": "gulpfile.js",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "tarifa"
+  ],
+  "author": "WebStrom",
+  "license": "MIT",
+  "homepage": "https://surf-tarifa.com/",
+  "devDependencies": {
+    // "browser-sync": "^2.18.13",
+    "cssnano": "^3.10.0",
+    // "del": "^3.0.0",
+    // "eslint": "^4.7.2",
+    "gulp": "^3.9.1",
+    // "gulp-clean": "^0.3.2",
+    // "gulp-debug": "^3.1.0",
+    // "gulp-if": "^2.0.2",
+    // "gulp-jshint": "^2.0.4",
+    // "gulp-notify": "^3.0.0",
+    // "gulp-plumber": "^1.1.0",
+    "gulp-postcss": "^7.0.0",
+    "gulp-rename": "^1.2.2",
+    // "gulp-rigger": "^0.5.8",
+    "gulp-sourcemaps": "^2.6.0",
+    // "jshint": "^2.9.5",
+    // "jshint-stylish": "^2.2.1",
+    "postcss-cssnext": "^3.0.2",
+    "postcss-import": "^10.0.0"
+  }
+}
