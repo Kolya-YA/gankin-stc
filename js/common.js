@@ -1,5 +1,5 @@
 $(function(){
-	$('.form-style').jqTransform();
+	// $('.form-style').jqTransform();
 	$('.form-style-2').jqTransform();
 	$( ".datepicker" ).datepicker({
 		showOn: "button",
@@ -22,21 +22,13 @@ $(function(){
 		return false
 	});
 */
-	$('#form1 .surf-btn').click(function(){
-		var location = $('#form1 [name=area]').val();
-		window.location.href = '/school?area='+location;
-		return false;
-	});
-	$('#form1 .rent-btn').click(function(){
-		var location = $('#form1 [name=area]').val();
-		window.location.href = '/equipment?area='+location;
-		return false;
-	});
+
 	if ($('[name=EquipmentForm\\[type\\]]').length)
 	{
 		$('[name=EquipmentForm\\[type\\]]').parent().find('ul a').click(update_rent_type);
 		update_rent_type();
 	}
+
 	if ($('[name=SchoolForm\\[level\\]]').length)
 	{
 		$('[name=SchoolForm\\[level\\]]').parent().find('ul a').click(update_school_level);

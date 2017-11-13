@@ -4,7 +4,7 @@ var path = {
     build: { //Тут мы укажем куда складывать готовые после сборки файлы
         // html: 'build/',
         // js: 'www/js/',
-        css: 'www/css/'
+        css: 'css/'
         //,
         // img: 'build/css/images/',
         // fonts: 'build/fonts/',
@@ -17,7 +17,7 @@ var path = {
         // html: 'src/index.html', //Синтаксис src/template/*.html говорит gulp что мы хотим взять все файлы с расширением .html
         // js: 'src/[^_]*.js',//В стилях и скриптах нам понадобятся только main файлы
         // jshint: 'src/blocks/**/*.js',
-        css: 'www/src/main.css',
+        css: 'src/css/style.css',
         //cssVendor: 'src/css/vendor/*.*', //Если мы хотим файлы библиотек отдельно хранить то раскоментить строчку
         //img: 'src/css/images/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
         // fonts: 'src/fonts/**/*.*',
@@ -47,8 +47,11 @@ var gulp = require('gulp'),
   // rigger = require('gulp-rigger'),
   // debug = require('gulp-debug'),
   // del = require('del'),
-  // plumber = require('gulp-plumber'),
-  postcss = require('gulp-postcss')
+  plumber = require('gulp-plumber'),
+  postcss = require('gulp-postcss'),
+  atImport = require('postcss-import'),
+  cssnano = require('cssnano'),
+  cssnext = require('postcss-cssnext')
   // jshint = require('gulp-jshint'),
   // clean = require('gulp-clean'),
   // browserSync = require('browser-sync').create();
@@ -70,11 +73,22 @@ gulp.task('css', function() {
     .pipe(plumber())
     .pipe(sourcemaps.init())
     .pipe(postcss([
-      require("postcss-import"),
-      require('postcss-cssnext'),
-      require('cssnano')({ autoprefixer: false })
+      atImport(),
+      cssnext(),
+      cssnano({ autoprefixer: false })
     ]))
     .pipe(sourcemaps.write())
+    .pipe(rename({basename: 'main', suffix: '.min'}))
+    .pipe(gulp.dest(path.build.css));
+});
+
+gulp.task('cssmin', function() {
+  return gulp.src(path.src.css)
+    .pipe(postcss([
+      atImport(),
+      cssnext(),
+      cssnano({ autoprefixer: false })
+    ]))
     .pipe(rename({basename: 'main', suffix: '.min'}))
     .pipe(gulp.dest(path.build.css));
 });

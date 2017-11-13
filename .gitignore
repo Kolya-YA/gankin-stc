@@ -24,3 +24,5 @@ protected/config/*local.php
 framework/*
 tmp/*
 sxd/
+
+/node_modules/*

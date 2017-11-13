@@ -114,16 +114,17 @@
 		}
 
 		//menu exists, and browser is mobile width
-		if(isMobile() && menuExists()){
-			$('.mnav').show();
-			$menus.hide();
-		}
+		// if(isMobile() && menuExists()){
+		// 	$('.mnav').show();
+		// 	$menus.hide();
+		// }
 
 		//otherwise, hide the mobile menu
-		if(!isMobile() && menuExists()){
-			$('.mnav').hide();
-			$menus.show();
-		}
+		// if(!isMobile() && menuExists()){
+		// 	$('.mnav').hide();
+		// 	$menus.show();
+		// }
+
 	}//runPlugin()
 
 	//plugin definition

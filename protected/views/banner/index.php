@@ -5,6 +5,6 @@
 	<? if ($banner->link): ?>
 	<a href="<?=$banner->link?>" target='_blank' rel="nofollow"  class="button">Details</a>
 	<? else: ?>
-	<a href="/banner/<?=$banner->id?>" rel="nofollow"  class="button">Details</a>
+	<a href="/banner/<?=$banner->id?>" class="button">Details</a>
 	<? endif ?>
 </li>

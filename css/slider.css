@@ -17,7 +17,7 @@
 
 .camera_wrap {
 	display: none;
-	z-index:999;
+	z-index:9;
 	min-height:340px;
 	box-sizing: border-box;
     -moz-box-sizing: border-box;

@@ -1,10 +1,20 @@
-<h2 class="h2-border"><?=Yii::t('app', 'lastnews')?><!-- <a href="/news" class="link"><?=Yii::t('app', 'seeall')?></a>--></h2>
-<ul class="box-2 lastnews">
+<h2 class="lastest-news__header"><?=Yii::t('app', 'lastnews')?></h2>
+<!-- <a href="/news" class="link"><?=Yii::t('app', 'seeall')?></a> -->
+<ul class="lastest-news__list">
 	<? foreach ($news as $n): ?>
-	<li>
-	<a href="/news/<?=$n->id?>" class="link-2"><?=date('d.m.Y', strtotime($n->created))?></a><a href="/news/<?=$n->id?>"><h3><?=Lang::local($n->name)?></h3></a>
-		<p><a href="/news/<?=$n->id?>" class="link-3"><?=Lang::local($n->description)?></a></p>
-		<a href="/news/<?=$n->id?>" class="link-3 more"><?=Yii::t('app', 'more')?></a>
+
+	<li class="lastest-news__item">
+		<a class="lastest-news__link" href="/news/<?=$n->id?>">
+			<div class="lastest-news__date">
+				<?=date('d.m.Y', strtotime($n->created))?>
+			</div>
+			<h3 class="lastest-news__head"><?=Lang::local($n->name)?></h3>
+			<p class="lastest-news__dscr"><?=Lang::local($n->description)?></p>
+			<div class="lastest-news__more">
+				<?=Yii::t('app', 'more')?>
+			</div>
+		</a>
 	</li>
+
 	<? endforeach; ?>
 </ul>

@@ -1,11 +1,10 @@
 <?php
 //created with TranslatePhpMessage module 0.5 at April 29, 2014, 22:50:32
 return array (
+  'header_h1' => 'Surf and kite in Tarifa, Spain.',
   'top' => 'Top',
   'phone' => '+34 633 611 907',
-  'address' => 'Calle Antonio Maura 6
-11380 Tarifa, Cádiz, Spain
-',
+  'address' => 'Calle Antonio Maura 6 11380 Tarifa, Cádiz, Spain',
   'faq' => 'FAQ',
   'rental_policies' => 'Terms & Rules',
   'privacy_policy' => 'Privacy Policy',

@@ -1,6 +1,6 @@
 <?php $this->beginContent('//layouts/common'); ?>
-<section id="content">
-	<div class="container_12">
+<section id="content" class="main-content">
+	<div class="main-content__wrapper">
 		<?=$content?>
 		<div class="clear"></div>
 	</div>  

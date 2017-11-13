@@ -5,7 +5,7 @@
 			text: '',
 			min: 200,			
 			scrollSpeed: 800,
-  			containerID: 'toTop',
+  		containerID: 'toTop',
 			containerHoverID: 'toTopHover',
 			easingType: 'linear',
 			min_width:parseInt($('body').css("min-width"),10),
