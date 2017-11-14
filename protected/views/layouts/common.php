@@ -4,23 +4,21 @@
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 	<meta charset="utf-8">
 	<meta name="format-detection" content="telephone=no">
-	<meta name="yandex-verification" content="fe58b273fa9740d3" />
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="yandex-verification" content="fe58b273fa9740d3">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<? foreach (Lang::getSiteLangs() as $code => $name): ?>
 	<link rel="alternate" hreflang="<?=$code?>" href="<?php echo Lang::getCurrentUrl($code)?>">
 	<? endforeach ?>
-	
-	<!-- <link rel="stylesheet" type="text/css" media="screen" href="/css/slider.css"> -->
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/jqtransform.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/jqtransform-2.css">
+
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.min.css">
 
-	<link rel="stylesheet" type="text/css" href="/css/datepicker.css"> 
-	<link rel="stylesheet" href="/css/buttons.css" type="text/css">
-<!-- 	<link rel="icon" href="images/favicon.ico" type="image/x-icon"> -->
-<!-- 	<link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" /> -->
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/jqtransform.css">
+	<link rel="stylesheet" type="text/css" media="screen" href="/css/jqtransform-2.css">
+	<link rel="stylesheet" type="text/css" href="/css/datepicker.css">
+
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+
 	<script src="/js/jquery-1.7.1.min.js"></script>
 	<script src="/js/jquery.cookie.js"></script>
 	<script src="/js/jquery.easing.1.3.js"></script>
