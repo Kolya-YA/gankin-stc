@@ -8,11 +8,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="alternate" hreflang="en" href="https://surf-tarifa.com/">
-	<link rel="alternate" hreflang="de" href="https://de.surf-tarifa.com/">
-	<link rel="alternate" hreflang="es" href="https://es.surf-tarifa.com/">
-	<link rel="alternate" hreflang="ru" href="https://ru.surf-tarifa.com/">
-
+	<? foreach (Lang::getSiteLangs() as $code => $name): ?>
+	<link rel="alternate" hreflang="<?=$code?>" href="<?php echo Lang::getCurrentUrl($code)?>">
+	<? endforeach ?>
+	
 	<!-- <link rel="stylesheet" type="text/css" media="screen" href="/css/slider.css"> -->
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/jqtransform.css">
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/jqtransform-2.css">
