@@ -1,0 +1,94 @@
+body {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	min-width: 320px;
+	min-height: 100vh;
+	font-size: 14px;
+	line-height: 1.375em;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 300;
+	color: #333333;
+	word-wrap: break-word;
+	background-color: #eaeaea;
+	scroll-behavior: smooth;
+}
+
+html{
+	box-sizing:border-box;
+	height: 100%;
+}
+
+html *,
+html ::after,
+html ::before {
+	box-sizing:inherit;
+}
+
+/* Global Structure---------------------------------------- */
+
+.fleft {
+	float: left
+}
+
+.fright {
+	float: right
+}
+
+.clear {
+	clear: both;
+	float: none !important
+}
+
+.img-indent {
+	float: left;
+	margin: 0px 20px 0px 0;
+}
+
+.nowrap {
+	white-space: nowrap;
+}
+
+.text-1 {
+	display: block;
+	color: #969696;
+	font-size: 17px;
+	line-height: 22px;
+}
+
+.top {
+	margin-top: 4px;
+}
+
+.top-1 {
+	margin-top: 51px;
+}
+
+.top-2 {
+	margin-top: 30px;
+}
+
+.top-3 {
+	padding-top: 14px !important;
+}
+
+.left-1 {
+	padding-left: 0px;
+}
+
+.right-1 {
+	padding-right: 0px;
+}
+
+.bot-0 {
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.bot-1 {
+	padding-bottom: 0px;
+}
+
+.pad-1 {
+	padding: 14px 20px 20px 20px;
+}

@@ -1,0 +1,92 @@
+img {
+	height: auto;
+}
+
+a[href^="tel:"] {
+	color: inherit;
+	text-decoration: none;
+}
+
+h2 {
+	line-height: 1.2em;
+	font-size: 19px;
+	color: #71caf2;
+	font-weight: normal;
+	text-transform: uppercase;
+	padding-left: 30px;
+	padding-bottom: 20px;
+}
+
+h3 {
+	line-height: 1.2em;
+	font-size: 12px;
+	color: #434242;
+	text-transform: uppercase;
+}
+
+a {
+	text-decoration: none;
+}
+
+a.button {
+	display: inline-block;
+	margin-top: 15px;
+	padding: 9px 12px;
+	font-size: 18px;
+	color: #666666;
+	background-color: #71caf2;
+	text-align: center;
+	border-radius: 2px;
+}
+
+a.button:hover {
+	background-color: #28a1d5;
+	color: #cccccc;
+	transition: 200ms;
+}
+
+a.link {
+	font-size: 10px;
+	line-height: 16px;
+	color: #434242;
+	display: inline-block;
+}
+
+a.link:hover {
+	text-decoration: underline;
+}
+
+a.link-3>span {
+	display: inline-block;
+	height: 5px;
+	width: 3px;
+	background: url(../images/marker-1.gif) 0 0 no-repeat;
+	margin: 5px 0 0 8px;
+}
+
+a.link-3:hover {
+	text-decoration: underline;
+}
+
+a.link-4 {
+	color: #2e2e2e;
+	text-decoration: underline;
+}
+
+a.link-4:hover {
+	text-decoration: none;
+}
+
+a.link-pdf {
+	color: #2e2e2e;
+	line-height: 16px;
+	padding: 4px 27px 4px 0;
+	text-decoration: underline;
+	display: inline-block;
+	background: url(../images/pdf.png) right 0 no-repeat;
+	margin-bottom: 8px;
+}
+
+a.link-pdf:hover {
+	text-decoration: none;
+}
