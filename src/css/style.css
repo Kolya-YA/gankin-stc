@@ -1,8 +1,12 @@
 @import "forms.css";
-@import "ui.totop.css";
-@import "fonts.css";
 @import "slider.css";
 @import "buttons.css";
+@import "jqtransform.css";
+@import "jqtransform-2.css";
+@import "datepicker.css";
+
+@import "fonts.css";
+@import "arrow-to-top.css";
 @import "burger-button.css";
 
 body {
@@ -18,6 +22,7 @@ body {
 	color: #333333;
 	word-wrap: break-word;
 	background-color: #eaeaea;
+	scroll-behavior: smooth;
 }
 
 html{
@@ -380,6 +385,13 @@ a.link-pdf:hover {
 	background-color: #ffffff;
 }
 
+/* TMP */
+.home-page-top__search .side-ico {
+	margin-left: auto;
+}
+/* /TMP */
+
+
 .home-page-bottom {
 	display: flex;
 	flex-direction: column;
@@ -619,7 +631,7 @@ a.link-pdf:hover {
 
 .form-title>span {
 	display: block;
-	color: #71caf2;
+	colorF__: #71caf2;
 	font-size: 17px;
 	line-height: 22px;
 	margin-top: -4px;

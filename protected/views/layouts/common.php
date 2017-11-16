@@ -12,11 +12,7 @@
 	<? endforeach ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.min.css">
-
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/jqtransform.css">
-	<link rel="stylesheet" type="text/css" media="screen" href="/css/jqtransform-2.css">
-	<link rel="stylesheet" type="text/css" href="/css/datepicker.css">
-
+	
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<script src="/js/jquery-1.7.1.min.js"></script>
@@ -190,6 +186,8 @@
 			</div>
 
 		</footer>
+
+		<div id="arrowToTop" hidden></div>
 	
 	<script type="text/javascript">
 
@@ -215,15 +213,12 @@
     ga('send', 'pageview');
 
 	</script>
-	<script src="/js/jquery.ui.totop.js" async></script>
-	<script src="/js/jquery.hoverIntent.minified.js" async></script>
-	<script>
-		$(window).load(function(){
-			$().UItoTop({ easingType: 'easeOutQuart', text: "<?=Yii::t('app','top')?> &#x25B2;"});
-		});
-	</script>
+	<!-- <script src="/js/jquery.hoverIntent.minified.js" async></script> -->
 
-	<script>	
+	<script>
+
+// toggle menu
+
 		var headerSatus = document.querySelector('.page-header');
 		var toggleBtn = document.querySelector('.toggle-menu');
 	
@@ -236,6 +231,18 @@
 				headerSatus.classList.remove('header--closed');
 			}
 		});
+
+// arrowToTop
+
+    arrowToTop.onclick = function() {
+      window.scrollTo(pageXOffset, 0);
+    };
+
+    window.addEventListener('scroll', function() {
+      arrowToTop.hidden = (pageYOffset < (document.documentElement.clientHeight / 2));
+    });
+
 	</script>
+
 </body>
 </html>

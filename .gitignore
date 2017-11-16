@@ -25,4 +25,9 @@ framework/*
 tmp/*
 sxd/
 
-/node_modules/*
+#node_modules
+node_modules/*
+
+
+css/main.min.css
+css/main.min.map

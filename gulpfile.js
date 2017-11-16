@@ -77,8 +77,8 @@ gulp.task('css', function() {
       cssnext(),
       cssnano({ autoprefixer: false })
     ]))
-    .pipe(sourcemaps.write())
     .pipe(rename({basename: 'main', suffix: '.min'}))
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest(path.build.css));
 });
 
