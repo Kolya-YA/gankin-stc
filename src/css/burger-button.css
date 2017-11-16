@@ -1,5 +1,5 @@
 :root {
-  --mybars: #71caf2;
+  --mybars: var(--main-blau);
   --mybox: transparent;
   --myboxborder: rgba(0,0,0,.4);
 }

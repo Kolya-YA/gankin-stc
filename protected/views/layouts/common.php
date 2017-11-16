@@ -56,7 +56,7 @@
 			<nav class=top-nav>
 
 				<div class="top-nav__topmenu">
-					<div class="page-header__wrapper">
+					<div class="page-header__wrapper top-nav__topmenu--desktop">
 						
 						<?=$this->renderPartial('/blocks/lang', array('lang' => Yii::app()->language))?>
 						
