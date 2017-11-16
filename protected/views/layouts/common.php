@@ -45,7 +45,7 @@
 </head>
 <body>
 			
-		<header class="page-header header--closed">
+		<header class="page-header page-header--closed">
 			
 			<button class="toggle-menu" type="button">
 				<span class="toggle-menu__burger"></span>Menu
@@ -67,7 +67,7 @@
 								array('label'=>Yii::t('menu', 'login'), 'url'=>'/login', 'visible'=>Yii::app()->user->isGuest, 'itemOptions'=>array('class'=>'top-nav__login'))
 							),
 							'activeCssClass' => 'current',
-							'htmlOptions' => array('class' => 'top-nav__user'),
+							'htmlOptions' => array('class' => 'top-nav__list top-nav__list--user'),
 							'activateItems' => true,
 							'encodeLabel' => false,
 						));?>
@@ -209,12 +209,12 @@
 		var toggleBtn = document.querySelector('.toggle-menu');
 	
 		toggleBtn.addEventListener('click', function() {
-			if (headerSatus.classList.contains('header--opened')) {
-				headerSatus.classList.add('header--closed');
-				headerSatus.classList.remove('header--opened');
+			if (headerSatus.classList.contains('page-header--opened')) {
+				headerSatus.classList.add('page-header--closed');
+				headerSatus.classList.remove('page-header--opened');
 			} else {
-				headerSatus.classList.add('header--opened');
-				headerSatus.classList.remove('header--closed');
+				headerSatus.classList.add('page-header--opened');
+				headerSatus.classList.remove('page-header--closed');
 			}
 		});
 

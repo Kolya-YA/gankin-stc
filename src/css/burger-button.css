@@ -39,7 +39,7 @@
   transform-origin: 50% 50%;
 }
 
-.header--closed .toggle-menu__burger {
+.page-header--closed .toggle-menu__burger {
   transition-duration: 0.4s;
   &::after,
   &::before {
@@ -53,7 +53,7 @@
   }
 }
 
- .header--opened .toggle-menu__burger {
+ .page-header--opened .toggle-menu__burger {
   background-color: rgba(0, 0, 0, 0);
   transition-duration: 0.4s;
   &::after,
