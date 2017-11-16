@@ -1,0 +1,24 @@
+#arrowToTop {
+	display: flex;
+	position: fixed;
+	right:25px;
+	bottom: 120px;
+	z-index: 10;
+	cursor: pointer;
+	width: 36px;
+	height: 36px;
+	background-color: rgba(0, 0, 0, 0.3);
+	border-radius: 50%;
+	color: #dddddd;
+}
+
+#arrowToTop::before {
+	content: '△';
+	margin: auto;
+	padding-bottom: 0.1em
+}
+
+#arrowToTop:hover {
+	background-color: rgba(0, 0, 0, 0.6);
+	transition: 300ms;
+}
