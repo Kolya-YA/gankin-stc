@@ -173,7 +173,7 @@
 
 		</footer>
 
-		<div id="arrowToTop" hidden></div>
+		<div id="arrowToTop" hidden>△</div>
 	
 	<script type="text/javascript">
 

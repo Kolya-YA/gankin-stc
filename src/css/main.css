@@ -1,3 +1,16 @@
+
+html{
+	box-sizing:border-box;
+	height: 100%;
+	scroll-behavior: smooth;
+}
+
+html *,
+html ::after,
+html ::before {
+	box-sizing:inherit;
+}
+
 body {
 	margin: 0;
 	display: flex;
@@ -11,18 +24,6 @@ body {
 	color: #333333;
 	word-wrap: break-word;
 	background-color: #eaeaea;
-	scroll-behavior: smooth;
-}
-
-html{
-	box-sizing:border-box;
-	height: 100%;
-}
-
-html *,
-html ::after,
-html ::before {
-	box-sizing:inherit;
 }
 
 /* Global Structure */
