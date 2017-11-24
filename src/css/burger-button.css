@@ -7,7 +7,7 @@
 .toggle-menu {
   position: absolute;
   z-index: 99999;
-  border: 1px solid var(--myboxborder);
+  border: none;
   border-radius: inherit;
   font-size: 0;
   top: auto;

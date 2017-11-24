@@ -1,5 +1,8 @@
 :root {
   
   --main-blau: #71caf2;
-  
+  --main-yellow: #ffaa4b;
+  --menu-bg: #666666;
+  --menu-text-color: #dddddd;
+  --menu-text-shadow: 0px 0px 10px #333333;
   }

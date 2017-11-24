@@ -10,7 +10,7 @@
 }
 
 .page-footer__top {
-	background-color: #232526;
+	background-color: var(--menu-bg);
 }
 
 .page-footer__nav {
@@ -33,9 +33,9 @@
 }
 
 .page-footer__bottom {
-	background: #232526;
+	background: var(--menu-bg);
 	border-top: 2px solid #FFAA4B;
-	background: linear-gradient(to bottom, #40382f, #232526);
+	background: linear-gradient(to bottom, #40382f, var(--menu-bg));
 	color: #dddddd;
 }
 
