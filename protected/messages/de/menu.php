@@ -1,11 +1,16 @@
 <?php
-//created with TranslatePhpMessage module 0.5 at September 17, 2013, 3:52:39
+//created with TranslatePhpMessage module 0.5 at November 7, 2017, 5:11:00
 return array (
   'home' => 'Home',
-  'school' => 'Schule <span> <span>suchen',
-  'equipment' => '',
-  'userpanel' => '',
+  'school' => 'Schule suchen',
+  'equipment' => 'Verleih',
+  'userpanel' => 'Buchungen',
   'contacts' => 'Kontakt',
-  'login' => '',
+  'login' => 'Einloggen',
+  'aboutTarifa' => 'Über Tarifa',
+  'faq' => '<span>Häufig gestellte Fragen (</span>FAQ<span>)</span>',
+  'schools' => 'Schulen',
+  'register' => 'Registrieren',
+  'logout' => 'Abmelden',
 )
 ?>

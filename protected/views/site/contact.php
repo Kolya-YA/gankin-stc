@@ -4,14 +4,12 @@
 ?>
 
 <div class="grid_8 inner-block">
-	<h2 class="h2-border p3">Stay in touch</h2>
-	<div class="wrap">
-		<?=Lang::local($contacts->content)?>
-	</div>
+	<h2 class=""><?=Lang::local($contacts->name)?></h2>
+	<?=Lang::local($contacts->content)?>
 </div>
 
 <div class="grid_4 inner-block">
-<div class="bg-white pad-1 top">
+<div class="pad-1">
 	<div class="form-title">Contact form</div>
 		<?php if(Yii::app()->user->hasFlash('contact')): ?>
 

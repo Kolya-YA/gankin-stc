@@ -8,20 +8,6 @@ $(function(){
 		dateFormat: "dd-mm-yy",
 		minDate: new Date((new Date()).getTime() + 2 * (24 * 60 * 60 * 1000)),
 	});
-/*	
-	$('.header-block .jqTransformSelectWrapper li a').click(function(){
-		var lang = $('#lang-switch').val();
-		switch_lang(lang);
-		
-		return false
-	});
-	$('.header-block .lang-switch a').click(function(){
-		var lang = $(this).data('lang');
-		switch_lang(lang);
-		
-		return false
-	});
-*/
 
 	if ($('[name=EquipmentForm\\[type\\]]').length)
 	{

@@ -1,10 +1,10 @@
 <?php
-//created with TranslatePhpMessage module 0.5 at July 7, 2014, 17:28:10
+//created with TranslatePhpMessage module 0.5 at November 3, 2017, 18:50:31
 return array (
+  'header_h1' => 'Surfing en Tarifa',
   'top' => 'Top',
   'phone' => '+49 633 611 907',
-  'address' => 'Calle Antonio Maura 6
-11380 Tarifa, Cádiz, Spain',
+  'address' => 'Calle Antonio Maura 6 11380 Tarifa, Cádiz, Spain',
   'faq' => 'Preguntas frecuentes',
   'rental_policies' => 'Términos y Condiciones',
   'privacy_policy' => 'Política de privacidad',
@@ -46,5 +46,6 @@ return array (
   'for_rent' => 'para alquiler de equipos',
   'for_course' => 'para reservar curso',
   'accept_school' => 'Leo y acepto',
+  'current_lang' => 'es',
 )
 ?>

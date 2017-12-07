@@ -1,11 +1,16 @@
 <?php
-//created with TranslatePhpMessage module 0.5 at August 5, 2013, 15:25:59
+//created with TranslatePhpMessage module 0.5 at November 7, 2017, 4:54:06
 return array (
-  'home' => '<strong>Главная</strong>',
-  'school' => 'Найти<span> школу</span>',
-  'equipment' => 'Найти<span> снаряжение</span>',
-  'userpanel' => '<strong>Мои заказы</strong>',
-  'contacts' => '<strong>Контакты</strong>',
-  'login' => '<strong>Войти</strong>',
+  'home' => 'Главная',
+  'school' => 'Найти школу',
+  'equipment' => 'Найти снаряжение',
+  'userpanel' => 'Мои заказы',
+  'contacts' => 'Контакты',
+  'login' => 'Войти',
+  'aboutTarifa' => 'О Тарифе',
+  'faq' => 'Вопросы и ответы',
+  'schools' => 'Школы',
+  'register' => 'Регистрация',
+  'logout' => 'Выйти',
 )
 ?>

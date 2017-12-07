@@ -1,7 +1,7 @@
 <?php
-//created with TranslatePhpMessage module 0.5 at April 29, 2014, 22:50:32
+//created with TranslatePhpMessage module 0.5 at November 3, 2017, 18:50:08
 return array (
-  'header_h1' => 'Surf and kite in Tarifa, Spain.',
+  'header_h1' => 'Surfing in Tarifa',
   'top' => 'Top',
   'phone' => '+34 633 611 907',
   'address' => 'Calle Antonio Maura 6 11380 Tarifa, Cádiz, Spain',
@@ -47,5 +47,6 @@ You’ve got a new surfer {whatfor}',
   'for_rent' => 'for rent equipment',
   'for_course' => 'to get a course',
   'accept_school' => 'Read and accept <a href="/viewpage/partners_rules" target="_blank">terms & conditions</a>',
+  'current_lang' => 'en',
 )
 ?>

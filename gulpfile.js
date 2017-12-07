@@ -1,49 +1,49 @@
-"use strict";
+'use strict';
 
 var path = {
-    build: { //Тут мы укажем куда складывать готовые после сборки файлы
-        // html: 'build/',
-        // js: 'www/js/',
-        css: 'css/'
-        //,
-        // img: 'build/css/images/',
-        // fonts: 'build/fonts/',
-        // htaccess: 'build/',
-        // contentImg: 'build/img/',
-        // sprites: 'src/css/images/',
-        // spritesCss: 'src/css/partial/'
-    },
-    src: { //Пути откуда брать исходники
-        // html: 'src/index.html', //Синтаксис src/template/*.html говорит gulp что мы хотим взять все файлы с расширением .html
-        // js: 'src/[^_]*.js',//В стилях и скриптах нам понадобятся только main файлы
-        // jshint: 'src/blocks/**/*.js',
-        css: 'src/css/style.css',
-        //cssVendor: 'src/css/vendor/*.*', //Если мы хотим файлы библиотек отдельно хранить то раскоментить строчку
-        //img: 'src/css/images/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
-        // fonts: 'src/fonts/**/*.*',
-        //contentImg: 'src/img/**/*.*',
-        //sprites: 'src/css/sprites/*.png',
-        //htaccess: 'src/.htaccess'
-    },
-    watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
-        // all: 'build/**/*.*',
-        // html: 'src/**/*.html',
-        // js: 'src/blocks/**/*.js',
-        // css: 'src/blocks/**/*.css',
-        //img: 'src/css/images/**/*.*',
-        //contentImg: 'src/img/**/*.*',
-        // fonts: 'src/fonts/**/*.*',
-        //htaccess: 'src/.htaccess',
-        //sprites: 'src/css/sprites/*.png'
-    }
-    // clean: './build', //директории которые могут очищаться
-    // outputDir: './build' //исходная корневая директория для запуска минисервера
+  build: { //Тут мы укажем куда складывать готовые после сборки файлы
+    // html: 'build/',
+    // js: 'www/js/',
+    css: 'css/'
+    //,
+    // img: 'build/css/images/',
+    // fonts: 'build/fonts/',
+    // htaccess: 'build/',
+    // contentImg: 'build/img/',
+    // sprites: 'src/css/images/',
+    // spritesCss: 'src/css/partial/'
+  },
+  src: { //Пути откуда брать исходники
+    // html: 'src/index.html', //Синтаксис src/template/*.html говорит gulp что мы хотим взять все файлы с расширением .html
+    // js: 'src/[^_]*.js',//В стилях и скриптах нам понадобятся только main файлы
+    // jshint: 'src/blocks/**/*.js',
+    css: 'src/css/style.css',
+    //cssVendor: 'src/css/vendor/*.*', //Если мы хотим файлы библиотек отдельно хранить то раскоментить строчку
+    //img: 'src/css/images/**/*.*', //Синтаксис img/**/*.* означает - взять все файлы всех расширений из папки и из вложенных каталогов
+    // fonts: 'src/fonts/**/*.*',
+    //contentImg: 'src/img/**/*.*',
+    //sprites: 'src/css/sprites/*.png',
+    //htaccess: 'src/.htaccess'
+  },
+  watch: { //Тут мы укажем, за изменением каких файлов мы хотим наблюдать
+    // all: 'build/**/*.*',
+    // html: 'src/**/*.html',
+    // js: 'src/blocks/**/*.js',
+    // css: 'src/blocks/**/*.css',
+    //img: 'src/css/images/**/*.*',
+    //contentImg: 'src/img/**/*.*',
+    // fonts: 'src/fonts/**/*.*',
+    //htaccess: 'src/.htaccess',
+    //sprites: 'src/css/sprites/*.png'
+  }
+  // clean: './build', //директории которые могут очищаться
+  // outputDir: './build' //исходная корневая директория для запуска минисервера
 };
 
 var gulp = require('gulp'),
   // notify = require('gulp-notify'),
   sourcemaps = require('gulp-sourcemaps'),
-  rename = require("gulp-rename"),
+  rename = require('gulp-rename'),
   // rigger = require('gulp-rigger'),
   // debug = require('gulp-debug'),
   // del = require('del'),
@@ -51,7 +51,7 @@ var gulp = require('gulp'),
   postcss = require('gulp-postcss'),
   atImport = require('postcss-import'),
   cssnano = require('cssnano'),
-  cssnext = require('postcss-cssnext')
+  cssnext = require('postcss-cssnext');
   // jshint = require('gulp-jshint'),
   // clean = require('gulp-clean'),
   // browserSync = require('browser-sync').create();

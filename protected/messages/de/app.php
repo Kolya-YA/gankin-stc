@@ -1,22 +1,23 @@
 <?php
-//created with TranslatePhpMessage module 0.5 at April 29, 2014, 22:52:10
+//created with TranslatePhpMessage module 0.5 at November 3, 2017, 19:02:52
 return array (
+  'header_h1' => 'Surfen in Tarifa',
   'top' => '',
   'phone' => '+49 633 611 907',
   'address' => 'Calle Antonio Maura 6
 11380 Tarifa, Cádiz, Spain',
-  'faq' => '',
+  'faq' => 'FAQ',
   'rental_policies' => 'AGB',
   'privacy_policy' => 'Datenschutz',
   'become_partner' => '',
   'lastnews' => 'Aktuelle Nachrichten',
   'seeall' => '',
   'about' => 'Über uns',
-  'bestoffer' => 'bestes Angebots',
+  'bestoffer' => 'Bestes Angebots',
   'searchsurf' => '',
   'location' => 'Ort',
   'allarea' => '',
-  'renteq' => 'mieten Surfausrüstung',
+  'renteq' => 'Mieten Surfausrüstung',
   'findsurf' => 'Schule zu finden',
   'userpanel' => '',
   'no_results' => '',
@@ -27,7 +28,7 @@ return array (
   'pay_percent' => 'Bezahlen 20%',
   'order_course' => 'Kurs Bestellen',
   'price' => 'Preis (Euro)',
-  'more' => 'weiter lesen',
+  'more' => 'Weiter lesen',
   'rent_type' => 'Mieten Typ',
   'percent_comment' => '20% Zahlung ist genug, um Ihren Auftrag zu buchen',
   'accept' => 'Lesen und akzeptieren <a href="/rental" target="_blank">AGB</a>',
@@ -46,5 +47,6 @@ return array (
   'for_rent' => '',
   'for_course' => '',
   'accept_school' => '',
+  'current_lang' => 'de',
 )
 ?>

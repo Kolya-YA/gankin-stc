@@ -1,11 +1,16 @@
 <?php
-//created with TranslatePhpMessage module 0.5 at August 5, 2013, 15:25:30
+//created with TranslatePhpMessage module 0.5 at November 7, 2017, 4:53:36
 return array (
-  'home' => '<strong>Home</strong>',
-  'school' => 'Find <span>School</span>',
-  'equipment' => 'Rent <span>Equipment</span>',
-  'userpanel' => '<strong>My Bookings</strong>',
-  'contacts' => '<strong>Contacts</strong>',
-  'login' => '<strong>Login</strong>',
+  'home' => 'Home',
+  'school' => 'Find School',
+  'equipment' => 'Rent Equipment',
+  'userpanel' => 'My Bookings',
+  'contacts' => 'Contacts',
+  'login' => 'Log in',
+  'aboutTarifa' => 'About Tarifa',
+  'faq' => 'FAQ',
+  'schools' => 'Schools',
+  'register' => 'Sign up',
+  'logout' => 'Log Out',
 )
 ?>
