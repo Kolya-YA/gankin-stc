@@ -1,11 +1,34 @@
 <?php
-	$this->pageTitle = Lang::local($page->name);
+	$this->pageTitle = Lang::local($page->name) . ' | ' . Yii::app()->name;
 	Yii::app()->clientScript->registerMetaTag(Lang::local($page->short_description), 'description');
 	Yii::app()->clientScript->registerMetaTag(Lang::local($page->keywords), 'keywords');
 ?>
 
-<div class="grid_6">
-	<div class="inner-block"> 
+<div class="inner-page">
+
+	<div class="inner-page__search-result">
+		<? if (is_array($schools)):?>
+		<h2><?=Yii::t('search', 'surf_equipment')?></h2>
+		<? endif ?>
+		<div class="search-result">
+			<? if ($schools): ?>
+			<ul>
+				<? foreach ($schools as $school)
+					$this->renderPartial('_item', array('school' => $school, 'filter' => $filter));
+				?>
+			</ul>
+			<? elseif (is_array($schools)): ?>
+			<?=Yii::t('app', 'no_results')?>
+			<?endif;/* else: */?>
+			<? /*endif*/ ?>
+		</div>
+	</div>
+	
+	<article class="inner-page__page-content">
+		<?= Lang::local($page->content); ?>	
+	</article>
+
+	<div class="inner-page__form"> 
 		<div class="bg-white pad-1 top search-block full-search">
 			<div class="form-title"><?=Yii::t('search', 'equip_form')?></div>  
 			<!-- <img src="/images/icon2.jpg" class="side-ico"> -->
@@ -73,31 +96,9 @@
 			<?php $this->endWidget(); ?>
 		</div>
 	</div>
+
 </div>
 
-<div class="grid_6">
-	<div class="inner-block">
-		<?php if ($_SERVER['REQUEST_METHOD'] == 'GET')
-			echo Lang::local($page->content); ?>
-		
-		<? if (is_array($schools)):?>
-		<h2 class="h2-border p3"><?=Yii::t('search', 'surf_equipment')?></h2>
-		<? endif ?>
-		<div class="search-result">
-			<? if ($schools): ?>
-			<ul>
-				<? foreach ($schools as $school)
-					$this->renderPartial('_item', array('school' => $school, 'filter' => $filter));
-				?>
-			</ul>
-			<? elseif (is_array($schools)): ?>
-			<?=Yii::t('app', 'no_results')?>
-			<?endif;/* else: */?>
-			<? /*endif*/ ?>
-		</div>
-	</div>
-</div>
-
-<div class="banner-block">
+<div class="inner-page__banners">
 	<? $this->renderPartial('/banner/left', array('banners' => $banners_left))?>
 </div>

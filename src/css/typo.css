@@ -8,20 +8,22 @@ a[href^="tel:"] {
 }
 
 h2 {
-	line-height: 1.2em;
-	font-size: 19px;
-	color: #71caf2;
-	font-weight: normal;
-	text-transform: uppercase;
-	padding-left: 30px;
-	padding-bottom: 20px;
+	line-height: 1.4em;
+	font-size: 28px;
+	color: var(--main-blau);
+	font-weight: 300;
 }
 
 h3 {
 	line-height: 1.2em;
-	font-size: 12px;
-	color: #434242;
-	text-transform: uppercase;
+	font-size: 20px;
+	font-weight: 300;
+}
+
+.inner-page__page-content p {
+	text-indent: 4%;
+	font-size: 16px;
+	line-height: 1.4em;
 }
 
 a {
@@ -34,7 +36,7 @@ a.button {
 	padding: 9px 12px;
 	font-size: 18px;
 	color: #666666;
-	background-color: #71caf2;
+	background-color: var(--main-blau);
 	text-align: center;
 	border-radius: 2px;
 }
