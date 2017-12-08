@@ -307,6 +307,7 @@ class SchoolController extends Controller
 		));
 	}
 
+
 	public function actionEquipment()
 	{
 		$this->layout = 'inner';
@@ -314,7 +315,7 @@ class SchoolController extends Controller
 		$filter = false;
 		$banners_left = $results = null;
 		
-		$model=new EquipmentForm;
+		$model = new EquipmentForm;
 		
 		if(isset($_GET['area']))
 			$model->location = intval($_GET['area']);
@@ -334,14 +335,13 @@ class SchoolController extends Controller
 		}
 		else
 			$model->count = 1;
+		
 		if (!$results)
 		{
 			$banners_left = Banner::model()->findAll('left_equipment = 1');
 		}
 		else
 			$banners_left = Banner::model()->findAll('search_result = 1');
-		
-		$banners_right = Banner::model()->findAll('right_equipment = 1');
 			
 		$page = Page::model()->find('slug = \'equipment\'');
 			
@@ -350,7 +350,6 @@ class SchoolController extends Controller
 			'schools' => $results,
 			'filter' => $filter,
 			'banners_left' => $banners_left,
-			'banners_right' => $banners_right,
 			'page' => $page
 		));
 	}
@@ -508,9 +507,7 @@ class SchoolController extends Controller
 		else if (isset($_POST['paypal']))
 		{
 			$price = $school->price;
-			$description = "Order $type";
-		
-			
+			$description = "Order $type";			
 			
 			if ($_POST['percent'])
 			{
@@ -521,7 +518,6 @@ class SchoolController extends Controller
 			$paymentInfo['Order']['description'] = $description;
 			$paymentInfo['Order']['theTotal'] = $price;
 			$paymentInfo['Order']['quantity'] = '1';
-
 
 			$result = Yii::app()->Paypal->SetExpressCheckout($paymentInfo); 
 			//Detect Errors 
