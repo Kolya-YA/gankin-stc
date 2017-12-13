@@ -1,4 +1,9 @@
-#form { width:100%; margin-top:14px;position: relative; }
+/* #form {
+	width:100%; 
+	margin-top:14px;
+	position: relative;
+}
+
 #form input {
 	float:left;
 	border:#d0d0d0 1px solid;
@@ -23,9 +28,9 @@
 	font-family:Arial, Helvetica, sans-serif; 
 	color:#696969; 
 	text-transform:uppercase;
-    height: 206px;
-    outline: medium none;
-    overflow: auto;
+	height: 206px;
+	outline: medium none;
+	overflow: auto;
 	resize:none;
 	margin:0px 0 0 0;
 }
@@ -33,13 +38,13 @@
 #form label {
 	position:relative;
 	overflow:hidden;
-    display: block;
-    min-height:36px;
-    width: 100%;
+	display: block;
+	min-height:36px;
+	width: 100%;
 }
 
 #form label.message {
-    height: 226px;
+	height: 226px;
 }
 
 #form span.error,
@@ -60,24 +65,24 @@
 #form .message .empty  {
 	left: 4px;
 	right: auto;
-    top: 191px;
+	top: 191px;
 }
 
 #form .success {
-    background: none repeat scroll 0 0 #f6f6f5;
-    border: 1px solid #333333;
-    display: none;
-    height: 98px;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
+	background: none repeat scroll 0 0 #f6f6f5;
+	border: 1px solid #333333;
+	display: none;
+	height: 98px;
+	position: absolute;
+	width: 100%;
+	z-index: 1;
 }
 
 #form .success .success_txt {
-    color: #000;
-    position: relative;
-    text-align: center;
-    top: 34%;
+	color: #000;
+	position: relative;
+	text-align: center;
+	top: 34%;
 }
 
 #form .btns {
@@ -91,6 +96,7 @@
 }
 
 @media only screen and (max-width: 995px) {
+
 	#form input,
 	#form textarea {
 		width:100%;
@@ -104,9 +110,11 @@
 	#form .success {
 		width: 100%;	
 	}
+	
 }
 
  @media only screen and (max-width: 767px) {
+
 	#form input,
 	#form textarea {
 		width:100%;
@@ -117,7 +125,7 @@
 	#form .success {
 		width: 100%;	
 	}
-}
+} */
 
 /*@media only screen and (max-width: 479px){
 }*/

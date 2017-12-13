@@ -6,63 +6,59 @@
 
 <div class="inner-page">
 
-	<article class="inner-page__page-content">
-		<h2><?=Lang::local($contacts->name)?></h2>
-		<?=Lang::local($contacts->content)?>
-	</article>
-
-	<div class="inner-page__form">
-
-		<div class="pad-1">
-
-			<div class="form-title">Contact form</div>
-				<?php if (Yii::app()->user->hasFlash('contact')): ?>
+	<div class="inner-page__internal-wrapper">
+		<article class="inner-page__page-content">
+			<h2><?=Lang::local($contacts->name)?></h2>
+			<?=Lang::local($contacts->content)?>
+		</article>
 	
-				<div class="flash-success">
-					<?php echo Yii::app()->user->getFlash('contact'); ?>
-				</div>
-				
-				<div class="success"><div class="success_txt">Contact form submitted!<br /><strong> We will be in touch soon.</strong></div></div>
+		<div class="inner-page__form">
 	
-				<?php else: ?>
+			<div class="contact-form">
 	
-				<?php
-					$form=$this->beginWidget('CActiveForm', array(
-						'id'=>'form',
-						'enableClientValidation'=>false,
-						'clientOptions'=>array(
-							'validateOnSubmit'=>true,
-						),
-					));
-				?>
-				<?php /*echo $form->errorSummary($model);*/ ?>
+				<h2 class="contact-form__title">Contact form</h2>
+					<?php if (Yii::app()->user->hasFlash('contact')): ?>
+		
+					<div class="flash-success">
+						<?php echo Yii::app()->user->getFlash('contact'); ?>
+					</div>
 					
-					<fieldset>
-	
-						<label class="name">
-							<?php echo $form->textField($model,'name', array('placeholder' => Yii::t('form', 'name'))); ?>
-							<?php echo $form->error($model,'name'); ?>
-						</label>
-	
-						<label class="email">
-							<?php echo $form->textField($model,'email', array('placeholder' => 'E-mail')); ?>
-							<?php echo $form->error($model,'email'); ?>
-						</label>
-	
-						<label class="message">
-							<?php echo $form->textArea($model,'body',array('placeholder' => Yii::t('form', 'message'))); ?>
-							<?php echo $form->error($model,'body'); ?>
-						</label>
-						
-						<div class="btns">
-							<a data-type="reset" class="button" href="#" onclick="document.getElementById('form').reset();return false;"><?=Yii::t('form', 'reset')?></a>
-							<a href="#" data-type="submit" class="button" onclick="document.getElementById('form').submit();return false;"><?=Yii::t('form', 'submit')?></a>
-						</div>
-	
-					</fieldset>
-	
-				<?php $this->endWidget(); ?>
-				<? endif ?>
+					<div class="success"><div class="success_txt">Contact form submitted!<br /><strong> We will be in touch soon.</strong></div></div>
+		
+					<?php else: ?>
+		
+					<?php
+						$form=$this->beginWidget('CActiveForm', array(
+							'id'=>'form',
+							'enableClientValidation'=>false,
+							'clientOptions'=>array(
+							'validateOnSubmit'=>true,
+							),
+						));
+					?>
+
+					<?php /*echo $form->errorSummary($model);*/ ?>
+							
+								<?php echo $form->labelEx($model,'name'); ?>
+								<?php echo $form->textField($model,'name', array('placeholder' => Yii::t('form', 'name'))); ?>
+								<?php echo $form->error($model,'name'); ?>
+							
+								<?php echo $form->labelEx($model,'email'); ?>
+								<?php echo $form->emailField($model,'email', array('placeholder' => 'E-mail')); ?>
+								<?php echo $form->error($model,'email'); ?>
+
+								<?php echo $form->labelEx($model,'body'); ?>
+								<?php echo $form->textArea($model,'body',array('placeholder' => Yii::t('form', 'message'))); ?>
+								<?php echo $form->error($model,'body'); ?>
+							
+							<div class="btns">
+								<button type="reset" class="button"><?=Yii::t('form', 'reset')?></button>
+								<a href="#" data-type="submit" class="button" onclick="document.getElementById('form').submit();return false;"><?=Yii::t('form', 'submit')?></a>
+							</div>
+		
+					<?php $this->endWidget(); ?>
+					<? endif ?>
+			</div>
 		</div>
 	</div>
 

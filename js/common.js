@@ -55,16 +55,19 @@ function update_school_level()
 	var ul = $('[name=SchoolForm\\[lesson\\]]').parents('.jqTransformSelectWrapper').find('ul');
 	
 	if (level == 'intermediate' || level == 'sport')
-	{
-		$('.full-search .note').show();
-		ul.children('li:nth-child(2)').children('a')[0].click();
-		ul.children('li:nth-child(3),li:nth-child(4)').hide();
-	}
+		{
+			$('.main-search .note').show();
+			ul.children('li:nth-child(2)').children('a')[0].click();
+			ul.children('li:nth-child(3),li:nth-child(4)').hide();
+		}
+
 	else
-	{
-		$('.full-search .note').hide();
-		ul.children('li:nth-child(3),li:nth-child(4)').show();
-	}
+
+		{
+			$('.main-search .note').hide();
+			ul.children('li:nth-child(3),li:nth-child(4)').show();
+		}
+		
 }
 
 function update_rent_type()

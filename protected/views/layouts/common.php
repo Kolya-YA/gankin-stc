@@ -17,11 +17,8 @@
 
 	<script src="/js/jquery-1.7.1.min.js"></script>
 	<script src="/js/jquery.cookie.js"></script>
-	<script src="/js/jquery.easing.1.3.js"></script>
-	<script src="/js/jquery.jqtransform.js"></script>
-	<script src="/js/camera.js"></script>
+
 	<script src="/js/script.js"></script>
-	<script src="/js/jquery.datepicker.min.js"></script>
 	<script src="/js/common.js"></script>
 
   <?php
@@ -195,6 +192,8 @@
 
 	</script>
 	<!-- <script src="/js/jquery.hoverIntent.minified.js" async></script> -->
+
+	<script src="/js/jquery.easing.1.3.js" async></script>
 
 	<script>
 

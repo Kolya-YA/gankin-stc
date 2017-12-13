@@ -21,14 +21,60 @@ h3 {
 }
 
 .inner-page__page-content p {
-	text-indent: 4%;
 	font-size: 16px;
 	line-height: 1.4em;
 }
 
+.inner-page__page-content a {
+	color: var(--main-blau);
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.inner-page__page-content a:hover,
+.inner-page__page-content a:focus {
+	text-decoration: underline;
+}
+
+
+
 a {
 	text-decoration: none;
 }
+
+.button {
+	display: block;
+	width: 100%;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	padding: 9px 12px;
+	font: inherit;
+	font-size: 18px;
+	color: #666666;
+	background-color: var(--main-blau);
+	text-align: center;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	border-radius: 2px;
+	border: none;
+	transition: 200ms;
+}
+
+.button:hover,
+.button:focus {
+	background-color: #28a1d5;
+	color: #cccccc;
+	transition: 200ms;
+}
+
+.button:active {
+	color: var(--main-yellow);
+	background-color: var(--menu-bg);
+	transition: 200ms;
+}
+
+/* Old Button */
 
 a.button {
 	display: inline-block;
@@ -46,6 +92,8 @@ a.button:hover {
 	color: #cccccc;
 	transition: 200ms;
 }
+
+/* /Old Button */
 
 a.link {
 	font-size: 10px;

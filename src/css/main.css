@@ -23,7 +23,11 @@ body {
 	font-weight: 300;
 	color: #333333;
 	word-wrap: break-word;
-	background-color: #eaeaea;
+	background-color: var(--body_bg);
+}
+
+input, textarea, select, button {
+	font: inherit;
 }
 
 /* Global Structure */

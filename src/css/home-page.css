@@ -15,8 +15,9 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	padding: 20px;
-	background-color: #ffffff;
+	padding: 1vw 1.2vw;
+  background-color: white;
+  box-shadow: var(--block-shadow);
 }
 
 /* TMP */
@@ -40,11 +41,13 @@
 	margin-bottom: 25px;
 }
 
-.home-page-bottom__about {
+.home-page-bottom__about,
+.home-page-bottom__offer {
 	flex: 1;
-	margin-bottom: 2vw;
-	padding: 20px;
-	background-color: #ffffff;
+	margin-bottom: 1vw;
+	padding: 1vw 1.2vw;
+  background-color: white;
+  box-shadow: var(--block-shadow);
 }
 
 .about-us {
@@ -60,14 +63,18 @@
 	display: block;
 	position: relative;
 	margin-bottom: 30px;
-	box-shadow: inset 0 0 50px #dadada, 0 8px 0 #cccccc;
+	border-bottom: 3px solid var(--main-blau);
+	background-color: #f2f2f2;
+	border-top-left-radius: 2px;
+	border-top-right-radius: 2px;
+	border-radius: 0px;
 	padding: 8px;
 	transition: 300ms;
 }
 
 .lastest-news__item:hover {
-	box-shadow: inset 0 0 50px #dadada, 0 8px 0 #cccccc, 0 8px 15px #ed8114;
-	transform: translateY(-4px);
+	box-shadow: 0 2px 5px var(--main-yellow);
+	transform: translateY(-2px);
 	transition: 300ms;
 }
 
@@ -79,8 +86,11 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	padding: 3px 5px 2px;
-	background-color: #f3d3b3;
+	padding: 3px 5px 1px;
+	background-color: #dadada;
+	border-bottom: 2px solid var(--main-yellow);
+	border-right: 2px solid var(--main-yellow);
+	border-bottom-right-radius: 4px;
 	color: #333333;
 }
 
@@ -88,16 +98,16 @@
 	position: absolute;
 	bottom: 0;
 	right: 0;
-	padding: 2px 10px 0;
+	padding: 4px 12px 0;
 	background-color: #71caf2;
 	color: #333333;
-	border-top-left-radius: 6px;
+	border-top-left-radius: 4px;
 }
 
 .lastest-news__head {
 	margin: 0;
-	padding-left: 80px;
-	padding-bottom: 16px;
+	padding-left: 100px;
+	padding-bottom: 25px;
 	color: #777;
 	font-size: 18px;
 	font-weight: 500;
@@ -105,15 +115,10 @@
 
 .lastest-news__dscr {
 	margin: 0;
-	padding-bottom: 18px;
+	padding-bottom: 25px;
 	color: #333333;
 }
 
-.home-page-bottom__offer {
-	flex: 1;
-	padding: 20px;
-	background-color: #ffffff;
-}
 
 /* Responsive section */
 
@@ -138,7 +143,6 @@
     }
     
     .home-page-bottom__about {
-      margin-bottom: 0;
       margin-right: 2vw;
     }
     

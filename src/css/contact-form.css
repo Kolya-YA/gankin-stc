@@ -1,0 +1,32 @@
+.contact-form input,
+.contact-form textarea {
+  padding: 5px 8px 2px;
+  border: none;
+  border-bottom: 3px solid #999999;
+  border-radius: 2px;
+  background-color: #ececec;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--main-blau);
+  font-size: 0.9em;
+}
+
+.contact-form label {
+  display: block;
+  width: 100%;
+  margin-bottom: 2px;
+}
+
+.contact-form input {
+  display: block;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.contact-form textarea {
+  width: 100%;
+  height: 10em;
+  resize: vertical;
+}

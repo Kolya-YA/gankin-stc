@@ -83,6 +83,7 @@
 	</div>  
 </section>
 
+<script src="/js/camera.js"></script>
 <script>
 	document.addEventListener('DOMContentLoaded',function() {
 	document.querySelector('select[name="area"]').onchange=changeArea;

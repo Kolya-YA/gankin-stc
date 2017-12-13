@@ -1,0 +1,74 @@
+.main-search {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 270px;
+}
+
+
+/* Old code */
+
+.main-search .note {
+	margin: 0 0 10px;
+	display: none;
+}
+
+#form2 {
+	margin-top: 8px;
+}
+
+#form2 p {
+	padding-bottom: 6px;
+}
+
+#form2 .label {
+	display: block;
+	position: relative;
+	padding-bottom: 10px;
+}
+
+#form2 .inp-2 {
+	width: 270px;
+}
+
+#form2 span {
+	font-size: 14px;
+}
+
+#form2 .select1 {
+	width: 90px !important;
+	display: block;
+	font-weight: 300;
+	float: left;
+}
+
+#form2 .select2 {
+	width: 270px !important;
+	display: block;
+	font-weight: 300;
+	float: left;
+}
+
+#form2 textarea {
+	border: #d0d0d0 1px solid;
+	background: #fff;
+	box-sizing: border-box;
+	width: 100%;
+	padding: 9px 0px 0px 10px;
+	font-size: 10px;
+	text-transform: uppercase;
+	color: #696969;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 155px;
+	outline: medium none;
+	overflow: auto;
+	resize: none;
+	float: left;
+}
+
+#form2 .clear {
+	font-size: 0 !important;
+	line-height: 0 !important;
+	float: none !important;
+	margin: 0 !important;
+	display: block;
+}

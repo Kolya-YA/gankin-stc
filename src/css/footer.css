@@ -1,6 +1,6 @@
 .page-footer {
 	margin-top: auto;
-	border-top: 5px solid #FFAA4B;
+	border-top: 5px solid var(--main-yellow);
 }
 
 .page-footer__wrapper {
@@ -34,8 +34,8 @@
 
 .page-footer__bottom {
 	background: var(--menu-bg);
-	border-top: 2px solid #FFAA4B;
-	background: linear-gradient(to bottom, #40382f, var(--menu-bg));
+	border-top: 2px solid var(--main-yellow);
+	background: linear-gradient(to top, #40382f, var(--menu-bg));
 	color: #dddddd;
 }
 

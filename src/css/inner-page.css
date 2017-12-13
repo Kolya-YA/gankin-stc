@@ -2,6 +2,34 @@
 .inner-page__form,
 .inner-page__banners,
 .inner-page__search-result {
-  padding: 1.2vw;
+  padding: 1vw 1.2vw;
   background-color: white;
+  box-shadow: var(--block-shadow);
+}
+
+.inner-page__page-content,
+.inner-page__form,
+.inner-page__search-result {
+  margin-bottom: 1vw;
+}
+
+.inner-page__form {
+  min-width: calc(270px + (2 * 1.2vw));
+}
+
+@media (min-width: 800px) {
+  
+  .inner-page__internal-wrapper {
+    display: flex;
+  }
+  
+  .inner-page__page-content {
+    flex: 2;
+    order: 10;
+  }
+  
+  .inner-page__form {
+    flex: 1;
+    margin-right: 1vw;
+  }
 }
