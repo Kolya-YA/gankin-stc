@@ -3,19 +3,18 @@
 /* @var $model LoginForm */
 /* @var $form CActiveForm  */
 
-$this->pageTitle=Yii::app()->name . ' - Login';
+$this->pageTitle=Yii::app()->name . ' | Login';
 $this->breadcrumbs=array(
 	'Login',
 );
 ?>
 
 <div class="small-form">
-	<div class="form-title"><?=Yii::t('auth', 'login')?></div>
-	
-	<div class="login-text"><?=Yii::t('auth', 'login_text')?></div>
 
-	<div class="form">
-	<?php $form=$this->beginWidget('CActiveForm', array(
+	<h2 class="form-title"><?=Yii::t('auth', 'login')?></h2>	
+	<p class="login-text"><?=Yii::t('auth', 'login_text')?></p>
+
+	<?php $form = $this->beginWidget('CActiveForm', array(
 		'id'=>'login-form',
 		'enableClientValidation'=>false,
 		'clientOptions'=>array(
@@ -23,37 +22,29 @@ $this->breadcrumbs=array(
 		),
 	)); ?>
 
-		<div class="label">
-			<?php echo $form->labelEx($model,'username'); ?>
-			<?php echo $form->textField($model,'username'); ?>
-			<?php echo $form->error($model,'username'); ?>
-		</div>
+		<?= $form->labelEx($model,'username'); ?>
+		<?= $form->textField($model,'username'); ?>
+		<?= $form->error($model,'username'); ?>
 
-		<div class="label">
-			<?php echo $form->labelEx($model,'password'); ?>
-			<?php echo $form->passwordField($model,'password'); ?>
-			<?php echo $form->error($model,'password'); ?>
-		</div>
+		<?= $form->labelEx($model,'password'); ?>
+		<?= $form->passwordField($model,'password'); ?>
+		<?= $form->error($model,'password'); ?>
+		
+		<?= $form->checkBox($model,'rememberMe'); ?>
+		<?= $form->label($model,'rememberMe', array('class'=>'wide')); ?>
+		<?= $form->error($model,'rememberMe'); ?>
 
-		<div class="register">
+		<div class="recovery">
 			<a href="/recovery"><?=Yii::t('auth', 'recover')?></a>
 		</div>
+	
+		<button class="button"><?= Yii::t('auth', 'login_btn'); ?></button>
 
-		<div class="label rememberMe">
-			<?php echo $form->checkBox($model,'rememberMe'); ?>
-			<?php echo $form->label($model,'rememberMe', array('class'=>'wide')); ?>
-			<?php echo $form->error($model,'rememberMe'); ?>
-		</div>
-		
-		<div class="label buttons">
-			<?php echo CHtml::submitButton(Yii::t('auth', 'login_btn')); ?>
-		</div>
-
-		<div class="register">
-			<span class="register-text">
-				<?=Yii::t('auth', 'new_user')?><a href="/register" class="register-link"><?=Yii::t('auth', 'register')?></a>
-			</span>
-		</div>
 	<?php $this->endWidget(); ?>
-	</div><!-- form -->
+
+	<div class="register">
+		<p class="register-text"><?=Yii::t('auth', 'new_user')?></p>
+		<a href="/register" class="button register-link"><?=Yii::t('auth', 'register')?></a>
+	</div>
+
 </div>

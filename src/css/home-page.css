@@ -1,54 +1,66 @@
-.home-page-top {
-	display: flex;
-	flex-direction: column;
-	margin-bottom: 2vw;
-}
-
-.home-page-top__banner {
-	flex: 1;
-	margin-bottom: 2vw;
+.home-page-top__left,
+.home-page-top__right,
+.home-page-bottom__left,
+.home-page-bottom__right {
+	margin-bottom: 1vw;
 	background-color: #ffffff;
-}
-
-.home-page-top__search {
-	flex: 1;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+	box-shadow: var(--block-shadow);
 	padding: 1vw 1.2vw;
-  background-color: white;
-  box-shadow: var(--block-shadow);
 }
-
-/* TMP */
-.home-page-top__search .side-ico {
-	margin-left: auto;
-}
-/* /TMP */
-
 
 .home-page-bottom {
 	display: flex;
 	flex-direction: column;
 }
 
-.home-page-bottom h2 {
-	color: #71caf2;
-	font-size: 24px;
-	font-weight: 300;
-	line-height: 30px;
-	margin: 0;
-	margin-bottom: 25px;
+/* Responsive section */
+
+@media (min-width: 700px) {
+  
+    .home-page-top,
+		.home-page-bottom {
+			display: flex;
+			flex-direction: row;
+		}
+		
+		.home-page-top__left,
+		.home-page-bottom__left {
+      margin-right: 1vw;
+    }
+		
+    .home-page-top__right {
+			max-width: 340px;
+		}
+		
+		.home-page-top__left,
+    .home-page-top__right,
+    .home-page-bottom__left,
+    .home-page-bottom__right {
+      flex: 1;
+    }
+		
+		.home-page-top__left--wide,
+    .home-page-top__right--wide,
+    .home-page-bottom__left--wide,
+    .home-page-bottom__right--wide {
+      flex: 2;
+    }
+  }
+  
+	/* End of Responsive section */
+	
+
+.duo-link {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
-.home-page-bottom__about,
-.home-page-bottom__offer {
-	flex: 1;
-	margin-bottom: 1vw;
-	padding: 1vw 1.2vw;
-  background-color: white;
-  box-shadow: var(--block-shadow);
+/* TMP */
+.duo-link .side-ico {
+	margin-left: auto;
 }
+/* /TMP */
 
 .about-us {
 	margin-bottom: 30px;
@@ -118,37 +130,3 @@
 	padding-bottom: 25px;
 	color: #333333;
 }
-
-
-/* Responsive section */
-
-@media (min-width: 700px) {
-  
-    .home-page-top {
-      flex-direction: row;
-    }
-    
-    .home-page-top__banner {
-      flex: 2;
-      margin-right: 2vw;
-      margin-bottom: 0;
-    }
-  
-    .home-page-top__search {
-      max-width: 340px;
-    }
-  
-    .home-page-bottom {
-      flex-direction: row;
-    }
-    
-    .home-page-bottom__about {
-      margin-right: 2vw;
-    }
-    
-    .home-page-bottom__offer {
-      flex: 2;
-    }
-  }
-  
-  /* End of Responsive section */

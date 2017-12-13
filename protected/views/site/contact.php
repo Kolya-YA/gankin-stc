@@ -5,25 +5,18 @@
 ?>
 
 <div class="inner-page">
-
 	<div class="inner-page__internal-wrapper">
-		<article class="inner-page__page-content">
-			<h2><?=Lang::local($contacts->name)?></h2>
-			<?=Lang::local($contacts->content)?>
-		</article>
 	
-		<div class="inner-page__form">
-	
-			<div class="contact-form">
-	
+		<div class="inner-page__form">	
+			<div class="contact-form">	
 				<h2 class="contact-form__title">Contact form</h2>
-					<?php if (Yii::app()->user->hasFlash('contact')): ?>
+				
+					<?php if (Yii::app()->user->hasFlash('form-success-1')): ?>
 		
-					<div class="flash-success">
-						<?php echo Yii::app()->user->getFlash('contact'); ?>
+					<div class="contact-form__success">
+						<p><?= Yii::app()->user->getFlash('form-success-1'); ?></p>
+						<p><strong><?= Yii::app()->user->getFlash('form-success-2'); ?></strong></p>
 					</div>
-					
-					<div class="success"><div class="success_txt">Contact form submitted!<br /><strong> We will be in touch soon.</strong></div></div>
 		
 					<?php else: ?>
 		
@@ -39,27 +32,32 @@
 
 					<?php /*echo $form->errorSummary($model);*/ ?>
 							
-								<?php echo $form->labelEx($model,'name'); ?>
-								<?php echo $form->textField($model,'name', array('placeholder' => Yii::t('form', 'name'))); ?>
-								<?php echo $form->error($model,'name'); ?>
+								<?= $form->labelEx($model,'name'); ?>
+								<?= $form->textField($model,'name', array('placeholder' => Yii::t('form', 'name'))); ?>
+								<?= $form->error($model,'name'); ?>
 							
-								<?php echo $form->labelEx($model,'email'); ?>
-								<?php echo $form->emailField($model,'email', array('placeholder' => 'E-mail')); ?>
-								<?php echo $form->error($model,'email'); ?>
+								<?= $form->labelEx($model,'email'); ?>
+								<?= $form->emailField($model,'email', array('placeholder' => 'E-mail')); ?>
+								<?= $form->error($model,'email'); ?>
 
-								<?php echo $form->labelEx($model,'body'); ?>
-								<?php echo $form->textArea($model,'body',array('placeholder' => Yii::t('form', 'message'))); ?>
-								<?php echo $form->error($model,'body'); ?>
+								<?= $form->labelEx($model,'body'); ?>
+								<?= $form->textArea($model,'body',array('placeholder' => Yii::t('form', 'message'))); ?>
+								<?= $form->error($model,'body'); ?>
 							
 							<div class="btns">
 								<button type="reset" class="button"><?=Yii::t('form', 'reset')?></button>
-								<a href="#" data-type="submit" class="button" onclick="document.getElementById('form').submit();return false;"><?=Yii::t('form', 'submit')?></a>
+								<button class="button"><?=Yii::t('form', 'submit')?></button>
 							</div>
 		
 					<?php $this->endWidget(); ?>
 					<? endif ?>
 			</div>
 		</div>
-	</div>
 
+		<article class="inner-page__page-content">
+			<h2><?=Lang::local($contacts->name)?></h2>
+			<?=Lang::local($contacts->content)?>
+		</article>
+
+	</div>
 </div>

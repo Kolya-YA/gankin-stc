@@ -54,19 +54,19 @@ or <b>=</b>) at the beginning of each of your search values to specify how the c
 			'name' => 'description',
 			'class' => 'application.widgets.MultilangColumn',
 		),
+		/*
 		array(
 			'name' => 'keywords',
 			'class' => 'application.widgets.MultilangColumn',
 		),
 		'link',
-		/*
 		'content',
 		'picture',
 		'top_index',
 		'index',
 		'left_course',
-		'right_course',
 		'left_equipment',
+		'right_course',
 		'right_equipment',
 		*/
 		array(
