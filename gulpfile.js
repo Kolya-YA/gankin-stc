@@ -87,7 +87,10 @@ gulp.task('cssmin', function() {
     .pipe(postcss([
       atImport(),
       cssnext(),
-      cssnano({ autoprefixer: false })
+      cssnano({
+        autoprefixer: false,
+        zindex: false
+      })
     ]))
     .pipe(rename({basename: 'main', suffix: '.min'}))
     .pipe(gulp.dest(path.build.css));

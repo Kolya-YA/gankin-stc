@@ -90,7 +90,7 @@ function update_rent_type()
 	}
 }
 
-$(window).load(function(){
+window.onload = (function() {
 	var slider = $('#slide');
 	if (slider.length)
 	{

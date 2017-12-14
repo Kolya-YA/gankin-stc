@@ -1,10 +1,15 @@
 $(function(){
 	tinymce.init({
-		selector: ".wysiwyg",
-		plugins: ["code", "link"],
-		fontsize_formats: "8pt 9pt 10pt 11pt 12pt 26pt 36pt",
-		toolbar: "insertfile undo redo | fontsizeselect | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor", 
+		selector: '.wysiwyg',
+		height: 400,
+		plugins: ['code', 'link', 'lists', 'image', 'charmap', 'visualblocks'],
+		toolbar: 'undo redo | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | visualblocks code',
 	});
+
+	tinymce.init({
+		toolbar: 'undo redo | alignleft aligncenter alignright alignjustify | formatselect fontselect fontsizeselect | bullist numlist | outdent indent',
+ })
+
 	$('.multilang-field .switch').click(function(){
 		var field = $(this).parents('.multilang-field');
 		var lang = $(this).data('lang');
@@ -15,12 +20,14 @@ $(function(){
 		field.find('.editor').hide();
 		field.find('.editor[data-lang='+lang+']').show();
 	});
+
 	$('.row.branch input[type=checkbox].branch-switch').each(function(){
 		if (!$(this).is(':checked'))
 		{
 			$(this).parents('.row').find('fieldset').hide();
 		}
 	});
+
 	$('.row.branch input[type=checkbox].branch-switch').change(function(){
 		if ($(this).is(':checked'))
 		{
@@ -29,6 +36,7 @@ $(function(){
 		else
 			$(this).parents('.row').find('fieldset').hide();
 	});
+
 	$('.row.branch').each(function(){
 		var row = $(this);
 		var type = $(this).data('type');
@@ -44,16 +52,12 @@ $(function(){
 		});
 	});
 	
-	$( ".datepicker" ).datepicker({
-		dateFormat: "yy-mm-dd",
+	$( '.datepicker' ).datepicker({
+		dateFormat: 'yy-mm-dd',
 	});
 	
 	$('#map_code').change(function(){
 		 var matches = $(this).val().match(/[^\w]ll=(-?[\d.]+),(-?[\d.]+)/);
-
-
-
-
 		
 		if (matches.length == 3)
 		{
@@ -66,4 +70,3 @@ $(function(){
 	});
 
 });
-

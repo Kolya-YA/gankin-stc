@@ -32,3 +32,6 @@ node_modules/*
 css/main.min.css
 css/main.min.map
 css/main.min.css.map
+
+js/tinymce/**
+js/tinymce222/**

@@ -15,10 +15,10 @@
 	
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
-	<script src="/js/jquery-1.7.1.min.js"></script>
+	<script src="/js/jquery-3.2.1.min.js"></script>
 	<script src="/js/jquery.cookie.js"></script>
 
-	<script src="/js/script.js"></script>
+	<!-- <script src="/js/script.js"></script> -->
 	<script src="/js/common.js"></script>
 
   <?php
@@ -193,7 +193,7 @@
 	</script>
 	<!-- <script src="/js/jquery.hoverIntent.minified.js" async></script> -->
 
-	<script src="/js/jquery.easing.1.3.js" async></script>
+	<!-- <script src="/js/jquery.easing.1.3.js" async></script> -->
 
 	<script>
 
