@@ -27,15 +27,15 @@ class SiteController extends Controller
 		$this->layout = 'common';
 		
 		$about = Page::model()->find("slug = 'about'");
-		$gallery = Banner::model()->findAll('top_index = 1');
+		// $gallery = Banner::model()->findAll('top_index = 1');
 		$best_offer = Banner::model()->findAll(array('limit' => 4, 'order' => 'id DESC', 'condition' => '`index` = 1'));
 
 		$page = Page::model()->find('slug = :slug', array('slug' => 'index'));
 		
 		$this->render('index', array(
-			'news' => News::model()->findAll(array('limit' => 3, 'order' => 'Created DESC')),
+			'news' => News::model()->findAll(array('limit' => 4, 'order' => 'Created DESC')),
 			'about' => $about,
-			'gallery' => $gallery,
+			//'gallery' => $gallery,
 			'best_offer' => $best_offer,
 			'page' => $page
 		));

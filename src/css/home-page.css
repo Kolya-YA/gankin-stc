@@ -8,10 +8,24 @@
 	padding: 1vw 1.2vw;
 }
 
-.home-page-bottom {
-	display: flex;
-	flex-direction: column;
+.home-page-bottom__left--no-border,
+.home-page-bottom__right--no-border {
+	background-color: transparent;
+	box-shadow: none;
+	padding: 0;
 }
+
+.banner-preview {
+	margin-bottom: 1vw;
+	background-color: #ffffff;
+	box-shadow: var(--block-shadow);
+	padding: 1vw 1.2vw;
+}
+
+.banner-preview:last-child {
+	margin-bottom: 0;
+}
+
 
 /* Responsive section */
 
@@ -28,7 +42,7 @@
       margin-right: 1vw;
     }
 		
-    .home-page-top__right {
+    .home-page-top__left {
 			max-width: 340px;
 		}
 		
@@ -49,18 +63,48 @@
   
 	/* End of Responsive section */
 	
-
 .duo-link {
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+	height: 100%;
+	background-image: url(/images/surfer.jpg);
+	background-position: top right;
+	background-repeat: no-repeat;
 }
 
-/* TMP */
-.duo-link .side-ico {
-	margin-left: auto;
+.duo-link__title {
+	text-transform: uppercase;
+	letter-spacing: 0.8px;
+	text-shadow: 0 0 5px #ffffff;
+	margin-bottom: auto;
+	padding-bottom: 12px;
 }
-/* /TMP */
+/* duo-link__form  TMP */
+/* 
+.duo-link__form {
+	margin-top: 12px;
+}
+
+.duo-link__form label {
+	display: block;
+	position: relative;
+	margin-bottom: 15px;
+}
+
+.duo-link__select {
+	display: block;
+	width: 100%;
+	height: 35px;
+	padding: 0 5px;
+	font: inherit;
+	border-radius: 2px;
+	appearance: none;
+	background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='rgb(68,68,68)' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'/></svg>");
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, .04);
+	border: 1px solid #bbbbbb;
+} */
 
 .about-us {
 	margin-bottom: 30px;
@@ -74,7 +118,7 @@
 .lastest-news__item {
 	display: block;
 	position: relative;
-	margin-bottom: 30px;
+	margin-bottom: 3vw;
 	border-bottom: 3px solid var(--main-blau);
 	background-color: #f2f2f2;
 	border-top-left-radius: 2px;
@@ -82,6 +126,10 @@
 	border-radius: 0px;
 	padding: 8px;
 	transition: 300ms;
+}
+
+.lastest-news__item:last-child {
+	margin-bottom: 0;
 }
 
 .lastest-news__item:hover {

@@ -10,43 +10,27 @@
 
 		<div class="home-page-top">
 
-			<div class="home-page-top__left home-page-top__left--wide">
-
+			<div class="home-page-top__left">
+				<?=  $this->renderPartial('/blocks/duolink') ?>				
+			</div>
+			
+			<div class="home-page-top__right  home-page-top__right--wide">
 				<div class="about-us">
 						<h2><?=Yii::t('app', 'about')?></h2>
 						<?=Lang::local($about->content)?>
 				</div>
-
-			</div>
-			
-			<div class="home-page-top__right">
-					<?=  $this->renderPartial('/blocks/duolink') ?>
 			</div>
 
 		</div>
 
 		<div class="home-page-bottom">
 
-			<div class="home-page-bottom__left">
-					<?=$this->renderPartial('/news/lastnews', array('news' => $news))?>
+			<div class="home-page-bottom__left home-page-bottom__left--wide home-page-bottom__left--no-border">
+				<?=$this->renderPartial('/banner/indexlist', array('best_offer' => $best_offer))?>
 			</div>
-
-			<div class="home-page-bottom__right home-page-bottom__right--wide">
-
-				<h2><?=Yii::t('app', 'bestoffer')?> <!--<a href="#" class="link"><?=Yii::t('app', 'seeall')?></a>--></h2>
-				<div class="box-1">
-					<ul>
-					<? for ($i = 0; $i < (int)((sizeof($best_offer) + 1) / 2); $i++)
-						$this->renderPartial('/banner/index', array('banner' => $best_offer[$i * 2]));
-					?>
-					</ul>
-					<ul class="last">
-					<? for ($i = 0; $i < (int)((sizeof($best_offer)) / 2); $i++)
-						$this->renderPartial('/banner/index', array('banner' => $best_offer[$i * 2 + 1]));
-					?>
-					</ul>
-				</div>
-
+				
+			<div class="home-page-bottom__right">
+				<?=$this->renderPartial('/news/lastnews', array('news' => $news))?>
 			</div>
 
 		</div>

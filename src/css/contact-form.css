@@ -2,7 +2,7 @@
 .contact-form textarea {
   padding: 5px 8px 2px;
   border: none;
-  border-bottom: 3px solid #999999;
+  border-bottom: 2px solid #999999;
   border-radius: 2px;
   background-color: #ececec;
 }
@@ -17,6 +17,12 @@
   display: block;
   width: 100%;
   margin-bottom: 2px;
+}
+
+.contact-form label  span.required {
+  vertical-align: super;
+  color: crimson;
+  font-size: 0.7em;
 }
 
 .contact-form input {

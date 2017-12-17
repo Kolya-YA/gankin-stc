@@ -7,6 +7,10 @@ a[href^="tel:"] {
 	text-decoration: none;
 }
 
+a {
+	text-decoration: none;
+}
+
 h2 {
 	line-height: 1.4em;
 	font-size: 28px;
@@ -36,12 +40,6 @@ h3 {
 	text-decoration: underline;
 }
 
-
-
-a {
-	text-decoration: none;
-}
-
 .button {
 	display: block;
 	width: 100%;
@@ -61,6 +59,13 @@ a {
 	transition: 200ms;
 }
 
+.button--duo {
+	font-size: 28px;
+  border-radius: 4px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
 .button:hover,
 .button:focus {
 	background-color: #28a1d5;
@@ -71,25 +76,6 @@ a {
 .button:active {
 	color: var(--main-yellow);
 	background-color: var(--menu-bg);
-	transition: 200ms;
-}
-
-/* Old Button */
-
-a.button {
-	display: inline-block;
-	margin-top: 15px;
-	padding: 9px 12px;
-	font-size: 18px;
-	color: #666666;
-	background-color: var(--main-blau);
-	text-align: center;
-	border-radius: 2px;
-}
-
-a.button:hover {
-	background-color: #28a1d5;
-	color: #cccccc;
 	transition: 200ms;
 }
 

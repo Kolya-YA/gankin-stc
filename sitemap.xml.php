@@ -1,23 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="https://www.surf-tarifa.com/sitemap.php"?>
-<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-<url>
-<loc>https://www.surf-tarifa.com/</loc>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-<url>
-<loc>https://www.surf-tarifa.com/school</loc>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-<url>
-<loc>https://www.surf-tarifa.com/equipment</loc>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-<url>
-<loc>https://www.surf-tarifa.com/contacts</loc>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://surf-tarifa.com/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="en"
+                 href="https://surf-tarifa.com/"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="ru"
+                 href="https://ru.surf-tarifa.com/"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="de"
+                 href="https://de.surf-tarifa.com/"
+                 />
+    <xhtml:link 
+                 rel="alternate"
+                 hreflang="es"
+                 href="https://es.surf-tarifa.com/"
+                 />
+  </url>
+  <url>
+    <loc>https://www.surf-tarifa.com/school</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.surf-tarifa.com/equipment</loc>
+    <changefreq>daily</changefreq>
+  </url>
+  <url>
+    <loc>https://www.surf-tarifa.com/contacts</loc>
+    <changefreq>daily</changefreq>
+  </url>
+</urlset>

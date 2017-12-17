@@ -160,68 +160,6 @@
 
 /******* forms *******/
 
-
-.form-title>span {
-	display: block;
-	color: #71caf2;
-	font-size: 17px;
-	line-height: 22px;
-	margin-top: -4px;
-}
-
-#form1 {
-	margin-top: 12px;
-}
-
-#form1 label {
-	display: block;
-	position: relative;
-	margin-bottom: 15px;
-}
-
-#form1 label>span {
-	display: block;
-	font-size: 20px;
-	color: #71caf2;
-	margin-bottom: 10px;
-}
-
-#form1 .select1 {
-	display: block;
-	width: 100%;
-	height: 35px;
-	padding: 0 5px;
-	font: inherit;
-	border-radius: 2px;
-	appearance: none;
-	background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='rgb(68,68,68)' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'/></svg>");
-	background-position: 100% 50%;
-	background-repeat: no-repeat;
-	background-color: rgba(0, 0, 0, .04);
-	border: 1px solid #bbbbbb;
-}
-
-#form1>a {
-	display: block;
-}
-
-.col-1 {
-	float: left;
-	width: 220px;
-	margin-right: 20px;
-	display: block;
-	font-weight: 300;
-}
-
-.col-2 {
-	float: left;
-	width: 170px;
-	display: block;
-	font-weight: 300;
-}
-
-/**********************form**********************/
-
 .small-form {
 	max-width: 520px;
 	min-width: 270px;
@@ -274,14 +212,6 @@ dl.adrss dd span {
 	margin: 5px 0;
 }
 
-#content .full-search>img {
-	max-width: 86px;
-	display: none;
-	position: absolute;
-	top: 0px;
-	right: 25px
-}
-
 .full-search #form2>a {
 	width: 200px;
 }
@@ -314,16 +244,6 @@ dl.adrss dd span {
 	float: left;
 	margin: 0 12px 10px 0;
 	box-shadow: 0 1px 4px rgba(50, 50, 50, 0.25);
-}
-
-.news .date {
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: 10px;
-	margin-left: 20px;
-}
-
-.main-content li a.button {
-	margin-top: 10px;
 }
 
 #form2 .label.half {
@@ -363,14 +283,6 @@ dl.adrss dd span {
 .payments td {
 	border: 1px solid #ccc;
 	padding: 0 5px;
-}
-
-.banners-right {
-	margin: 20px;
-}
-
-.right-banner {
-	margin-bottom: 20px;
 }
 
 .full-search .form-title {
@@ -460,17 +372,6 @@ dl.adrss dd span {
 	margin-left: 200px;
 }
 
-#content img.side-ico {
-	height: 100px;
-	border-bottom-left-radius: 5px;
-	border-top-left-radius: 5px;
-}
-
-#content .full-search img.side-ico {
-	height: 60px;
-	margin-top: 10px;
-}
-
 .paypal-logo {
 	margin-left: 15px;
 	height: 32px;
@@ -485,17 +386,6 @@ dl.adrss dd span {
 	clear: both;
 }
 
-#login-form .register .register-text {
-	font-size: 24px;
-	margin-top: 14px;
-	display: block;
-}
-
-#login-form .register .register-text a {
-	font-size: 24px;
-	display: inline;
-}
-
 /******************** Responsive OLD ******************/
 
 @media only screen and (min-width: 1024px) {
@@ -504,16 +394,7 @@ dl.adrss dd span {
 	}
 }
 
-@media only screen and (min-width: 768px) and (max-width: 1024px) {
-	.box-1 ul {
-		width: 261px;
-	}
-}
-
 @media only screen and (max-width: 995px) {
-	.box-1 ul {
-		width: 231px;
-	}
 
 	ul.sf-menu>li>a {
 		font-size: 13px;
@@ -553,50 +434,26 @@ dl.adrss dd span {
 }
 
 @media only screen and (max-width: 800px) {
-	.box-1 ul {
-		width: 230px;
-	}
+
 	ul.sf-menu>li>a {
 		font-size: 12px;
 		padding: 26px 9px 30px;
 	}
+
 	.camera_wrap {
 		min-height: 200px;
 	}
 }
 
 @media only screen and (max-width: 767px) {
-	
-	.box-1 ul {
-		float: none;
-		margin-right: 0px;
-		width: 100%;
-	}
 
 	.camera_wrap {
 		min-height: 200px;
 	}
 
-	.grid_4.search-block {
-		box-shadow: none;
-		background: none;
-	}
-
-	.search-block.full-search {
-		box-shadow: none;
-		background: none;
-	}
 }
 
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-
-	.floatright {
-		float: left;
-	}
-
-	.floatleft {
-		float: right;
-	}
 
 	.camera_target_content {
 		display: none;
@@ -618,12 +475,6 @@ dl.adrss dd span {
 
 	.camera_wrap {
 		min-height: 150px;
-	}
-	
-	.box-1 ul {
-		float: none;
-		margin-right: 0px;
-		width: 100%;
 	}
 
 	.pad-1 {
@@ -660,26 +511,33 @@ dl.adrss dd span {
 	.order-details {
 		width: 280px !important;
 	}
+
 	.order-form .cards {
 		margin-left: 100px !important;
 	}
+
 	.order-form label {
 		width: 100px !important;
 	}
+
 	.order-form input[type="text"] {
 		width: 160px !important;
 	}
+
 	#content img {
 		width: 100%;
 		height: auto;
 	}
+
 	#content .order-form img {
 		width: auto;
 	}
+
 	#content .search-block img {
 		width: auto;
 		height: auto;
 	}
+
 	.camera_wrap {
 		min-height: 100px;
 	}
@@ -687,38 +545,37 @@ dl.adrss dd span {
 	.camera_target_content {
 		display: none;
 	}
-	.box-1 ul {
-		float: none;
-		margin-right: 0px;
-		width: 100%;
-	}
-	.pad-1 {
-		padding: 0;
-	}
+
 	.page2-banner2,
 	.page2-banner1 {
 		padding: 0;
 		background: none;
 	}
+
 	#form2 .inp-1 {
 		margin-bottom: 5px;
 	}
+
 	a.link-pdf {
 		display: block;
 		margin-bottom: 0;
 	}
+
 	.lists>div {
 		float: none;
 		width: 100%;
 	}
+
 	.map {
 		margin: 0 0 20px 0;
 		float: none;
 		width: 100%;
 	}
+
 	.map iframe {
 		width: 100%;
 	}
+
 	.box-3 img {
 		float: none;
 		margin: 0 30px 15px 0;
