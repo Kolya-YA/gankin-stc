@@ -5,7 +5,6 @@ class EquipmentForm extends FilterForm
 	public $location;
 	public $type;
 	public $pick_date;
-// 	public $return_date;
 	public $days;
 	public $count;
 	public $rent_type = 0;
@@ -23,10 +22,8 @@ class EquipmentForm extends FilterForm
 		return array(
 			'location'=> Yii::t('search', 'location'),
 			'type' => Yii::t('search', 'type'),
-			'days' => Yii::t('search', 'days'),
-
 			'pick_date' => Yii::t('search', 'pick_date'),
-// 			'return_date' => Yii::t('search', 'return_date'),
+			'days' => Yii::t('search', 'days'),
 			'count' => Yii::t('search', 'count'),
 		);
 	}
@@ -45,9 +42,6 @@ class EquipmentForm extends FilterForm
 			$types = $this->rentTypes($this->type);
 			$res [] = array('name' => Yii::t('app', 'rent_type'), 'value' => $types[$this->rent_type]);
 		}
-		
-		
-		
 		return $res;
 	}
 	
@@ -60,7 +54,7 @@ class EquipmentForm extends FilterForm
 		$addon = $type == 'kite' ? $kite : $wing;
 		
 		return array(
-			0 => "$board+$addon",
+			0 => "$board + $addon",
 			1 => "$board",
 			2 => "$addon",
 		);

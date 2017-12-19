@@ -377,11 +377,6 @@ dl.adrss dd span {
 	height: 32px;
 }
 
-#map-canvas {
-	clear: both;
-	margin: 7px auto 0;
-}
-
 #order {
 	clear: both;
 }
@@ -417,20 +412,12 @@ dl.adrss dd span {
 		padding: 0;
 		background: none;
 	}
+	
 	.lists>div {
 		float: none;
 		width: 100%;
 	}
 
-	.map {
-		margin: 0 0 20px 0;
-		float: none;
-		width: 100%;
-	}
-
-	.map iframe {
-		width: 100%;
-	}
 }
 
 @media only screen and (max-width: 800px) {

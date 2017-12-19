@@ -3,13 +3,11 @@
     Yii::app()->clientScript->registerMetaTag(Lang::local($news->keywords), 'keywords');  
 
 ?>
-<div class="grid_12">
-	<div class="inner-block news">
-		<h2 class="h2-border p3"><?=Lang::local($news->name)?><span class="date"><?=date('d.m.Y', strtotime($news->created))?></span></h2>
-		
+<div class="inner-page">
+	<div class="inner-page__page-content">
+		<h2 class="inner-page__header"><?=Lang::local($news->name)?></h2>
+		<time class="inner-page__date" datetime="<?=date('Y-m-d', strtotime($news->created))?>"><?=date('d.m.Y', strtotime($news->created))?></time>		
 		<?=Lang::local($news->content)?>
-	</div>
-</div>
 
 <?php $pagelink ='http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']; $pd=json_decode($news->description); $pagedescription=$pd->{'en'};?>
 				<div class="likes-block">			<a onclick="window.open('http://www.facebook.com/sharer.php?u=<?=$pagelink?>', 'facebook', 'width=626, height=436'); return false;" rel="nofollow" href="http://www.facebook.com/sharer.php?u=<?=$pagelink;  ?>" class="like l-fb">
@@ -34,3 +32,6 @@
 					</a>				</div>
 				</div>
 </div></div><div class="clear"></div>
+
+	</div>
+</div>

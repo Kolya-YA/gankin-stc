@@ -16,6 +16,11 @@
   min-width: calc(270px + (2 * 1.2vw));
 }
 
+.inner-page__map {
+  width: 100%;
+  height: 480px;
+}
+
 @media (min-width: 800px) {
   
   .inner-page__internal-wrapper {

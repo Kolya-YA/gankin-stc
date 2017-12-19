@@ -7,4 +7,4 @@ Disallow: /user/
 Disallow: /register
 Disallow: /login
 Disallow: /recovery
-Sitemap: https://surf-tarifa.com/sitemap.xml.php
+Sitemap: https://surf-tarifa.com/sitemap.xml
