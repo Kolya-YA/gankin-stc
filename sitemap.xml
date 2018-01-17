@@ -34,6 +34,14 @@
     <loc>https://www.surf-tarifa.com/equipment</loc>
     <changefreq>daily</changefreq>
   </url>
+    <url>
+        <loc>https://www.surf-tarifa.com/faq</loc>
+        <changefreq>daily</changefreq>
+    </url>
+    <url>
+        <loc>https://www.surf-tarifa.com/tarifa</loc>
+        <changefreq>daily</changefreq>
+    </url>
   <url>
     <loc>https://www.surf-tarifa.com/contacts</loc>
     <changefreq>daily</changefreq>
