@@ -240,7 +240,7 @@ class SchoolController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
-		if(isset($_POST['ajax']) && $_POST['ajax']==='school-form')
+		if(isset($_POST['ajax']) && $_POST['ajax'] === 'school-form')
 		{
 			echo CActiveForm::validate($model);
 			Yii::app()->end();
@@ -264,13 +264,16 @@ class SchoolController extends Controller
 		$banners_left = $results = null;
 		
 		$model=new SchoolForm;
+
+        $model->date_from = date('Y-m-d', time() + (7 * 24 * 60 * 60));
+        $model->date_to = date('Y-m-d', time() + (21 * 24 * 60 * 60));
 		
 		if(isset($_GET['area']))
 			$model->location = intval($_GET['area']);
 		
 		if(isset($_POST['SchoolForm']))
 		{
-			$model->attributes=$_POST['SchoolForm'];
+			$model->attributes = $_POST['SchoolForm'];
 			if($model->validate())
 			{
 				$results = School::findCourse($model);
@@ -307,7 +310,6 @@ class SchoolController extends Controller
 		));
 	}
 
-
 	public function actionEquipment()
 	{
 		$this->layout = 'inner';
@@ -316,10 +318,11 @@ class SchoolController extends Controller
 		$banners_left = $results = null;
 		
 		$model = new EquipmentForm;
-		
+		$model->pick_date = date('Y-m-d', time() + (7 * 24 * 60 * 60));
+
 		if(isset($_GET['area']))
 			$model->location = intval($_GET['area']);
-		
+
 		if(isset($_POST['EquipmentForm']))
 		{
 			$model->attributes=$_POST['EquipmentForm'];
@@ -335,7 +338,7 @@ class SchoolController extends Controller
 		}
 		else
 			$model->count = 1;
-		
+
 		if (!$results)
 		{
 			$banners_left = Banner::model()->findAll('left_equipment = 1');

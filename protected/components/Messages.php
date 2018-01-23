@@ -1,4 +1,4 @@
-<?
+<?php
 
 class Messages extends CPhpMessageSource
 {
@@ -12,7 +12,6 @@ class Messages extends CPhpMessageSource
 				$language = 'en';
 			$message .= "<a href='/TranslatePhpMessage/translate/translate/filename/$category.php/languageid/$language'>_</a>";
 		}
-		
 		return $message;
 	}
 }

@@ -11,26 +11,66 @@
 	display: none;
 }
 
-#form2 {
-	margin-top: 8px;
+.find-form__row {
+	margin-bottom: 12px;
 }
-
-#form2 p {
-	padding-bottom: 6px;
-}
-
-#form2 .label {
+.find-form__row>label,
+.find-form__row>input,
+.find-form__row>select {
 	display: block;
-	position: relative;
-	padding-bottom: 10px;
+	width: 100%;
+}
+
+.find-form__row>label {
+	margin-bottom: 2px;
+}
+
+.find-form__row>input {
+    height: 35px;
+    padding: 0 5px;
+    font: inherit;
+    border-radius: 2px;
+    background-color: rgba(0, 0, 0, .04);
+    border: 1px solid #bbbbbb;
+}
+
+.find-form__row select {
+	height: 35px;
+	padding: 0 5px;
+	font: inherit;
+	border-radius: 2px;
+	appearance: none;
+	background-image: url("data:image/svg+xml;utf8,<svg version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='24' height='24' viewBox='0 0 24 24'><path fill='rgb(68,68,68)' d='M7.406 7.828l4.594 4.594 4.594-4.594 1.406 1.406-6 6-6-6z'/></svg>");
+	background-position: 100% 50%;
+	background-repeat: no-repeat;
+	background-color: rgba(0, 0, 0, .04);
+	border: 1px solid #bbbbbb;
+}
+
+.radio-block {
+	display: flex;
+}
+
+.radio-block label {
+	flex: 1;
+    padding-left: 4px;
+    padding-right: 4px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.radio-block input {
+    display: block;
+    margin: auto;
+    padding: 5px;
+}
+
+#form2 .rent-type {
+    display: none;
 }
 
 #form2 .inp-2 {
 	width: 270px;
-}
-
-#form2 span {
-	font-size: 14px;
 }
 
 #form2 .select1 {
@@ -62,12 +102,4 @@
 	overflow: auto;
 	resize: none;
 	float: left;
-}
-
-#form2 .clear {
-	font-size: 0 !important;
-	line-height: 0 !important;
-	float: none !important;
-	margin: 0 !important;
-	display: block;
 }

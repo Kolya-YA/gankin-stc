@@ -34,19 +34,19 @@
 
 	<div id="mainmenu">
 		<?php 
-		$items = array();
+		$items = [];
 		
 		if (Yii::app()->user->role == 'admin')
 			$items = array(
-				array('label'=>'News', 'url'=>array('/news/admin')),
-				array('label'=>'Pages', 'url'=>array('/page/admin')),
-				array('label'=>'Banners', 'url'=>array('/banner/admin')),
-				array('label'=>'Translations', 'url'=>array('/TranslatePhpMessage')),
-				array('label'=>'Users', 'url'=>array('/user/admin')),
-				array('label'=>'Locations', 'url'=>array('/location/admin')),
-				array('label'=>'Languages', 'url'=>array('/lang/admin')),
-				array('label'=>'Manage schools', 'url'=>array('/school/admin')),
-			);
+				array('label'=>'News', 'url'=> array('/news/admin')),
+				array('label'=>'Pages', 'url'=> array('/page/admin')),
+				array('label'=>'Banners', 'url'=> array('/banner/admin')),
+				array('label'=>'Translations', 'url'=> array('/TranslatePhpMessage')),
+				array('label'=>'Users', 'url'=> array('/user/admin')),
+				array('label'=>'Locations', 'url'=> array('/location/admin')),
+				array('label'=>'Languages', 'url'=> array('/lang/admin')),
+				array('label'=>'Manage schools', 'url'=> array('/school/admin')),
+            );
 		if (Yii::app()->user->role == 'school')
 			$items[] = array('label'=>'School info', 'url'=>array('/school/settings'));
 		if (Yii::app()->user->role == 'school' || Yii::app()->user->role == 'admin')
@@ -58,23 +58,9 @@
 		else
 			$items[] = array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'));
 		$this->widget('zii.widgets.CMenu', array('items' => $items));
-		
-		/*$this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'School info', 'url'=>array('/admin/school'), 'visible' => Yii::app()->user->role == 'school'),
-				array('label'=>'Courses', 'url'=>array('/manage_courses'), 'visible' => Yii::app()->user->role == 'school'),
-				array('label'=>'Goods', 'url'=>array('/manage_goods'), 'visible' => Yii::app()->user->role == 'school'),
-			
-				array('label'=>'News', 'url'=>array('/news/admin'), 'visible' => Yii::app()->user->role == 'admin'),
-				array('label'=>'Pages', 'url'=>array('/page/admin'), 'visible' => Yii::app()->user->role == 'admin'),
-				array('label'=>'Translations', 'url'=>array('/TranslatePhpMessage'), 'visible' => Yii::app()->user->role == 'admin'),
-				array('label'=>'Users', 'url'=>array('/user/admin'), 'visible'=> Yii::app()->user->role == 'admin'),
-				
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		));*/ ?>
+		?>
 	</div><!-- mainmenu -->
+
 	<?php if(isset($this->breadcrumbs)):?>
 		<?php 
 // 		$this->widget('zii.widgets.CBreadcrumbs', array(
@@ -88,9 +74,9 @@
 	<div class="clear"></div>
 
 	<div id="footer">
-		Copyright &copy; <?php echo date('Y'); ?><?php /* by <a href="http://indexium.ru">Indexium</a>*/?><br/>
-		All Rights Reserved.<br/>
-		<?php/* echo Yii::powered();*/ ?>
+		Copyright &copy; <?=date('Y');?> —
+<!--        --><?php //by <a href="http://indexium.ru">Indexium</a>?>
+		<?=Yii::powered()?>
 	</div><!-- footer -->
 
 </div><!-- page -->

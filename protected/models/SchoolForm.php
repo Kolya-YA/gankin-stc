@@ -61,9 +61,9 @@ class SchoolForm extends FilterForm
 		if ($this->sex)
 			$res [] = array('name' => Yii::t('search', 'sex'), 'value' => $this->sex);
 		if ($this->level)
-			$res []= array('name' => Yii::t('search', 'level'), 'value' => $levels[$this->level]);
+			$res [] = array('name' => Yii::t('search', 'level'), 'value' => $levels[$this->level]);
 		if ($this->language)
-			$res []= array('name' => Yii::t('search', 'language'), 'value' => $langs[$this->language]);
+			$res [] = array('name' => Yii::t('search', 'language'), 'value' => $langs[$this->language]);
 		
 		return $res;
 	}

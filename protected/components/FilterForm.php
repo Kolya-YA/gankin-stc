@@ -6,11 +6,9 @@ abstract class FilterForm extends CFormModel
 	public function formatDetails()
 	{
 		$details = $this->getDetails();
-		
 		$res = "";
 		foreach ($details as $d)
 		$res .= $d['name'] . ": " . $d['value'] . "\n";
-		
 		return $res;
 	}
 }

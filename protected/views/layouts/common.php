@@ -12,7 +12,6 @@
 	<? endforeach ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.min.css">
-	
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
 
 	<script src="/js/jquery-3.2.1.min.js"></script>
@@ -192,37 +191,7 @@
 
 	</script>
 	<!-- <script src="/js/jquery.hoverIntent.minified.js" async></script> -->
-
 	<!-- <script src="/js/jquery.easing.1.3.js" async></script> -->
-
-	<script>
-
-// toggle menu
-
-		var headerSatus = document.querySelector('.page-header');
-		var toggleBtn = document.querySelector('.toggle-menu');
-	
-		toggleBtn.addEventListener('click', function() {
-			if (headerSatus.classList.contains('page-header--opened')) {
-				headerSatus.classList.add('page-header--closed');
-				headerSatus.classList.remove('page-header--opened');
-			} else {
-				headerSatus.classList.add('page-header--opened');
-				headerSatus.classList.remove('page-header--closed');
-			}
-		});
-
-// arrowToTop
-
-    arrowToTop.onclick = function() {
-      window.scrollTo(pageXOffset, 0);
-    };
-
-    window.addEventListener('scroll', function() {
-      arrowToTop.hidden = (pageYOffset < (document.documentElement.clientHeight / 2));
-    });
-
-	</script>
 
 </body>
 </html>
