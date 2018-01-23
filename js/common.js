@@ -93,7 +93,7 @@ $(function() {
     if ($(this).is(':checked'))
       price *= .2;
 		
-    $('#order .total .value').text(price);
+    $('#order .total .value').text(price.toFixed(2) + ' €');
   });
 	
   $('#order-page #form3 .button').click(function() {

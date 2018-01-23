@@ -5,9 +5,9 @@
 @import "forms.css";
 @import "slider.css";
 @import "buttons.css";
-@import "jqtransform.css";
-@import "jqtransform-2.css";
-@import "datepicker.css";
+/*@import "jqtransform.css";*/
+/*@import "jqtransform-2.css";*/
+/*@import "datepicker.css";*/
 
 @import "fonts.css";
 @import "arrow-to-top.css";
@@ -16,10 +16,11 @@
 @import "header.css";
 @import "footer.css";
 @import "main-content.css";
-@import "home-page.css";
+@import "main-layout.css";
 @import "inner-page.css";
 @import "main-search-form.css";
 @import "contact-form.css";
+@import "order.css";
 
 /* Old code */
 
@@ -181,26 +182,6 @@ dl.adrss dd span {
 	color: #900;
 }
 
-.order-details {
-	margin: 20px 0;
-	width: 434px;
-}
-
-.order-details td {
-	padding: 7px;
-	border: 1px solid #ccc;
-}
-
-.order-details td:nth-child(1) {
-	font-size: 11px;
-	font-weight: bold;
-}
-
-.order-details .total {
-	font-weight: bold;
-	font-size: 12px;
-}
-
 .payments td {
 	border: 1px solid #ccc;
 	padding: 0 5px;
@@ -222,10 +203,6 @@ dl.adrss dd span {
 #order .comment span {
 	color: red;
 	font-size: 150%;
-}
-
-#order .button {
-	width: 236px;
 }
 
 .order-form h2 {
@@ -266,17 +243,6 @@ dl.adrss dd span {
 	margin-bottom: 52px;
 }
 
-#order-page .order-form {
-	width: 455px;
-	float: left;
-	margin-bottom: 20px;
-}
-
-#order-page .order-form.left {
-	border-right: 2px solid #CCCCCC;
-	margin-right: 20px;
-}
-
 .order-form .cards {
 	margin-left: 200px;
 }
@@ -284,10 +250,6 @@ dl.adrss dd span {
 .paypal-logo {
 	margin-left: 15px;
 	height: 32px;
-}
-
-#order {
-	clear: both;
 }
 
 /******************** Responsive OLD ******************/

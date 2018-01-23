@@ -26,7 +26,7 @@ class OrderForm extends CFormModel
 		return array(
 			'first_name' => Yii::t('app', 'First name'),
 			'last_name' => Yii::t('app', 'Last name'),
-			'percent' => Yii::t('app', 'Pay 20%').' *',
+			'percent' => Yii::t('app', 'Pay 20%').'<sup>*</sup>',
 			'accept' => Yii::t('app', 'accept'),
 
 			'card_number' => Yii::t('app', 'Credit card number'),

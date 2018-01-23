@@ -8,13 +8,13 @@
 
 	<div class="main-content__wrapper">
 
-		<div class="home-page-top">
+		<div class="page-top">
 
-			<div class="home-page-top__left">
+			<div class="page-top__left">
 				<?=  $this->renderPartial('/blocks/duolink') ?>				
 			</div>
 			
-			<div class="home-page-top__right  home-page-top__right--wide">
+			<div class="page-top__right  page-top__right--wide">
 				<div class="about-us">
 						<h2><?=Yii::t('app', 'about')?></h2>
 						<?=Lang::local($about->content)?>
@@ -23,13 +23,13 @@
 
 		</div>
 
-		<div class="home-page-bottom">
+		<div class="page-bottom">
 
-			<div class="home-page-bottom__left home-page-bottom__left--wide home-page-bottom__left--no-border">
+			<div class="page-bottom__left page-bottom__left--wide page-bottom__left--no-border">
 				<?=$this->renderPartial('/banner/indexlist', array('best_offer' => $best_offer))?>
 			</div>
 				
-			<div class="home-page-bottom__right">
+			<div class="page-bottom__right">
 				<?=$this->renderPartial('/news/lastnews', array('news' => $news))?>
 			</div>
 
