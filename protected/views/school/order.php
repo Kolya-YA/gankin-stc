@@ -135,7 +135,7 @@
 
 		<?php //copy-paste from school/view ?>
 		<? if ($school->latitude && $school->longitude): ?>
-		<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;key=AIzaSyA7Bqzv6aUAyMfmQoP6NO7QQVRSFvWeHtU" type="text/javascript"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?sensor=false&amp;key=AIzaSyA7Bqzv6aUAyMfmQoP6NO7QQVRSFvWeHtU" type="text/javascript"></script>
 		<div id="school-map" class="order-school__map" style="height: 300px"></div>
 
 		<script type="text/javascript">

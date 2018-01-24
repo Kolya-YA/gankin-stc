@@ -55,8 +55,6 @@ function hiLevelOptions() {
         levelNote = document.querySelector('.note'),
         lessonType = document.querySelector('select[name="SchoolForm\[lesson\]');
 
-    console.log(lessonType.options[1]);
-
     if (curLevel === 'intermediate' || curLevel === 'sport') {
         levelNote.style.display = 'block';
         lessonType.options[1].selected = true;

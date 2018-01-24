@@ -259,7 +259,6 @@ class SiteController extends Controller
 		$result = User::tryConfirm($user, $key);
 		if ($result)
 		{
-			
 			$identity=new UserIdentity('','');
 			$identity->forceId($user);
 			Yii::app()->user->login($identity);
@@ -306,7 +305,6 @@ class SiteController extends Controller
 		// $headers="From: Surf-tarifa administration <noreply@{$_SERVER['HTTP_HOST']}>\r\n".
 			// "MIME-Version: 1.0\r\n".
 			// "Content-type: text/html; charset=UTF-8";
-
 		
 		// var_dump(mail('just_alex@rambler.ru', "privetkakdela", "oppa-oppa", $headers));
  		// MailNotifier::notify(25);

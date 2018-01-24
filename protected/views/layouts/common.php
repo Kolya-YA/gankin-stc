@@ -8,7 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 	<? foreach (Lang::getSiteLangs() as $code => $name): ?>
-	<link rel="alternate" hreflang="<?=$code?>" href="<?php echo Lang::getCurrentUrl($code)?>">
+	<link rel="alternate" hreflang="<?=$code?>" href="<?=Lang::getCurrentUrl($code)?>">
 	<? endforeach ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.min.css">
