@@ -31,7 +31,24 @@ document.addEventListener('DOMContentLoaded', function() {
         trainingLevel.onchange = hiLevelOptions;
     }
 
+    let percentToPayPal = document.getElementById('paypal_percent');
+    if (percentToPayPal) {
+        percentToPayPal.onchange = percentChange;
+    }
+
+    let percentToPayCard = document.getElementById('OrderForm_percent');
+    if (percentToPayCard) {
+        percentToPayCard.onchange = percentChange;
+    }
+
 }, false);
+
+function percentChange() {
+    let toPay = +document.getElementById('totalToPay').dataset.price;
+
+    if (this.checked) toPay *= .2;
+    document.getElementById('valueToPay').textContent = (toPay.toFixed(2) + ' €');
+}
 
 function hiLevelOptions() {
     let curLevel = this.value,
@@ -87,22 +104,21 @@ $(function() {
   //   minDate: new Date((new Date()).getTime() + 2 * (24 * 60 * 60 * 1000)),
   // });
 
-  $('#OrderForm_percent, #paypal_percent').change(function() {
-    var price = +$('#order .total').data('price');
-		
-    if ($(this).is(':checked'))
-      price *= .2;
-		
-    $('#order .total .value').text(price.toFixed(2) + ' €');
-  });
+  // $('#OrderForm_percent, #paypal_percent').change(function() {
+  //   var price = +$('#order .total').data('price');
+	//
+  //   if ($(this).is(':checked'))
+  //     price *= .2;
+	//
+  //   $('#order .total .value').text(price.toFixed(2) + ' €');
+  // });
 	
-  $('#order-page #form3 .button').click(function() {
+  $('#btnPayPal').click(function() {
+  // $('#order-page #form3 .button').click(function() {
 
     if ($('#paypal_accept').is(':checked'))
       $(this).parents('form').submit();
-    else {
-      $('#paypal_accept').siblings('.errorMessage').show();
-    }
+    else $('#paypal_accept').siblings('.errorMessage').show();
 			
     return false;
 

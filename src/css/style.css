@@ -221,26 +221,8 @@ dl.adrss dd span {
 	outline: none;
 }
 
-.order-form label {
-	float: left;
-	width: 200px;
-}
-
 .order-form input[type=checkbox] {
-	margin: 5px 0;
-}
-
-.order-form .row {
-	margin: 2px 0;
-}
-
-.order-form .errorMessage {
-	margin-left: 150px;
-	clear: both;
-}
-
-#order-page h2.p3 {
-	margin-bottom: 52px;
+	margin-right: 5px;
 }
 
 .order-form .cards {

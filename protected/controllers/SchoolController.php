@@ -512,8 +512,7 @@ class SchoolController extends Controller
 			$price = $school->price;
 			$description = "Order $type";			
 			
-			if ($_POST['percent'])
-			{
+			if (isset($_POST['percent'])) {
 				$price *= .2;
 				$description .= " (20%)";
 			}

@@ -14,22 +14,21 @@
                 <td class="order-details__name">Total price:</td>
                 <td class"order-details__value"><?=number_format($school->price, 2) ?> €</td>
             </tr>
-            <tr class="total" data-price="<?=$school->price?>">
+            <tr class="order-details__total" id="totalToPay" data-price="<?=$school->price?>">
                 <td class="order-details__name"><?=Yii::t('app', 'price')?></td>
-                <td class="order-details__value value"><?=$model->percent ? number_format($school->price * .2, 2) : $school->price?> €</td>
+                <td class="order-details__value" id="valueToPay"><?=$model->percent ? number_format($school->price * .2, 2) : $school->price?> €</td>
             </tr>
         </table>
         <div class="order-details__comment"><sup>*</sup> <?=Yii::t('app', 'percent_comment')?></div>
 
         <div class="order-details__form">
-            <div class="order-form left">
-                <?php $form=$this->beginWidget('application.widgets.ActiveForm', array(
-                    'id'=>'form2',
-                    'enableAjaxValidation'=>false,
-                    'action' => $_SERVER['REQUEST_URI'].'#order',
-                    // 				'htmlOptions' => array('class' => 'form-style-2'),
-                )); ?>
-                <h3><?=Yii::t('app', 'Pay with credit card')?></h3>
+<!--            <div class="order-form left">-->
+<!--                --><?php //$form=$this->beginWidget('application.widgets.ActiveForm', array(
+//                    'id'=>'form2',
+//                    'enableAjaxValidation'=>false,
+//                    'action' => $_SERVER['REQUEST_URI'].'#order',
+//                )); ?>
+<!--                <h3>--><?//=Yii::t('app', 'Pay with credit card')?><!--</h3>-->
                 <!---->
                 <!--				<div class="row">-->
                 <!--					--><?//=$form->label($model, 'first_name')?>
@@ -75,23 +74,23 @@
                 <!--					--><?//=$form->error($model, 'cv_code')?>
                 <!--				</div>-->
 
-                <div class="row">
-                    <?=$form->label($model, 'percent')?>
-                    <?=$form->checkBox($model, 'percent')?>
-                    <?=$form->error($model, 'percent')?>
-                </div>
-                <div class="row">
-                    <?=$form->label($model, 'accept')?>
-                    <?=$form->checkBox($model, 'accept')?>
-                    <?=$form->error($model, 'accept')?>
-                </div>
-                <?php if (Yii::app()->user->isGuest):?>
-                    <a href="/register" class="button"><?=Yii::t('app', 'order')?></a>
-                <?php else: ?>
-                    <a href="#"  onClick="document.getElementById('form2').submit();return false;" class="button"><?=Yii::t('app', 'order')?></a>
-                <? endif ?>
-                <?php $this->endWidget(); ?>
-            </div>
+<!--                <div class="row">-->
+<!--                    --><?//=$form->checkBox($model, 'percent')?>
+<!--                    --><?//=$form->label($model, 'percent')?>
+<!--                    --><?//=$form->error($model, 'percent')?>
+<!--                </div>-->
+<!--                <div class="row">-->
+<!--                    --><?//=$form->checkBox($model, 'accept')?>
+<!--                    --><?//=$form->label($model, 'accept')?>
+<!--                    --><?//=$form->error($model, 'accept')?>
+<!--                </div>-->
+<!--                --><?php //if (Yii::app()->user->isGuest):?>
+<!--                    <a href="/register" class="button">--><?//=Yii::t('app', 'order')?><!--</a>-->
+<!--                --><?php //else: ?>
+<!--                    <button onClick="document.getElementById('form2').submit();return false;" class="button">--><?//=Yii::t('app', 'order')?><!--</button>-->
+<!--                --><?// endif ?>
+<!--                --><?php //$this->endWidget(); ?>
+<!--            </div>-->
 
             <div class="order-form right">
                 <?php $form=$this->beginWidget('application.widgets.ActiveForm', array(
@@ -103,21 +102,21 @@
                 <h3><?=Yii::t('app', 'Pay with PayPal')?> <img class="paypal-logo" src="/images/paypal_logo_small.gif" /></h3>
 
                 <div class="row">
-                    <label for="paypal_percent"><?=Yii::t('app', 'Pay 20%')?><sup>*</sup></label>
                     <input type="checkbox" value="1" id="paypal_percent" name="percent" <?= $_SERVER['REQUEST_METHOD'] == 'GET' ? 'checked' : false?>>
+                    <label for="paypal_percent"><?=Yii::t('app', 'Pay 20%')?><sup>*</sup></label>
                 </div>
 
                 <div class="row">
+                    <input type="checkbox" value="1" id="paypal_accept" required>
                     <label for="paypal_accept"><?=Yii::t('app', 'accept')?></label>
-                    <input type="checkbox" value="1" id="paypal_accept">
                     <div class="errorMessage" style="display:none"><?=Yii::t('app', 'Read and accept terms & conditions')?></div>
                 </div>
 
                 <?php if (Yii::app()->user->isGuest):?>
                     <?php $this->endWidget(); ?>
-                    <a href="/register" class="button" onclick="javascript:void(0)"><?=Yii::t('app', 'order')?></a>
+                    <a href="/register" class="button"><?=Yii::t('app', 'order')?></a>
                 <?php else: ?>
-                    <a href="#" class="button"><?=Yii::t('app', 'order')?></a>
+                    <button class="button" id="btnPayPal"><?=Yii::t('app', 'order')?></button>
                     <?php $this->endWidget(); ?>
                 <?php endif ?>
 
