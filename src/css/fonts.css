@@ -21,8 +21,8 @@
 /* roboto-500 - cyrillic_latin */
 @font-face {
   font-family: 'Roboto';
-  font-style: bold;
-  font-weight: 500;
+  font-style: normal;
+  font-weight: bold;
   font-display: swap;
   src: local('Roboto Medium'), local('Roboto-Medium'),
        url('/fonts/roboto-v18-cyrillic_latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */

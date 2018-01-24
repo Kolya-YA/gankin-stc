@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         rentTypeSelect.onchange = changeRentAdd;
     }
 
-    let trainingLevel = document.querySelector('select[name="SchoolForm\[level\]');
+    let trainingLevel = document.querySelector('select[name="SchoolForm\[level\]"]');
     if (trainingLevel) {
         trainingLevel.onchange = hiLevelOptions;
     }
@@ -53,7 +53,7 @@ function percentChange() {
 function hiLevelOptions() {
     let curLevel = this.value,
         levelNote = document.querySelector('.note'),
-        lessonType = document.querySelector('select[name="SchoolForm\[lesson\]');
+        lessonType = document.querySelector('select[name="SchoolForm\[lesson\]"]');
 
     if (curLevel === 'intermediate' || curLevel === 'sport') {
         levelNote.style.display = 'block';
