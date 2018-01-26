@@ -295,7 +295,8 @@ class SiteController extends Controller
 	
 	public function actionThumb($filename, $ext, $w, $h)
 	{
-		AutoThumb::give("$filename.$ext", $w, $h);
+//	    D::dump($filename . " <= § => " . $ext . " <= § => " . $w. " <= § => " . $h);
+	    AutoThumb::give("$filename.$ext", $w, $h);
 	}
 	
  	public function actionNotify()

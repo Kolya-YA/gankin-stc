@@ -5,11 +5,11 @@
 	<meta charset="utf-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="yandex-verification" content="fe58b273fa9740d3">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<? foreach (Lang::getSiteLangs() as $code => $name): ?>
-	<link rel="alternate" hreflang="<?=$code?>" href="<?=Lang::getCurrentUrl($code)?>">
-	<? endforeach ?>
+    <? foreach (Lang::getSiteLangs() as $code => $name): ?>
+    <link rel="alternate" hreflang="<?=$code?>" href="<?=Lang::getCurrentUrl($code)?>">
+    <? endforeach ?>
 
 	<link rel="stylesheet" type="text/css" media="screen" href="/css/main.min.css">
 	<link rel="icon" href="favicon.ico" type="image/x-icon">
@@ -114,7 +114,7 @@
 					'items'=>array(
 						array('label'=>Yii::t('menu', 'home'),				'url'=>'/'),
 						array('label'=>Yii::t('menu', 'aboutTarifa'),	'url'=>'/tarifa'),
-						array('label'=>Yii::t('menu', 'schools'),			'url'=>'/school/7'),
+						array('label'=>Yii::t('menu', 'schools'),		'url'=>'/school/7'),
 						array('label'=>Yii::t('menu', 'school'),			'url'=>'/school'),
 						array('label'=>Yii::t('menu', 'equipment'),		'url'=>'/equipment'),
 						array('label'=>Yii::t('menu', 'faq'),					'url'=>'/faq'),

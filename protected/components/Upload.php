@@ -6,13 +6,12 @@ class Upload extends CComponent
 	{
 		$filename = Yii::getPathOfAlias('uploads').DIRECTORY_SEPARATOR.$shortname;
 		if (file_exists($filename))
-		do 
-		{
+		do {
 			$shortname = rand(1000, 10000).'_'.$shortname;
 			$filename = Yii::getPathOfAlias('uploads').DIRECTORY_SEPARATOR.$shortname;
 			if (!file_exists($filename))
 				break;
-		} while(true);
+		} while (true);
 		return array($shortname, $filename);
 	}
 	static function deleteUpload($name)

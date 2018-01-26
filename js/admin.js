@@ -52,9 +52,9 @@ $(function(){
 		});
 	});
 	
-	$( '.datepicker' ).datepicker({
-		dateFormat: 'yy-mm-dd',
-	});
+	// $( '.datepicker' ).datepicker({
+	// 	dateFormat: 'yy-mm-dd',
+	// });
 	
 	$('#map_code').change(function(){
 		 var matches = $(this).val().match(/[^\w]ll=(-?[\d.]+),(-?[\d.]+)/);

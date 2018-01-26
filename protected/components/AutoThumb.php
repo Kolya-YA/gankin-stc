@@ -3,6 +3,7 @@ class AutoThumb extends CComponent{
 	static public function give($url, $w, $h)
 	{
 		$src = $_SERVER['DOCUMENT_ROOT'].'/'.$url;
+//        D::dump("Path: " . $src . " <= § => " . $url . " <= § => " . $w. " <= § => " . $h);
 		if (!file_exists($src))
 		{
 			header('HTTP/1.0 404 Not Found');

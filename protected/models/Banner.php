@@ -50,11 +50,12 @@ class Banner extends ActiveRecord
 			array('top_index, index, left_course, right_course, left_equipment, right_equipment, search_result, payment, mail', 'numerical', 'integerOnly'=>true),
 			array('link, picture', 'length', 'max'=>127),
 			array('name, content, description, keywords', 'safe'),
-			array('picture', 'file','types'=>'png,jpg,jpeg', 'allowEmpty'=>true,'on'=>'insert,update'),
+//			array('picture', 'file','types'=>'png,jpg,jpeg', 'allowEmpty'=>true,'on'=>'insert,update'),
 
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, name, description, keywords, link, content, picture, top_index, index, left_course, right_course, left_equipment, right_equipment', 'safe', 'on'=>'search'),
+			array('picture', 'file','types'=>'png,jpg,jpeg', 'allowEmpty'=>true,'on'=>'insert,update', 'safe' => false),
 		);
 	}
 

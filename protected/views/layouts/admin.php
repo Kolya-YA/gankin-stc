@@ -10,7 +10,7 @@
 	<script src="/js/jquery-ui-1.10.3.custom.min.js"></script>
 	<script src="/js/admin.js"></script>
 
-	<link rel="stylesheet" type="text/css" href="/css/datepicker.css"> 
+<!--	<link rel="stylesheet" type="text/css" href="/css/datepicker.css"> -->
 	<!-- blueprint CSS framework -->
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin/screen.css" media="screen, projection" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin/print.css" media="print" />
@@ -34,7 +34,7 @@
 
 	<div id="mainmenu">
 		<?php 
-		$items = [];
+		$items = array();
 		
 		if (Yii::app()->user->role == 'admin')
 			$items = array(
