@@ -43,7 +43,7 @@ class SchoolController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('equipment','view','index', 'order'),
+				'actions'=>array('equipment','view','index', 'order', 'fullList'),
 				'users'=>array('*'),
 			),
 			array('allow',
@@ -265,12 +265,6 @@ class SchoolController extends Controller
 		
 		$model=new SchoolForm;
 
-        $model->date_from = date('Y-m-d', time() + (7 * 24 * 60 * 60));
-        $model->date_to = date('Y-m-d', time() + (21 * 24 * 60 * 60));
-		
-		if(isset($_GET['area']))
-			$model->location = intval($_GET['area']);
-		
 		if(isset($_POST['SchoolForm']))
 		{
 			$model->attributes = $_POST['SchoolForm'];
@@ -309,6 +303,25 @@ class SchoolController extends Controller
 			'page' => $page
 		));
 	}
+
+    public function actionfullList()
+    {
+        $this->layout = 'inner';
+        $filter = false;
+        $model=new SchoolForm;
+        $results = School::model()->findAll();
+
+// 		D::dump($results);
+
+        $page = Page::model()->find('slug = \'list-Of-Schools\'');
+
+        $this->render('schoolList', array(
+            'model' => $model,
+            'schools' => $results,
+            'filter' => $filter,
+            'page' => $page
+        ));
+    }
 
 	public function actionEquipment()
 	{

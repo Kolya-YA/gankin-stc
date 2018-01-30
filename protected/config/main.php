@@ -83,8 +83,9 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
 				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 // 				'page/<id:\d+>'=>'page/view',
-				'equipment' => 'school/equipment',
-				'<slug:(faq|tarifa|schools|partner|rental|privacy|impressum)>' => 'page/view',
+                'all_kite_schools_in_tarifa' => 'school/fullList',
+                'equipment' => 'school/equipment',
+				'<slug:(faq|tarifa|partner|rental|privacy|impressum)>' => 'page/view',
 				'<action:(confirmation|login|logout|register|recover|recovery|userpanel)>' => 'site/<action>',
 				'contacts' => 'site/contact',
 				'thumb/<filename:.+>[<w:\d+>*<h:\d+>].<ext:(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)>' => 'site/thumb',
@@ -110,16 +111,16 @@ return array(
 		'log' => array(
 			'class' => 'CLogRouter',
 			'routes' => array(
-//				array(
-//					'class' => 'CFileLogRoute',
-//					'levels' => 'error, warning',
-//				),
+				array(
+					'class' => 'CFileLogRoute',
+					'levels' => 'error, warning',
+				),
 
 				// uncomment the following to show log messages on web pages
-                array(
-                    'class' => 'CWebLogRoute',
-                    'levels'=>'error, warning, trace, profile, info',
-                ),
+//                array(
+//                    'class' => 'CWebLogRoute',
+//                    'levels'=>'error, warning, trace, profile, info',
+//                ),
 
 			),
 		),

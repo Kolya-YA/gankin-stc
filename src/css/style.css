@@ -12,8 +12,8 @@
 
 @import "header.css";
 @import "footer.css";
-@import "main-content.css";
 @import "main-layout.css";
+@import "schools-card.css";
 @import "inner-page.css";
 @import "main-search-form.css";
 @import "contact-form.css";
@@ -144,35 +144,6 @@ dl.adrss dd span {
 	width: 200px;
 }
 
-.search-result ul li img {
-	max-width: 150px;
-	float: left;
-	margin-right: 10px;
-}
-
-.search-result ul li .left {
-	float: left;
-}
-
-.search-result ul li {
-	margin-bottom: 20px;
-}
-
-.search-result ul li .price-block {
-	float: right;
-}
-
-.search-result ul li .price {
-	display: inline-block;
-	margin-right: 20px;
-	line-height: 42px;
-}
-
-.school .school-photo {
-	float: left;
-	margin: 0 12px 10px 0;
-	box-shadow: 0 1px 4px rgba(50, 50, 50, 0.25);
-}
 
 .errorSummary {
 	margin-bottom: 20px;

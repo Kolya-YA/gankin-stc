@@ -26,11 +26,13 @@ class School extends ActiveRecord
 {
 	protected $multilang = array('name', 'description', 'short_description');
 	protected $sets = array('beaches');
-	public $branches = array();
+//	public $branches = array();
 	public $prices = array();
 	public $branch = array();
+	public $branches = array();
 	public $price = 0;
-	
+	public $type = '';
+
 	public $accept = false;
 	
 	
@@ -83,7 +85,8 @@ class School extends ActiveRecord
 		return array(
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 			'courses' => array(self::HAS_MANY, 'Course', 'school_id'),
-// 			'branches' => array(self::HAS_MANY, 'SchoolBranch', 'school_id'),
+ 			'branches' => array(self::HAS_MANY, 'SchoolBranch', 'school_id'),
+// 			'typeOfSerf' => array(self::HAS_MANY, 'SchoolBranch', 'school_id'),
 // 			'prices' => array(self::HAS_MANY, 'SchoolPrice', 'school_id'),
 		);
 	}
@@ -268,50 +271,40 @@ class School extends ActiveRecord
 	public static function findEquipment($filter, $id = false)
 	{
 		$criteria = new CDbCriteria;
-		
+
 		if ($id)
 		{
-			$criteria->addCondition('t.id = :id');
-			$criteria->params['id'] = $id;
+		    $criteria->compare('t.id',  $id, true);
 		}
-		
+
 		if ($filter->location)
 		{
 			$criteria->compare('beaches',  $filter->location, true);
-			//$criteria->addCondition('location = :location');
-			//$criteria->params['location'] = $filter->location;
 		}
-		
-		$criteria->join = "JOIN school_branch b ON b.school_id = t.id";
-		$criteria->addCondition('b.type = :type');
-		$criteria->params['type'] = $filter->type;
 
-		$criteria->select = 't.*, b.rent_prices as price';
-// 		$criteria->order = 'rand()';
-		$criteria->limit = '20';
-		
+		$criteria->join = "JOIN school_branch b ON b.school_id = t.id";
+		$criteria->compare('b.type', $filter->type, true);
+		$criteria->select = 't.*, b.type as type, b.rent_prices as price';
+//		$criteria->limit = '20';
+
 		$results = School::model()->findAll($criteria);
-		
-		
-		$days = $filter->days;
 
 		if ($results)
 		{
+    		$orderDays = $filter->days - 1;
 			foreach ($results as $i => $school)
 			{
 				$school->price = json_decode($school->price, true);
-				$price = $school->price[$filter->rent_type][$days - 1];
+				$price = $school->price[$filter->rent_type][$orderDays];
 				if (!$price)
 					unset($results[$i]);
-// 					$price = $school->price[$filter->rent_type][0] * $days;
+// 					$price = $school->price[$filter->rent_type][0] * $days; //calculate synthetic price
 				$school->price = $filter->count * $price;
 			}
-
 			usort($results, function ($a, $b){
-				return $a->price > $b->price;
+				return $a->price - $b->price;
 			});
 		}
-		
 		return $results;
 	}
 	

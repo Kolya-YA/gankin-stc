@@ -38,7 +38,7 @@ class Page extends ActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('slug, name,short_description, keywords, content', 'required'),
+			array('slug, name,short_description, content', 'required'),
 			array('slug', 'length', 'max'=>127),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.

@@ -114,7 +114,7 @@
 					'items'=>array(
 						array('label'=>Yii::t('menu', 'home'),				'url'=>'/'),
 						array('label'=>Yii::t('menu', 'aboutTarifa'),	'url'=>'/tarifa'),
-						array('label'=>Yii::t('menu', 'schools'),		'url'=>'/school/7'),
+						array('label'=>Yii::t('menu', 'schools'),		'url'=>'/all_kite_schools_in_tarifa'),
 						array('label'=>Yii::t('menu', 'school'),			'url'=>'/school'),
 						array('label'=>Yii::t('menu', 'equipment'),		'url'=>'/equipment'),
 						array('label'=>Yii::t('menu', 'faq'),					'url'=>'/faq'),

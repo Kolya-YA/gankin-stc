@@ -47,7 +47,6 @@ class AutoThumb extends CComponent{
 			else
 			{
 				$thumbnail = ImageCreateTrueColor($w, $h);
-				
 				imagealphablending( $thumbnail, false );
 				imagesavealpha( $thumbnail, true );
 				imagecopyresampled($thumbnail, $image, 0, 0, 0, 0, $w, $h, $src_width, $src_height);
@@ -85,7 +84,7 @@ class AutoThumb extends CComponent{
 			readfile($dest);
 		}
 	}
-	
+
 	static private function get_proportional_sizes($sw, $sh, $dw, $dh)
 	{
 		$src_ratio = $sw / $sh;
@@ -105,8 +104,8 @@ class AutoThumb extends CComponent{
 		return array($dw, $dh);
 	}
 
-	static function url($url, $w, $h)
+	static function url($url, $thumbWidth, $thumbHeight)
 	{
-		return preg_replace('/^(.+)\.([a-zA-Z]+)$/', "/thumb/$1[{$w}*{$h}].$2", ltrim($url, '/'));
+		return preg_replace('/^(.+)\.([a-zA-Z]+)$/', "/thumb/$1[{$thumbWidth}*{$thumbHeight}].$2", ltrim($url, '/'));
 	}
 }
