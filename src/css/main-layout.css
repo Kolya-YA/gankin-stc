@@ -25,7 +25,7 @@
 }
 
 .main-content__right-block {
-    font: 1;
+    flex: 1;
 }
 
 .main-content__wide-block {
