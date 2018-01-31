@@ -34,3 +34,20 @@ css/main.min.css.map
 
 js/tinymce/**
 js/tinymce222/**
+/thumb/*
+assets/
+framework/
+js/jquery-ui-1.10.3.custom.min.js
+node_modules/
+protected/commands/
+protected/extensions/
+protected/migrations/
+protected/modules/TranslatePhpMessage/components/
+protected/modules/TranslatePhpMessage/messages/
+protected/modules/TranslatePhpMessage/models/
+protected/modules/TranslatePhpMessage/views/layouts/
+protected/runtime/
+protected/tests/fixtures/
+protected/tests/report/
+protected/tests/unit/
+tmp/
