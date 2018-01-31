@@ -29,7 +29,7 @@ class School extends ActiveRecord
 //	public $branches = array();
 	public $prices = array();
 	public $branch = array();
-	public $branches = array();
+//	public $branches = array();
 	public $price = 0;
 	public $type = '';
 

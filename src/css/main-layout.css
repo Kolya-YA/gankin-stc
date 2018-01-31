@@ -38,8 +38,6 @@
     padding: 1vw 1.2vw;
 }
 
-
-
 .page-top__left,
 .page-top__right,
 .page-bottom__left,
@@ -191,9 +189,7 @@
 	margin-bottom: 3vw;
 	border-bottom: 3px solid var(--main-blau);
 	background-color: #f2f2f2;
-	border-top-left-radius: 2px;
-	border-top-right-radius: 2px;
-	border-radius: 0px;
+	border-top-right-radius: 30px;
 	padding: 8px;
 	transition: 300ms;
 }
