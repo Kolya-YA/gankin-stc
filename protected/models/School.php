@@ -86,7 +86,6 @@ class School extends ActiveRecord
 			'user' => array(self::BELONGS_TO, 'User', 'user_id'),
 			'courses' => array(self::HAS_MANY, 'Course', 'school_id'),
  			'branches' => array(self::HAS_MANY, 'SchoolBranch', 'school_id'),
-// 			'typeOfSerf' => array(self::HAS_MANY, 'SchoolBranch', 'school_id'),
 // 			'prices' => array(self::HAS_MANY, 'SchoolPrice', 'school_id'),
 		);
 	}
@@ -199,12 +198,8 @@ class School extends ActiveRecord
 					}
 			}
 		}
-
-			
 		return parent::afterSave();
 	}
-	
-	
 	
 	public static function getSchools()
 	{
@@ -212,14 +207,11 @@ class School extends ActiveRecord
 		$criteria = new CDbCriteria;
 		
 		$command = $db->createCommand();
-		
 		$command->select('id, name')->from('school');
 		if (Yii::app()->user->role != 'admin')
 			$command->where('user_id = :uid', array('uid' => Yii::app()->user->id));
-		
-		
+
 		$dict = $command->queryAll();
-		
 		$res = array();
 		if ($dict)
 			foreach ($dict as $row)

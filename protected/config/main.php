@@ -83,7 +83,7 @@ return array(
 				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
 				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 // 				'page/<id:\d+>'=>'page/view',
-                'all_kite_schools_in_tarifa' => 'school/fullList',
+                'kite_schools_in_tarifa' => 'school/fullList',
                 'equipment' => 'school/equipment',
 				'<slug:(faq|tarifa|partner|rental|privacy|impressum)>' => 'page/view',
 				'<action:(confirmation|login|logout|register|recover|recovery|userpanel)>' => 'site/<action>',

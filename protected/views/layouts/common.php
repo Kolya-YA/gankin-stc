@@ -112,12 +112,12 @@
 			<nav class="page-header__main-nav">
 				<? $this->widget('application.widgets.Menu', array(
 					'items'=>array(
-						array('label'=>Yii::t('menu', 'home'),				'url'=>'/'),
+						array('label'=>Yii::t('menu', 'home'),			'url'=>'/'),
 						array('label'=>Yii::t('menu', 'aboutTarifa'),	'url'=>'/tarifa'),
-						array('label'=>Yii::t('menu', 'schools'),		'url'=>'/all_kite_schools_in_tarifa'),
+						array('label'=>Yii::t('menu', 'schools'),		'url'=>'/kite_schools_in_tarifa'),
 						array('label'=>Yii::t('menu', 'school'),			'url'=>'/school'),
 						array('label'=>Yii::t('menu', 'equipment'),		'url'=>'/equipment'),
-						array('label'=>Yii::t('menu', 'faq'),					'url'=>'/faq'),
+						array('label'=>Yii::t('menu', 'faq'),			'url'=>'/faq'),
 						array('label'=>Yii::t('menu', 'contacts'), 		'url'=>'/contacts')
 					),
 					'activeCssClass' => 'current',
@@ -190,8 +190,6 @@
     ga('send', 'pageview');
 
 	</script>
-	<!-- <script src="/js/jquery.hoverIntent.minified.js" async></script> -->
-	<!-- <script src="/js/jquery.easing.1.3.js" async></script> -->
 
 </body>
 </html>

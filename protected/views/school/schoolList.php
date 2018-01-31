@@ -51,10 +51,8 @@
 
         </div>
 
-        <div class="main-content__right-block main-content--border">
-<!--	--><?// $this->renderPartial('/banner/right', array('banners' => $banners_right)) ?>
-<!--	--><?// $this->renderPartial('/banner/left', array('banners' => $banners_left))?>
-        Banners...
+        <div class="main-content__right-block">
+	        <? $this->renderPartial('/banner/left', array('banners' => $banners))?>
         </div>
 
     </div>

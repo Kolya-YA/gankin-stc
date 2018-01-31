@@ -265,6 +265,12 @@ class SchoolController extends Controller
 		
 		$model=new SchoolForm;
 
+        $model->date_from = date('Y-m-d', time() + (7 * 24 * 60 * 60));
+        $model->date_to = date('Y-m-d', time() + (21 * 24 * 60 * 60));
+
+		if(isset($_GET['area']))
+			$model->location = intval($_GET['area']);
+
 		if(isset($_POST['SchoolForm']))
 		{
 			$model->attributes = $_POST['SchoolForm'];
@@ -308,18 +314,21 @@ class SchoolController extends Controller
     {
         $this->layout = 'inner';
         $filter = false;
-        $model=new SchoolForm;
         $results = School::model()->findAll();
-
-// 		D::dump($results);
-
         $page = Page::model()->find('slug = \'list-Of-Schools\'');
+        $banners = Banner::model()->findAll(array(
+                'limit'=>count($results),
+                'order'=>'rand()',
+            ));
+
+//         		D::dump(count($banners));
+//         		D::dump(count($results));
 
         $this->render('schoolList', array(
-            'model' => $model,
             'schools' => $results,
             'filter' => $filter,
-            'page' => $page
+            'page' => $page,
+            'banners' => $banners,
         ));
     }
 
@@ -358,7 +367,7 @@ class SchoolController extends Controller
 		}
 		else
 			$banners_left = Banner::model()->findAll('search_result = 1');
-			
+
 		$page = Page::model()->find('slug = \'equipment\'');
 			
 		$this->render('equipment', array(
