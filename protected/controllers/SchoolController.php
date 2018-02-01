@@ -43,7 +43,7 @@ class SchoolController extends Controller
 	{
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('equipment','view','index', 'order', 'fullList'),
+				'actions'=>array('equipment','view','index', 'order', 'kite_schools_in_tarifa'),
 				'users'=>array('*'),
 			),
 			array('allow',
@@ -261,7 +261,7 @@ class SchoolController extends Controller
 		$this->layout = 'inner';
 
 		$filter = false;
-		$banners_left = $results = null;
+		$results = null;
 		
 		$model=new SchoolForm;
 
@@ -310,7 +310,8 @@ class SchoolController extends Controller
 		));
 	}
 
-    public function actionfullList()
+//    public function actionfullList()
+    public function actionkite_schools_in_tarifa()
     {
         $this->layout = 'inner';
 
@@ -363,7 +364,7 @@ class SchoolController extends Controller
 		$this->layout = 'inner';
 		
 		$filter = false;
-		$banners_left = $results = null;
+		$results = null;
 		
 		$model = new EquipmentForm;
 		$model->pick_date = date('Y-m-d', time() + (7 * 24 * 60 * 60));
