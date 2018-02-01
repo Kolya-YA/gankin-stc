@@ -42,6 +42,10 @@
         <loc>https://www.surf-tarifa.com/tarifa</loc>
         <changefreq>daily</changefreq>
     </url>
+    <url>
+        <loc>https://www.surf-tarifa.com/kite_schools_in_tarifa</loc>
+        <changefreq>daily</changefreq>
+    </url>
   <url>
     <loc>https://www.surf-tarifa.com/contacts</loc>
     <changefreq>daily</changefreq>

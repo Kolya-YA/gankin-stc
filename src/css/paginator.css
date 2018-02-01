@@ -1,0 +1,53 @@
+.paginator {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 1vw;
+}
+
+.paginator li,
+.paginator a {
+    display: block;
+    font-size: 24px;
+    color: #333333;
+}
+
+.paginator__page a {
+    padding: 6px 10px;
+    background-color: var(--block-bg);
+    box-shadow: var(--block-shadow);
+}
+
+.paginator__first-page a,
+.paginator__previous-page a,
+.paginator__next-page a,
+.paginator__last-page a {
+    padding: 5px 18px 7px;
+    background-color: var(--block-bg);
+    box-shadow: var(--block-shadow);
+}
+
+.paginator :not(.paginator--selected)  a:hover {
+    background-color: #0004;
+}
+
+
+.paginator__page:not(:last-child),
+.paginator__first-page,
+.paginator__previous-page,
+.paginator__next-page {
+    margin-right: 8px;
+}
+
+.paginator--selected a {
+    color: var(--main-yellow);
+    background-color: var(--menu-bg);
+}
+
+.paginator .paginator__first-page,
+.paginator .paginator__last-page,
+.paginator .paginator--hidden {
+    display: none;
+}

@@ -313,8 +313,34 @@ class SchoolController extends Controller
     public function actionfullList()
     {
         $this->layout = 'inner';
-        $filter = false;
-        $results = School::model()->findAll();
+
+        $criteria = new CDbCriteria();
+        $count = School::model()->count($criteria);
+        $pages = new CPagination($count);
+        $pages->pageSize = 10; //Schools pr page
+        $pages->applyLimit($criteria);
+
+        $pagerSettings = [
+            'pages' => $pages,
+            'cssFile' => '',
+            'htmlOptions' => array('class' => 'paginator'),
+            'header' => '',
+            'maxButtonCount' => 4, // MAX button in paginator
+            'firstPageLabel' => '&laquo;&laquo;', // ««
+            'firstPageCssClass' => 'paginator__first-page',
+            'lastPageLabel' => '&raquo;&raquo;',  // »»
+            'lastPageCssClass' => 'paginator__last-page',
+            'prevPageLabel' => '&laquo;', // «
+            'previousPageCssClass' => 'paginator__previous-page',
+            'nextPageLabel' => '&raquo;',  // »
+            'nextPageCssClass' => 'paginator__next-page',
+            'internalPageCssClass' => 'paginator__page',
+            'selectedPageCssClass' => 'paginator--selected',
+            'hiddenPageCssClass' => 'paginator--hidden',
+        ];
+//        D::dump($pages);
+        $results = School::model()->findAll($criteria);
+
         $page = Page::model()->find('slug = \'list-Of-Schools\'');
         $banners = Banner::model()->findAll(array(
                 'limit'=>count($results),
@@ -326,8 +352,8 @@ class SchoolController extends Controller
 
         $this->render('schoolList', array(
             'schools' => $results,
-            'filter' => $filter,
             'page' => $page,
+            'pagerSettings' => $pagerSettings,
             'banners' => $banners,
         ));
     }

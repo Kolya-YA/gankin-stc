@@ -25,17 +25,18 @@
             <div class="schools-list">
                     <? if ($schools): ?>
 
-                        <?php if (isset($paginator)) : ?>
-                        <div class="inner-page__paginator"></div>
-                        <?php endif; ?>
+                        <div class="schools-list__paginator">
+                            <?$this->widget('CLinkPager', $pagerSettings )?>
+<!--                            --><?//=D::dump($pagerSettings)?>
+                        </div>
 
                         <? foreach ($schools as $school)
-                            $this->renderPartial('_schoolListItem', array('school' => $school, 'filter' => $filter));
+                            $this->renderPartial('_schoolListItem', array('school' => $school));
                         ?>
 
-                        <?php if (isset($paginator)) : ?>
-                        <div class="inner-page__paginator"></div>
-                        <?php endif; ?>
+                        <div class="schools-list__paginator">
+                            <?$this->widget('CLinkPager', $pagerSettings )?>
+                        </div>
 
                     <? else: ?>
 
