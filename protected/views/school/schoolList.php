@@ -5,6 +5,12 @@
  * Date: 28.01.2018
  * Time: 20:20
  */
+/**
+ * @var $schools array content for schools list
+ * @var $page object static content for top block
+ * @var $pagerSettings array
+ * @var $banners array banners for right column
+**/
 
   $this->pageTitle = Lang::local($page->name) . ' | ' . Yii::app()->name;
   Yii::app()->clientScript->registerMetaTag(Lang::local($page->short_description), 'description');
