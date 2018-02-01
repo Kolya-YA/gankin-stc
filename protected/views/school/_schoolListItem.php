@@ -1,6 +1,9 @@
 <?php
-/* @var $model School */
+/**
+ * @var $school object  data for school card display
+ */
 ?>
+
     <article class="school-card main-content--border">
         <div class="school-card__header">
             <h3 class="school-card__name"><?= Lang::local($school->name) ?></h3>
