@@ -20,5 +20,7 @@
 
         <?=  $this->renderPartial('/blocks/likesBlock') ?>
 
+        <a href="/news" class=""><?=Yii::t('app', 'seeall')?></a>
+
     </div>
 </div>
