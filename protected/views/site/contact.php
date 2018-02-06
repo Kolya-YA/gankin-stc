@@ -45,7 +45,6 @@
 								<?= $form->error($model,'body'); ?>
 							
 							<div class="btns">
-								<button type="reset" class="button"><?=Yii::t('form', 'reset')?></button>
 								<button class="button"><?=Yii::t('form', 'submit')?></button>
 							</div>
 		
