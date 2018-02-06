@@ -8,7 +8,7 @@
 //    $pageLink = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 //    $pd  = json_decode($news->description);
 //    $pageDescription = $pd->{'en'};
-    $this->params['pageLink'] = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+    $this->params['pageLink'] = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
 //    $this->params['pageDescription']  = json_decode($news->description)->{'en'};
 ?>
 
