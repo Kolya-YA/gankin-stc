@@ -1,4 +1,9 @@
-<section class="article-list">
+<?php
+/**
+* @var $best_offer array banners for render
+**/
+?>
+<section class="main-article-list">
 
 	<?
 	for ($i = 0; $i < (int)((sizeof($best_offer) + 1) / 2); $i++)

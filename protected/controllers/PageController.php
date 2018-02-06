@@ -7,6 +7,7 @@ class PageController extends Controller
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
 	public $layout='//layouts/column2';
+    public $banners = [];
 
 	/**
 	 * @return array action filters
@@ -47,14 +48,18 @@ class PageController extends Controller
 	 */
 	public function actionView($id=false, $slug=false)
 	{
-		$this->layout = "inner";
+		$this->layout = "innerFlex";
 		if ($id)
 			$page = $this->loadModel($id);
 		else if ($slug) 
 			$page = Page::model()->find('slug = :slug', array('slug' => $slug));
 		if ($page)
 		{
-			$this->pageTitle = Yii::app()->name . ' - ' . Lang::local($page->name);
+			$this->pageTitle = Lang::local($page->name) . ' | ' . Yii::app()->name;
+            $this->banners = Banner::model()->findAll([
+                'limit'=> '2',
+                'order'=>'rand()',
+            ]);
 			$this->render('view',array(
 				'page' => $page,
 			));

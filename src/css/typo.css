@@ -81,17 +81,6 @@ h3 {
 
 /* /Old Button */
 
-a.link {
-	font-size: 10px;
-	line-height: 16px;
-	color: #434242;
-	display: inline-block;
-}
-
-a.link:hover {
-	text-decoration: underline;
-}
-
 a.link-3>span {
 	display: inline-block;
 	height: 5px;

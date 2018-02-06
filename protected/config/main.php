@@ -82,6 +82,7 @@ return array(
 				'<controller:\w+>/<id:\d+>' => '<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
                 'kite_schools_in_tarifa' => 'school/kite_schools_in_tarifa',
+                'news' => 'news/NewsList',
 				'<controller:\w+>/<action:\w+>' => '<controller>/<action>',
 // 				'page/<id:\d+>'=>'page/view',
                 'equipment' => 'school/equipment',

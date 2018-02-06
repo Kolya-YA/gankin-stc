@@ -56,7 +56,7 @@
 }
 
 .banner-left-block,
-.article-list {
+.main-article-list {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
 	grid-column-gap: 1vw;

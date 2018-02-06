@@ -83,7 +83,7 @@
 
 			<div class="page-header__top">
 					
-				<?=$this->renderPartial('/blocks/lang', array('lang' => Yii::app()->language))?>
+				<?=$this->renderPartial('/blocks/lang', ['lang' => Yii::app()->language])?>
 				
 				<? $this->widget('application.widgets.Menu', array(
 					'items'=>array(
@@ -110,30 +110,28 @@
 			</div>
 					
 			<nav class="page-header__main-nav">
-				<? $this->widget('application.widgets.Menu', array(
-					'items'=>array(
-						array('label'=>Yii::t('menu', 'home'),			'url'=>'/'),
-						array('label'=>Yii::t('menu', 'aboutTarifa'),	'url'=>'/tarifa'),
-						array('label'=>Yii::t('menu', 'schools'),		'url'=>'/kite_schools_in_tarifa'),
-						array('label'=>Yii::t('menu', 'school'),			'url'=>'/school'),
-						array('label'=>Yii::t('menu', 'equipment'),		'url'=>'/equipment'),
-						array('label'=>Yii::t('menu', 'faq'),			'url'=>'/faq'),
-						array('label'=>Yii::t('menu', 'contacts'), 		'url'=>'/contacts')
-					),
+				<? $this->widget('application.widgets.Menu', [
+					'items'=> [
+						['label'=>Yii::t('menu', 'home'),			'url'=>'/'],
+						['label'=>Yii::t('menu', 'aboutTarifa'),	'url'=>'/tarifa'],
+						['label'=>Yii::t('menu', 'schools'),		'url'=>'/kite_schools_in_tarifa'],
+						['label'=>Yii::t('menu', 'school'),			'url'=>'/school'],
+						['label'=>Yii::t('menu', 'equipment'),		'url'=>'/equipment'],
+//						array('label'=>Yii::t('menu', 'faq'),			'url'=>'/faq'),
+						['label'=>Yii::t('menu', 'contacts'), 		'url'=>'/contacts']
+                    ],
 					'activeCssClass' => 'current',
-					'htmlOptions' => array('class' => 'main-nav-list'),
+					'htmlOptions' => ['class' => 'main-nav-list'],
 					'activateItems' => true,
 					'encodeLabel' => false,
-				));?>
+                ]);?>
 			</nav>
 			
 		</div>
 		
 	</header>
 
-
 		<?=$content?>
-
 
 		<footer class="page-footer">
 			

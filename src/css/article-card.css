@@ -1,24 +1,27 @@
-.schools-list {
+.article-list {
 	margin-bottom: 1vw;
 }
 
-.school-card:not(:last-child) {
+.article-list__paginator:not(:last-child) {
 	margin-bottom: 1vw;
 }
 
-.school-card__header {
+.article-card:not(:last-child) {
+	margin-bottom: 1vw;
+}
+
+.article-card__header {
 	position: relative;
 }
 
-.school-card__name {
+.article-card__name {
 	color:	var(--main-blau);
 	font-size: 26px;
 	text-transform: uppercase;
 	letter-spacing: .05em;
-
 }
 
-.school-card__year {
+.article-card__year {
 	position: absolute;
 	bottom: -20px;
 	right: 0;
@@ -27,7 +30,7 @@
 }
 
 
-.school-card__image {
+.article-card__image {
 	background-color: #3331;
 	display: flex;
 	flex-direction: column;
@@ -37,11 +40,11 @@
 	min-height: 240px;
 }
 
-.school-card__service-types {
+.article-card__service-types {
 	display: flex;
 }
 
-.school-card__service-item {
+.article-card__service-item {
 	padding: 1px 5px 0;
 	text-transform: uppercase;
 	color: #FFFFFF;
@@ -50,7 +53,7 @@
 	background-color: #0005;
 }
 
-.school-card__service-item:not(:last-child) {
+.article-card__service-item:not(:last-child) {
 	margin-right: 5px;
 }
 
@@ -58,15 +61,15 @@
 
 @media (min-width: 700px) {
 
-	.schools-list {
+	.article-list {
 		margin-bottom: 0;
 	}
 
-	.school-card__content {
+	.article-card__content {
 		position: relative;
 	}
 
-	.school-card__image {
+	.article-card__image {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -76,7 +79,7 @@
 		background-color: #3331;
 	}
 
-	.school-card__description {
+	.article-card__description {
 		margin-left: 345px;
 		min-height: 240px;
 	}

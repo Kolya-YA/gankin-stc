@@ -6,7 +6,8 @@ class SchoolController extends Controller
 	 * @var string the default layout for the views. Defaults to '//layouts/column2', meaning
 	 * using two-column layout. See 'protected/views/layouts/column2.php'.
 	 */
-	public $layout='//layouts/column2';
+	public $layout = '//layouts/column2';
+    public $banners = []; //Banners block for view in innerFlex
 
 	/**
 	 * @return array action filters
@@ -310,10 +311,10 @@ class SchoolController extends Controller
 		));
 	}
 
-//    public function actionfullList()
+//    Action kite_schools_in_tarifa()
     public function actionkite_schools_in_tarifa()
     {
-        $this->layout = 'inner';
+        $this->layout = 'innerFlex';
 
         $criteria = new CDbCriteria();
         $count = School::model()->count($criteria);
@@ -324,7 +325,7 @@ class SchoolController extends Controller
         $pagerSettings = [
             'pages' => $pages,
             'cssFile' => '',
-            'htmlOptions' => array('class' => 'paginator'),
+            'htmlOptions' => ['class' => 'paginator'],
             'header' => '',
             'maxButtonCount' => 4, // MAX button in paginator
             'firstPageLabel' => '&laquo;&laquo;', // ««
@@ -339,24 +340,20 @@ class SchoolController extends Controller
             'selectedPageCssClass' => 'paginator--selected',
             'hiddenPageCssClass' => 'paginator--hidden',
         ];
-//        D::dump($pages);
-        $results = School::model()->findAll($criteria);
 
+        $results = School::model()->findAll($criteria);
         $page = Page::model()->find('slug = \'list-Of-Schools\'');
-        $banners = Banner::model()->findAll(array(
+        $this->pageTitle = Lang::local($page->name) . ' | ' . Yii::app()->name ;
+        $this->banners = Banner::model()->findAll([
                 'limit'=>count($results),
                 'order'=>'rand()',
-            ));
+            ]);
 
-//         		D::dump(count($banners));
-//         		D::dump(count($results));
-
-        $this->render('schoolList', array(
+        $this->render('schoolList', [
             'schools' => $results,
             'page' => $page,
             'pagerSettings' => $pagerSettings,
-            'banners' => $banners,
-        ));
+        ]);
     }
 
 	public function actionEquipment()
