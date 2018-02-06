@@ -1,70 +1,35 @@
 .likes-block {
-    line-height:24px;
-    height:24px;
-    text-align:right;
+    display: flex;
+    justify-content: flex-end;
 }
 
-.like {
-    display:inline-block;
-    height:24px;
-    line-height:24px;
-    position:relative;
-    font:normal 10px tahoma;
-    color:#fff;
-    min-width:29px;
-    vertical-align:top;
-    text-align:center;
-    padding:0;
+.likes-block a {
+    width: 24px;
+    height: 24px;
+    background-image: url("../images/likes-ico.png");
+    background-repeat: no-repeat;
 }
 
-.likes-block .like:first-child {
-    margin-left:10px;
+.likes-block a:not(:last-child) {
+    margin-right: 10px;
 }
 
-.like .l-ico {
-    width:24px;
-    height:24px;
-    position:absolute;
-    top:0;
-    left:-12px;
-    background-image:url("../images/likes-ico.png");
-    background-repeat:no-repeat;
+.likes-block__fb {
+    background-position: 0 0;
 }
 
-.l-fb .l-ico {
-    background-position:0 0;
+.likes-block__vk {
+    background-position: -29px 0;
 }
 
-.l-vk .l-ico {
-    background-position:-29px 0;
+.likes-block__tw {
+    background-position: -58px 0;
 }
 
-.l-tw .l-ico {
-    background-position:-58px 0;
+.likes-block__ok {
+    background-position: -87px 0;
 }
 
-.l-ok .l-ico {
-    background-position:-87px 0;
-}
-
-.l-gp .l-ico {
-    background-position:-116px 0;
-}
-
-.like .l-count {
-    vertical-align:middle;
-    line-height:24px;
-    cursor: default;
-    color:white;
-    padding: 0 0 0 6px;
-}
-
-.like.like-not-empty {
-    background: url("../images/likes-bg.png") no-repeat 100% 0;
-    margin-right:14px;
-    padding:0 0 0 9px;
-}
-
-a.like {
-    text-decoration: none;
+.likes-block__gp {
+    background-position: -116px 0;
 }

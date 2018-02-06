@@ -8,6 +8,7 @@ class NewsController extends Controller
 	 */
 	public $layout='//layouts/column2';
     public $banners = [];
+    public $params = []; // additional parameters for passing to view
 
 	/**
 	 * @return array action filters
