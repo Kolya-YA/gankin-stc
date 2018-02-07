@@ -8,6 +8,7 @@
 	<meta charset="utf-8">
 	<meta name="format-detection" content="telephone=no">
 	<meta name="yandex-verification" content="fe58b273fa9740d3">
+    <meta name="msvalidate.01" content="27952050F8E1BD939DF369ECE80068D7" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <? foreach (Lang::getSiteLangs() as $code => $name): ?>
