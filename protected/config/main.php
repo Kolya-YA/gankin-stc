@@ -5,49 +5,49 @@ Yii::setPathOfAlias('uploads',$_SERVER['DOCUMENT_ROOT'].'/media');
 //$db_host = substr($_SERVER['HTTP_HOST'], -6, 6) == '.local' ? 'localhost' : '78.108.80.119';
 $db_host = stripos($_SERVER['HTTP_HOST'],'ocal') ? 'localhost' : '78.108.80.119';
 
-return array(
+return [
 	'language' => 'en',
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'Surf-tarifa.com',
 
 	// preloading 'log' component
-	'preload'=>array('log'),
+	'preload'=> ['log'],
 
 	// autoloading model and component classes
-	'import'=>array(
+	'import'=> [
 		'application.models.*',
 		'application.components.*',
 // 		'application.validators.MultilangValidator',
 		'zii.widgets.CMenu',
-	),
+    ],
 
-	'modules'=>array(
+	'modules'=> [
 		// uncomment the following to enable the Gii tool
-		'TranslatePhpMessage' => array(
+		'TranslatePhpMessage' => [
 			'encoding' => 'UTF-8', //encoding used to save messages
-			'excludedirs' => array(), //directories to exclude
-			'excludefiles' => array(), //files to exclude
-		),
-		'gii'=>array(
+			'excludedirs' => [], //directories to exclude
+			'excludefiles' => [], //files to exclude
+        ],
+		'gii'=> [
 			'class'=>'system.gii.GiiModule',
 			'password'=>'cunt265',
 			//'ipFilters'=>array('127.0.0.1','::1'),
-		),
-	),
+        ],
+    ],
 
 	// application components
-	'components'=>array(
-		'messages' => array(
-			'onMissingTranslation' => array('Lang', 'missingTranslation'),
+	'components'=> [
+		'messages' => [
+			'onMissingTranslation' => ['Lang', 'missingTranslation'],
 			'class' => 'Messages',
-		),
-		'user'=>array(
+        ],
+		'user'=> [
 			// enable cookie-based authentication
 			'allowAutoLogin' => true,
 			'class' => 'WebUser',
 
-		),
-		'Paypal' => array(
+        ],
+		'Paypal' => [
 			'class'=>'application.components.Paypal',
 			'apiUsername' => 'info_api1.surf-tarifa.com',
 			'apiPassword' => 'B8Q3X8D9MUGCEUY6',
@@ -62,8 +62,8 @@ return array(
 			
 			'returnUrl' => 'paypal/confirm/', //regardless of url management component
 			'cancelUrl' => 'paypal/cancel/', //regardless of url management component
-		),
-		'Posh' => array(
+        ],
+		'Posh' => [
 			'payments' => 'cc,dd',
 			'command' => 'authorization',
 			'class'=>'application.components.Posh',
@@ -72,12 +72,12 @@ return array(
 //			'merchId' => '9071150012', //Test
 //			'secretKey' => 'SlBaxKxgIKMs2bXagUNFOhatc5b', //Test
 			'returnUrl' => 'payment/success',
-		),
+        ],
 		
-		'urlManager' => array(
+		'urlManager' => [
 			'showScriptName' => false,
 			'urlFormat' => 'path',
-			'rules' => array(
+			'rules' => [
 				'viewpage/<slug:[\w-]+>' => 'page/view',
 				'<controller:\w+>/<id:\d+>' => '<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
@@ -93,29 +93,29 @@ return array(
 
 //				'thumb/<filename:(.+)>\[<w:([0-9]+)>(x|X|\*)<h:([0-9]+)>\].<ext:(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)>' => 'site/thumb',
 //              'thu66mb/<filename:(.+)>\[<w:([0-9]+)>(x|X|\*)(<h:[0-9]+)>\].<ext:(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)>' => 'site/thumb',
-			),
-		),
+            ],
+        ],
 		
-		'db' => array(
+		'db' => [
 			'connectionString' => "mysql:host=$db_host;dbname=b109820_surftarifacom",
 			'emulatePrepare' => true,
 			'username' => 'u109820',
 			'password' => 'wwegsh_01',
 			'charset' => 'utf8',
-		),
+        ],
 
-		'errorHandler' => array(
+		'errorHandler' => [
 			// use 'site/error' action to display errors
 			'errorAction' => 'site/error',
-		),
+        ],
 
-		'log' => array(
+		'log' => [
 			'class' => 'CLogRouter',
-			'routes' => array(
-				array(
+			'routes' => [
+				[
 					'class' => 'CFileLogRoute',
 					'levels' => 'error, warning',
-				),
+                ],
 
 				// uncomment the following to show log messages on web pages
 //                array(
@@ -123,15 +123,15 @@ return array(
 //                    'levels'=>'error, warning, trace, profile, info',
 //                ),
 
-			),
-		),
-	),
+            ],
+        ],
+    ],
 
 	// application-level parameters that can be accessed
 	// using Yii::app()->params['paramName']
-	'params' => array(
+	'params' => [
 		// this is used in contact page
 		// 'adminEmail' => 'info@surf-tarifa.com',
 		'adminEmail' => 'info@aquacream.ru',
-	),
-);
+    ],
+];

@@ -252,23 +252,23 @@ class SiteController extends Controller
 	}
 
 	
-	public function actionConfirmation($key, $user)
+	public function actionConfirmation($key, $user_id) //TODO check to confirmed user against multiply use one confirmation link
 	{
-		$returnUrl = $_SESSION['last_order_url'];
-		
-		$result = User::tryConfirm($user, $key);
+		$returnUrl = isset($_SESSION['last_order_url']) ? $_SESSION['last_order_url'] : Yii::app()->getHomeUrl();
+
+		$result = User::tryConfirm($user_id, $key);
 		if ($result)
 		{
 			$identity=new UserIdentity('','');
-			$identity->forceId($user);
+			$identity->forceId($user_id);
 			Yii::app()->user->login($identity);
 		}
 		
-		$this->render('confirm',array(
+		$this->render('confirm', [
 			'result'=>$result,
-			'uid' => $user,
+			'uid' => $user_id,
 			'returnUrl' => $returnUrl
-		));
+        ]);
 	}
 	
 	public function actionRun($key=false)
@@ -288,14 +288,9 @@ class SiteController extends Controller
 			'payments' => Transaction::model()->findAll('user_id = :uid AND confirmed = 1', array('uid' => Yii::app()->user->id)),
 		));
 	}
-// 	public function actionSchool()
-// 	{
-// 		$this->render('school');
-// 	}
-	
+
 	public function actionThumb($filename, $ext, $w, $h)
 	{
-//	    D::dump($filename . " <= § => " . $ext . " <= § => " . $w. " <= § => " . $h);
 	    AutoThumb::give("$filename.$ext", $w, $h);
 	}
 	

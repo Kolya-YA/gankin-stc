@@ -136,11 +136,6 @@ class User extends CActiveRecord
 			
 		return true;
 	}
-	
-	public static function getConfirmationKey($id)
-	{
-		return md5('(_SW'.$id.'AG_)');
-	}
 
 	public function getChangePasswordKey()
 	{
@@ -149,7 +144,7 @@ class User extends CActiveRecord
 	
 	public static function tryConfirm($id, $key)
 	{
-		$success = self::getConfirmationKey($id) == $key;
+		$success = password_verify($id, $key);
 		if ($success)
 		{
 			Yii::app()->db->createCommand()
@@ -160,26 +155,24 @@ class User extends CActiveRecord
 	
 	public function sendConfirmationMail()
 	{
-		$key = self::getConfirmationKey($this->id);
-		$url = "http://{$_SERVER['HTTP_HOST']}/confirmation?key=$key&user={$this->id}";
-		
-		$to      = $this->email;
+		$key = password_hash($this->id, PASSWORD_DEFAULT);
+		$url = "https://{$_SERVER['HTTP_HOST']}/confirmation?key=$key&user_id={$this->id}";
+		$to = $this->email;
 		$subject = "Registration confirmation {$_SERVER['SERVER_NAME']}";
+		$headers  = 'MIME-Version: 1.0' . "\r\n" .
+            'Content-type: text/html; charset=utf-8' . "\r\n" .
+            "From: surf-tarifa <noreply@{$_SERVER['SERVER_NAME']}>\r\n" .
+		    "Reply-To: noreply@{$_SERVER['SERVER_NAME']}\r\n" .
+		    'X-Mailer: PHP/' . phpversion();
 		$message = "To confirm e-mail follow this link: <a href=$url>$url</a>.<br>";
-		
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-		$headers .= "From: surf-tarifa <noreply@{$_SERVER['SERVER_NAME']}>\r\n" .
-		"Reply-To: noreply@{$_SERVER['SERVER_NAME']}\r\n" .
-		'X-Mailer: oche mailer agent';
 		mail($to, $subject, $message, $headers);
-
 // 		die($message);
 	}
 
 	public function sendRecoveryMail()
 	{
 		$key = $this->getChangePasswordKey();
+//		$key = password_hash($this->id.$this->password.date("Y-m-d"), PASSWORD_DEFAULT);
 		$url = "http://{$_SERVER['HTTP_HOST']}/recover?key=$key&user={$this->id}";
 		
 		$to      = $this->email;
@@ -194,5 +187,4 @@ class User extends CActiveRecord
 		mail($to, $subject, $message, $headers);
 // 		die($message);
 	}
-
 }

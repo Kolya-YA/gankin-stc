@@ -74,7 +74,7 @@
 				
 				<div class="find-form__row">
 					<?=$form->label($model, 'count')?>
-					<?=$form->dropDownList($model, 'count', array_combine(range(1,7),range(1,7)))?>
+					<?=$form->dropDownList($model, 'count', array_combine(range(1,5),range(1,5)))?>
 				</div>
 
                 <div class="find-form__row">

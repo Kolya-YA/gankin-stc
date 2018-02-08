@@ -4,11 +4,12 @@ class MailNotifier extends CComponent
 {
 	static public function mail($mail, $subject, $body, $headers)
 	{
-		// $log = fopen($_SERVER['DOCUMENT_ROOT'].'/mail.log', 'a');
-		// fwrite($log, date('Y-m-d h:i:s')."\n");
-		// fwrite($log, "mail($mail, $subject, text(".strlen($body)."))\n");
-		// fclose($log);
-		mail($mail, $subject, $body, $headers);
+//		 $log = fopen($_SERVER['DOCUMENT_ROOT'].'/mail.log', 'a');
+//		 fwrite($log, date('Y-m-d h:i:s')."\n");
+//		 fwrite($log, "mail($mail, $subject, text(".strlen($body)."))\n");
+//		 fclose($log);
+//		 D::dump("mail($mail, $subject, text(".strlen($body)."))\n");
+//		mail($mail, $subject, $body, $headers);
 	}
 	
 	static public function notify($transactionId)

@@ -10,20 +10,20 @@ class RegisterForm extends CFormModel
 
 	public function rules()
 	{
-		return array(
-			array('login, password, password2, email', 'required'),
-			array('email', 'email'),
-			array('password', 'compare', 'compareAttribute' => 'password2', 'message' => Yii::t('auth', 'password_match')),
-		);
+		return [
+			['login, password, password2, email', 'required'],
+			['email', 'email'],
+			['password', 'compare', 'compareAttribute' => 'password2', 'message' => Yii::t('auth', 'password_match')],
+        ];
 	}
 
 	public function attributeLabels()
 	{
 		return array(
-			'email'     => 'E-mail',
-			'password2' => Yii::t('auth', 'password_confirm'),
 			'login'     => Yii::t('auth', 'username'),
+			'email'     => 'E-mail',
 			'password'  => Yii::t('auth', 'password'),
+			'password2' => Yii::t('auth', 'password_confirm'),
 		);
 	}
 

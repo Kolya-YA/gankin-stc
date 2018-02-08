@@ -5,6 +5,7 @@
  * Date: 06.02.2018
  * Time: 20:26
  */
+
 ?>
 
 <div class="page-header__holder"></div>
@@ -65,7 +66,8 @@
                 'items' => [
                     [
                         'label' => Yii::t('menu', 'home'),
-                        'url' => '/'
+//                        'url' => '/'
+                        'url' => Yii::app()->getHomeUrl(),
                     ],
                     [
                         'label' => Yii::t('menu', 'aboutTarifa'),
