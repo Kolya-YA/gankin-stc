@@ -78,6 +78,8 @@ return [
 			'showScriptName' => false,
 			'urlFormat' => 'path',
 			'rules' => [
+				'<action:(confirmation|login|logout|register|recover|recovery|userpanel|contacts)>' => 'site/<action>',
+
 				'viewpage/<slug:[\w-]+>' => 'page/view',
 				'<controller:\w+>/<id:\d+>' => '<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>' => '<controller>/<action>',
@@ -87,8 +89,7 @@ return [
 // 				'page/<id:\d+>'=>'page/view',
                 'equipment' => 'school/equipment',
 				'<slug:(faq|tarifa|partner|rental|privacy|impressum)>' => 'page/view',
-				'<action:(confirmation|login|logout|register|recover|recovery|userpanel)>' => 'site/<action>',
-				'contacts' => 'site/contact',
+//				'contacts' => 'site/contact',
 				'thumb/<filename:.+>[<w:\d+>*<h:\d+>].<ext:(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)>' => 'site/thumb',
 
 //				'thumb/<filename:(.+)>\[<w:([0-9]+)>(x|X|\*)<h:([0-9]+)>\].<ext:(jpg|jpeg|png|gif|JPG|JPEG|PNG|GIF)>' => 'site/thumb',

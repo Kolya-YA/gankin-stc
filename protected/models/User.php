@@ -17,40 +17,40 @@
  */
 class User extends CActiveRecord
 {
-	public $password1;
-	public $password2;
-	public $key; // key for password recovery
+    public $password1;
+    public $password2;
+    public $key; // key for password recovery
 
-	/**
-	 * Returns the static model of the specified AR class.
-	 * @param string $className active record class name.
-	 * @return User the static model class
-	 */
-	public static function model($className=__CLASS__)
-	{
-		return parent::model($className);
-	}
+    /**
+     * Returns the static model of the specified AR class.
+     * @param string $className active record class name.
+     * @return User the static model class
+     */
+    public static function model($className = __CLASS__)
+    {
+        return parent::model($className);
+    }
 
-	/**
-	 * @return string the associated database table name
-	 */
-	public function tableName()
-	{
-		return 'user';
-	}
+    /**
+     * @return string the associated database table name
+     */
+    public function tableName()
+    {
+        return 'user';
+    }
 
-	/**
-	 * @return array validation rules for model attributes.
-	 */
-	public function rules()
-	{
-		// NOTE: you should only define rules for those attributes that
-		// will receive user inputs.
-		return [
-			['login, role', 'required'],
-            ['login', 'length', 'min' => 3, 'max'  => 32],
+    /**
+     * @return array validation rules for model attributes.
+     */
+    public function rules()
+    {
+        // NOTE: you should only define rules for those attributes that
+        // will receive user inputs.
+        return [
+            ['login, role', 'required'],
+            ['login', 'length', 'min' => 3, 'max' => 32],
             ['login', 'unique'],
-			['email', 'required'],
+            ['email', 'required'],
             ['email', 'email'],
             ['email', 'length', 'max' => '255'],
             ['email', 'unique'],
@@ -68,109 +68,109 @@ class User extends CActiveRecord
         ];
     }
 
-	public function relations()
-	{
-		return array(
-			'schools' => array(self::HAS_MANY, 'School', 'user_id'),
-		);
-	}
+    public function relations()
+    {
+        return array(
+            'schools' => array(self::HAS_MANY, 'School', 'user_id'),
+        );
+    }
 
-	/**
-	 * @return array customized attribute labels (name=>label)
-	 */
-	public function attributeLabels()
-	{
-		return array(
-			'id' => 'ID',
-			'login' => Yii::t('auth', 'username'),
-			'email' => 'E-mail',
-			'password1' => Yii::t('auth', 'password'),
-			'password2' => Yii::t('auth', 'password_confirm'),
-			'role' => 'Role',
-			'firstname' => 'First name',
-			'lastname' => 'Last name',
-			'sex' => 'Sex',
-			'phone' => 'Phone',
-			'city' => 'City',
-		);
-	}
+    /**
+     * @return array customized attribute labels (name=>label)
+     */
+    public function attributeLabels()
+    {
+        return [
+            'id' => 'ID',
+            'login' => Yii::t('auth', 'username'),
+            'email' => 'E-mail',
+            'password1' => Yii::t('auth', 'password'),
+            'password2' => Yii::t('auth', 'password_confirm'),
+            'role' => 'Role',
+            'firstname' => 'First name',
+            'lastname' => 'Last name',
+            'sex' => 'Sex',
+            'phone' => 'Phone',
+            'city' => 'City',
+        ];
+    }
 
-	/**
-	 * Retrieves a list of models based on the current search/filter conditions.
-	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
-	 */
-	public function search()
-	{
-		// Warning: Please modify the following code to remove attributes that
-		// should not be searched.
+    /**
+     * Retrieves a list of models based on the current search/filter conditions.
+     * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
+     */
+    public function search()
+    {
+        // Warning: Please modify the following code to remove attributes that
+        // should not be searched.
 
-		$criteria=new CDbCriteria;
+        $criteria = new CDbCriteria;
 
-		$criteria->compare('id',$this->id);
-		$criteria->compare('login',$this->login,true);
-		$criteria->compare('email',$this->email,true);
+        $criteria->compare('id', $this->id);
+        $criteria->compare('login', $this->login, true);
+        $criteria->compare('email', $this->email, true);
 //		$criteria->compare('password',$this->password,true);
-		$criteria->compare('role',$this->role,true);
+        $criteria->compare('role', $this->role, true);
 //		$criteria->compare('firstname',$this->firstname,true);
 //		$criteria->compare('lastname',$this->lastname,true);
 //		$criteria->compare('sex',$this->sex);
 //		$criteria->compare('phone',$this->phone,true);
 //		$criteria->compare('city',$this->city,true);
-		$criteria->compare('confirmed',$this->confirmed,true);
+        $criteria->compare('confirmed', $this->confirmed, true);
 
-		return new CActiveDataProvider($this, array(
-			'criteria'=>$criteria,
-		));
-	}
-	
-	public static function pwHash($pw)
-	{
-		return md5("YOBA{$pw}CODE");
-	}
-	
-	protected function beforeSave(){
-		if(!parent::beforeSave())
-			return false;
+        return new CActiveDataProvider($this, array(
+            'criteria' => $criteria,
+        ));
+    }
+
+    public static function pwHash($pw)
+    {
+        return md5("YOBA{$pw}CODE");
+    }
+
+    protected function beforeSave()
+    {
+        if (!parent::beforeSave())
+            return false;
 //		if ($this->password1)
-			$this->password = self::pwHash($this->password1);
+        $this->password = self::pwHash($this->password1);
 //		else
 //			unset($this->password);
-			
-		return true;
-	}
 
-	public static function getChangePasswordKey($user)
-	{
-		return password_hash($user->id.$user->password.date("Y-m-d"), PASSWORD_DEFAULT);
-	}
+        return true;
+    }
+
+    public static function getChangePasswordKey($user)
+    {
+        return password_hash($user->id . $user->password . date("Y-m-d"), PASSWORD_DEFAULT);
+    }
 
     /**
      * @param string $key hash from confirmation link
      * @return bool
      */
     public function tryConfirm($key)
-	{
-		$success = password_verify($this->id, $key);
-		if ($success)
-		{
-		    $this->confirmed = 1;
-		    $this->save();
-		}
-		return $success;
-	}
-	
-	public function sendConfirmationMail()
-	{
-		$key = password_hash($this->id, PASSWORD_DEFAULT);
-		$url = "https://{$_SERVER['HTTP_HOST']}/confirmation?key=$key&user_id={$this->id}";
-		$to = $this->email;
-		$subject = "Registration confirmation {$_SERVER['SERVER_NAME']}";
-		$headers  = 'MIME-Version: 1.0' . "\r\n" .
+    {
+        $success = password_verify($this->id, $key);
+        if ($success) {
+            $this->confirmed = 1;
+            $this->save();
+        }
+        return $success;
+    }
+
+    public function sendConfirmationMail()
+    {
+        $key = password_hash($this->id, PASSWORD_DEFAULT);
+        $url = "https://{$_SERVER['HTTP_HOST']}/confirmation?key=$key&user_id={$this->id}";
+        $to = $this->email;
+        $subject = "Registration confirmation {$_SERVER['SERVER_NAME']}";
+        $headers = 'MIME-Version: 1.0' . "\r\n" .
             'Content-type: text/html; charset=utf-8' . "\r\n" .
             "From: surf-tarifa <noreply@{$_SERVER['SERVER_NAME']}>\r\n" .
-		    "Reply-To: noreply@{$_SERVER['SERVER_NAME']}\r\n" .
-		    'X-Mailer: PHP/' . phpversion();
-		$message = "To confirm e-mail follow this link: <a href=$url>$url</a>.<br>";
-		return mail($to, $subject, $message, $headers);
-	}
+            "Reply-To: noreply@{$_SERVER['SERVER_NAME']}\r\n" .
+            'X-Mailer: PHP/' . phpversion();
+        $message = "To confirm e-mail follow this link: <a href=$url>$url</a>.<br>";
+        return mail($to, $subject, $message, $headers);
+    }
 }

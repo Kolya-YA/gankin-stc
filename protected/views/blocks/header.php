@@ -26,19 +26,20 @@
                 'items' => [
                     [
                         'label' => Yii::t('auth', 'logout') . ' (' . Yii::app()->user->name . ')',
-                        'url' => '/logout',
+                        'url' => $this->createUrl('site/logout'),
                         'visible' => !Yii::app()->user->isGuest,
                         'itemOptions' => ['class' => 'user-menu__logout']
                     ],
                     [
                         'label' => Yii::t('menu', 'register'),
-                        'url' => '/register',
+                        'url' => $this->createUrl('site/register'),
                         'visible' => Yii::app()->user->isGuest,
                         'itemOptions' => ['class' => 'user-menu__register']
                     ],
                     [
                         'label' => Yii::t('menu', 'login'),
-                        'url' => '/login',
+//                        'url' => '/login',
+                        'url' => Yii::app()->user->loginUrl,
                         'visible' => Yii::app()->user->isGuest,
                         'itemOptions' => ['class' => 'user-menu__login']
                     ]
@@ -88,7 +89,7 @@
 //						array('label'=>Yii::t('menu', 'faq'),			'url'=>'/faq'),
                     [
                         'label' => Yii::t('menu', 'contacts'),
-                        'url' => '/contacts'
+                        'url' => $this->createUrl('site/contacts')
                     ]
                 ],
                 'activeCssClass' => 'current',

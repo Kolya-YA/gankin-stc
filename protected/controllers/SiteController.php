@@ -60,7 +60,7 @@ class SiteController extends Controller
 	/**
 	 * Displays the contact page
 	 */
-	public function actionContact()
+	public function actionContacts()
 	{
 		$model = new ContactForm;
 
