@@ -1,32 +1,49 @@
-<div class="grid_12">
-	<div class="inner-block">
-		<div class="bg-white pad-1 top">
-			<div class="form-title"><?=Yii::t('auth', 'recover')?></div>
-			
-			<? if (!empty($message)): ?>
-			<div class="login-text"><?=$message?></div>
-			<? else: ?>
-			<div class="login-text"><?=Yii::t('auth', 'email_login')?></div>
-			<? endif ?>
+<?php
+/**
+ * @var object $model data for form
+ */
 
-			<div class="form">
-				<form id="login-form" action="/recover" method="post">
-					<input type="hidden" name="user" value="<?=$user?>" />
-					<input type="hidden" name="key" value="<?=$key?>" />
-					<div class="label">
-						<label for="login"><?=Yii::t('auth', 'password')?></label>
-						<input type="password" name="password1" id="password1">
-					</div>
-					<div class="label">
-						<label for="email"><?=Yii::t('auth', 'password_confirm')?></label>
-						<input type="password" name="password2" id="password2">
-					</div>
-					<div class="label buttons">
-						<?php echo CHtml::submitButton(Yii::t('auth', 'recover_btn')); ?>
-					</div>
 
-				</form>
-			</div>
-		</div>
-	</div>
+?>
+
+<div class="small-form">
+
+    <h2 class="form-title"><?= Yii::t('auth', 'recover') ?></h2>
+
+    <?php
+
+    if ($flash = Yii::app()->user->getFlash('code_expired')): ?>
+
+        <div class="small-form__success">
+            <p><i><?= $flash; ?></i></p>
+        </div>
+
+    <?php else: ?>
+
+    <?php $form = $this->beginWidget('CActiveForm', [ //TODO add CSS rules for error status
+        'id' => 'login-form',
+        'enableClientValidation' => false,
+        'clientOptions' => [
+            'validateOnSubmit' => true,
+        ],
+    ]); ?>
+    <?= $form->errorSummary($model); ?>
+
+<!--    --><?//= $form->hiddenField($model, 'id'); ?>
+<!--    --><?//= $form->hiddenField($model, 'key'); ?>
+
+    <?= $form->labelEx($model, 'password1'); ?>
+    <?= $form->passwordField($model, 'password1'); ?>
+    <?= $form->error($model, 'password1'); ?>
+
+    <?= $form->labelEx($model, 'password2'); ?>
+    <?= $form->passwordField($model, 'password2'); ?>
+    <?= $form->error($model, 'password2'); ?>
+
+    <button class="button"><?= Yii::t('auth', 'register_btn'); ?></button>
+
+    <?php $this->endWidget(); ?>
+
+    <? endif; ?>
+    </div>
 </div>

@@ -29,9 +29,9 @@
 	</div>
 
 	<div class="row">
-		<?php echo $form->labelEx($model,'password'); ?>
-		<?=$form->textField($model,'password',array('size'=>45,'maxlength'=>45, 'value' => '', 'autocomplete' => 'off')); ?>
-		<?php echo $form->error($model,'password'); ?>
+		<?php echo $form->labelEx($model,'password1'); ?>
+		<?=$form->textField($model,'password1',array('size'=>45,'maxlength'=>45, 'value' => '', 'autocomplete' => 'off')); ?>
+		<?php echo $form->error($model,'password1'); ?>
 	</div>
 
 	<div class="row">

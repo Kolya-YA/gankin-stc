@@ -8,12 +8,10 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<div class="grid_12">
-	<div class="inner-block">
+<div class="small-form">
 		<h2>Error <?php echo $code; ?></h2>
 
 		<div class="error">
 			<?php echo CHtml::encode($message); ?>
 		</div>
-	</div>
 </div>

@@ -13,11 +13,14 @@
  * @property integer $sex
  * @property string $phone
  * @property string $city
+ * @property int $confirmed
  */
 class User extends CActiveRecord
 {
+	public $password1;
 	public $password2;
-	
+	public $key; // key for password recovery
+
 	/**
 	 * Returns the static model of the specified AR class.
 	 * @param string $className active record class name.
@@ -43,23 +46,27 @@ class User extends CActiveRecord
 	{
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
-		return array(
-			array('login, role, email', 'required'),
-			array('password, password2', 'required', 'on'=>'create'),
-			array('password, password2', 'safe'/*, 'on'=>'update'*/),
-			array('confirmed', 'safe'),
-			array('sex', 'numerical', 'integerOnly'=>true),
-			array('login, password, phone', 'length', 'max'=>45),
-			array('role', 'length', 'max'=>6),
-			array('email, firstname, lastname, city', 'length', 'max'=>127),
-			
-			array('password', 'compare', 'compareAttribute' => 'password2', 'message' => Yii::t('auth', 'password_match')),
-
-			// The following rule is used by search().
-			// Please remove those attributes that should not be searched.
-			array('id, login, password, role, firstname, lastname, sex, phone, city', 'safe', 'on'=>'search'),
-		);
-	}
+		return [
+			['login, role', 'required'],
+            ['login', 'length', 'min' => 3, 'max'  => 32],
+            ['login', 'unique'],
+			['email', 'required'],
+            ['email', 'email'],
+            ['email', 'length', 'max' => '255'],
+            ['email', 'unique'],
+            ['password1', 'required', 'on' => 'create, newReg, pswUpdate'],
+            ['password1', 'length', 'min' => 6, 'max' => 32],
+            ['password2', 'compare', 'compareAttribute' => 'password1', 'message' => Yii::t('auth', 'password_match'), 'on' => 'create, newReg, update, pswUpdate'],
+            ['sex, confirmed', 'numerical', 'integerOnly' => true],
+            ['phone', 'length', 'min' => 3, 'max' => 45],
+            ['role', 'length', 'max' => 6],
+            ['firstname, lastname, city', 'length', 'max' => 127],
+//
+            // The following rule is used by search().
+            // Please remove those attributes that should not be searched.
+            ['id, login, role, confirmed', 'safe', 'on' => 'search'],
+        ];
+    }
 
 	public function relations()
 	{
@@ -75,13 +82,13 @@ class User extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'login' => 'Login',
+			'login' => Yii::t('auth', 'username'),
 			'email' => 'E-mail',
-			'password' => 'Password',
+			'password1' => Yii::t('auth', 'password'),
 			'password2' => Yii::t('auth', 'password_confirm'),
 			'role' => 'Role',
-			'firstname' => 'Firstname',
-			'lastname' => 'Lastname',
+			'firstname' => 'First name',
+			'lastname' => 'Last name',
 			'sex' => 'Sex',
 			'phone' => 'Phone',
 			'city' => 'City',
@@ -102,13 +109,13 @@ class User extends CActiveRecord
 		$criteria->compare('id',$this->id);
 		$criteria->compare('login',$this->login,true);
 		$criteria->compare('email',$this->email,true);
-		$criteria->compare('password',$this->password,true);
+//		$criteria->compare('password',$this->password,true);
 		$criteria->compare('role',$this->role,true);
-		$criteria->compare('firstname',$this->firstname,true);
-		$criteria->compare('lastname',$this->lastname,true);
-		$criteria->compare('sex',$this->sex);
-		$criteria->compare('phone',$this->phone,true);
-		$criteria->compare('city',$this->city,true);
+//		$criteria->compare('firstname',$this->firstname,true);
+//		$criteria->compare('lastname',$this->lastname,true);
+//		$criteria->compare('sex',$this->sex);
+//		$criteria->compare('phone',$this->phone,true);
+//		$criteria->compare('city',$this->city,true);
 		$criteria->compare('confirmed',$this->confirmed,true);
 
 		return new CActiveDataProvider($this, array(
@@ -121,34 +128,33 @@ class User extends CActiveRecord
 		return md5("YOBA{$pw}CODE");
 	}
 	
-// 	public function setPassword($password) 
-// 	{
-// 		$this->password = User::pwHash($password);
-// 	}
-	
 	protected function beforeSave(){
 		if(!parent::beforeSave())
 			return false;
-		if ($this->password)
-			$this->password = self::pwHash($this->password);
-		else
-			unset($this->password);
+//		if ($this->password1)
+			$this->password = self::pwHash($this->password1);
+//		else
+//			unset($this->password);
 			
 		return true;
 	}
 
-	public function getChangePasswordKey()
+	public static function getChangePasswordKey($user)
 	{
-		return md5('(_'.$this->id.$this->password.date("Y-m-d").'_)');
+		return password_hash($user->id.$user->password.date("Y-m-d"), PASSWORD_DEFAULT);
 	}
-	
-	public static function tryConfirm($id, $key)
+
+    /**
+     * @param string $key hash from confirmation link
+     * @return bool
+     */
+    public function tryConfirm($key)
 	{
-		$success = password_verify($id, $key);
+		$success = password_verify($this->id, $key);
 		if ($success)
 		{
-			Yii::app()->db->createCommand()
-				->update('user', array('confirmed' => 1), 'id=:id', array(':id' => $id));
+		    $this->confirmed = 1;
+		    $this->save();
 		}
 		return $success;
 	}
@@ -165,26 +171,6 @@ class User extends CActiveRecord
 		    "Reply-To: noreply@{$_SERVER['SERVER_NAME']}\r\n" .
 		    'X-Mailer: PHP/' . phpversion();
 		$message = "To confirm e-mail follow this link: <a href=$url>$url</a>.<br>";
-		mail($to, $subject, $message, $headers);
-// 		die($message);
-	}
-
-	public function sendRecoveryMail()
-	{
-		$key = $this->getChangePasswordKey();
-//		$key = password_hash($this->id.$this->password.date("Y-m-d"), PASSWORD_DEFAULT);
-		$url = "http://{$_SERVER['HTTP_HOST']}/recover?key=$key&user={$this->id}";
-		
-		$to      = $this->email;
-		$subject = "Password recovery {$_SERVER['SERVER_NAME']}";
-		$message = "To reset your password follow link: <a href=$url>$url</a>.";
-		
-		$headers  = 'MIME-Version: 1.0' . "\r\n";
-		$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
-		$headers .= "From: surf-tarifa <noreply@{$_SERVER['SERVER_NAME']}>\r\n" .
-		"Reply-To: noreply@{$_SERVER['SERVER_NAME']}\r\n" .
-		'X-Mailer: oche mailer agent';
-		mail($to, $subject, $message, $headers);
-// 		die($message);
+		return mail($to, $subject, $message, $headers);
 	}
 }

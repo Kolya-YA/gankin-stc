@@ -1,17 +1,22 @@
-	<div class="inner-block">
+<?php
+/**
+ * @var boolean $result The result of confirmation
+ * @var string $returnUrl The return URL form this confirmation form
+ * */
+?>
 
-			<div class="form-title"><?=Yii::t('auth', 'confirmation')?></div>
-			<? if ($result): ?>
-			<div class="login-text"><?=Yii::t('auth', 'confirm_success')?></div>
+<div class="small-form">
 
-			<script type="text/javascript">  
-			window.setTimeout(function(){
-				window.location.href = '<?= $returnUrl ?>';
-			}, 9000);
-			</script>
-			
-			<? else: ?>
-			<div class="login-text"><?=Yii::t('auth', 'confirm_fail')?></div>
-			<? endif ?>
+    <h2 class="form-title"><?= Yii::t('auth', 'confirmation') ?></h2>
+    <? if ($result): ?>
+        <p class="login-text"><?= Yii::t('auth', 'confirm_success') ?></p>
 
-    </div>
+        <script type="text/javascript">
+            window.setTimeout(() => window.location.href = '<?= $returnUrl ?>', 8000);
+        </script>
+
+    <? else: ?>
+        <p class="login-text"><?= Yii::t('auth', 'confirm_fail') ?></p>
+    <? endif ?>
+
+</div>

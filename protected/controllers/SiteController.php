@@ -22,27 +22,29 @@ class SiteController extends Controller
 		);
 	}
 
-	public function actionIndex()
-	{
-		$this->layout = 'common';
-		
-		$about = Page::model()->find("slug = 'about'");
-		// $gallery = Banner::model()->findAll('top_index = 1');
-		$best_offer = Banner::model()->findAll(array('limit' => 4, 'order' => 'id DESC', 'condition' => '`index` = 1'));
+    /**
+     * Displays main index page
+     */
+    public function actionIndex()
+    {
+        $this->layout = 'common';
 
-		$page = Page::model()->find('slug = :slug', array('slug' => 'index'));
-		
-		$this->render('index', array(
-			'news' => News::model()->findAll(array('limit' => 4, 'order' => 'Created DESC')),
-			'about' => $about,
-			//'gallery' => $gallery,
-			'best_offer' => $best_offer,
-			'page' => $page
-		));
-	}
+        $page = Page::model()->find('slug = :slug', ['slug' => 'index']);
+        $about = Page::model()->find("slug = 'about'");
+        $best_offer = Banner::model()->findAll(['limit' => 4, 'order' => 'id DESC', 'condition' => '`index` = 1']);
+        $news = News::model()->findAll(['limit' => 4, 'order' => 'Created DESC']);
 
-	/**
-	 * This is the action to handle external exceptions.
+        $this->render('index', [
+            'news' => $news,
+            'about' => $about,
+            //'gallery' => $gallery,
+            'best_offer' => $best_offer,
+            'page' => $page
+        ]);
+    }
+
+    /**
+     * This is the action to handle external exceptions.
 	 */
 	public function actionError()
 	{
@@ -82,18 +84,18 @@ class SiteController extends Controller
 			}
 		}
 
-		$contacts = Page::model()->find('slug = "contacts"');
+		$page = Page::model()->find('slug = "contacts"');
 
 		$this->render('contact',array(
 			'model'=>$model,
-			'contacts' => $contacts,
+			'contacts' => $page,
 			));
 	}
 
 	/**
 	 * Displays the login page
 	 */
-	public function actionLogin()
+	public function actionLogin() //TODO check confimed
 	{
 		$model=new LoginForm;
 
@@ -108,12 +110,13 @@ class SiteController extends Controller
 		if(isset($_POST['LoginForm']))
 		{
 			$model->attributes=$_POST['LoginForm'];
+
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())
-				$this->redirect(Yii::app()->user->returnUrl);
+              $this->redirect(Yii::app()->user->returnUrl);
 		}
 		// display the login form
-		$this->render('login',array('model'=>$model));
+		$this->render('login', ['model'=>$model]);
 	}
 
 	/**
@@ -124,147 +127,93 @@ class SiteController extends Controller
 		Yii::app()->user->logout();
 		$this->redirect(Yii::app()->homeUrl);
 	}
-	
-	public function actionRegister()
-	{
-		$model = new RegisterForm;
-		if(isset($_POST['RegisterForm']))
-		{
-			$model->attributes=$_POST['RegisterForm'];
-			if($model->validate())
-			{
-				$gtfo = User::model()->find('email = :email AND confirmed = 0', array('email' => $model->email));
-				if ($gtfo)
-					$gtfo->delete();
-				
-				$exists = User::model()->count('email = :email', array('email' => $model->email));
-				if ($exists)
-					$model->addError('email', Yii::t('auth', 'email_exists'));
-				else
-				{
-					$exists = User::model()->count('login = :login', array('login' => $model->login));
-					if ($exists)
-						$model->addError('login',  Yii::t('auth', 'login_exists'));
-					else
-					{
-						$user = new User;
-						$user->email = $model->email;
-						$user->login = $model->login;
-// 						D::dump(User::pwHash($model->password));exit;
-						$user->password = $model->password;
-						$user->role = 'user';
-						$user->save(false);
-						
-						$user->sendConfirmationMail();
-						
-						$this->redirect('?done'); //TODO: redirect to order page
-					}
-				}
-			}
-		}
-		$this->render('register',array(
-			'model'=> $model,
-			'done' => isset($_GET['done']),
-			));
-	}
-	
+
+    public function actionRegister() //TODO add captcha
+    {
+        $user = new User('newReg');
+        if (isset($_POST['User']))
+        {
+            $user->attributes = $_POST['User'];
+            $user->role = 'user';
+            if ($user->save() && $user->sendConfirmationMail())
+            {
+                Yii::app()->user->setFlash('confirmation-email', Yii::t('auth', 'confirm_email'));
+//                $this->redirect('?done'); //TODO: redirect to order page
+            }
+        }
+
+        $this->render('register', [
+            'model'=> $user,
+        ]);
+    }
+
 	public function actionRecovery()
 	{
-		$message = false;
-		
-		if (isset($_POST['login']) || isset($_POST['email']))
-		{
-			$user = null;
-			if (isset($_POST['login']))
-			{
-				$user = User::model()->find('login LIKE :login', array('login' => "%{$_POST['login']}%"));
-				if (!$user)
-					$message = Yii::t('auth', 'login_notexist');
-			}
-			else if (isset($_POST['email']))
-			{
-				$user = User::model()->find('email LIKE :email', array('email' => "%{$_POST['email']}%"));
-				if (!$user)
-					$message = Yii::t('auth', 'email_notexists');
-			}
-			
-			if ($user)
-			{
-				$user->sendRecoveryMail();
-				$message = Yii::t('auth', 'recovery_sent');
-			}
-			
-		}
-		$this->render('recovery', array('message' => $message));
+	    $model = new RecoveryForm;
+
+	    if (isset($_POST['RecoveryForm'])) {
+            $model->attributes = $_POST['RecoveryForm'];
+
+            if ($model->validate() && $model->sendRecoveryMail())
+                Yii::app()->user->setFlash('recovery_sent', Yii::t('auth', 'recovery_sent'));
+        }
+
+		$this->render('recovery', [
+            'model' => $model
+        ]);
 	}
-	
+
 	public function actionRecover($user = null, $key = null)
 	{
-		if ($_SERVER['REQUEST_METHOD'] == 'POST')
-		{
-			$user = $_POST['user'];
-			$key = $_POST['key'];
-			$password1 = $_POST['password1'];
-			$password2 = $_POST['password2'];
-			
-			$user = User::model()->findByPk($user);
-			if ($user && $key == $user->getChangePasswordKey())
-			{
-				if ($password1 != '' && $password1 == $password2)
-				{
-					$user->password = $password1;
-					$user->save(false);
-					$this->render('//site/message', array(
-						'title' => Yii::t('auth', 'recover'),
-						'message' => Yii::t('auth', 'password_changed'),
-					));
-				}
-				else
-				{
-					$this->render('//site/newpass', array(
-						'key' => $key,
-						'user' => $user->id,
-						'message' => Yii::t('auth', 'password_not_match'),
-					));
-				}
-			}
-		}
-		else if ($user && $key)
-		{
-			$user = User::model()->findByPk($user);
-			if ($user && $key == $user->getChangePasswordKey())
-			{
-				$this->render('//site/newpass', array(
-					'key' => $key,
-					'user' => $user->id,
-				));
-			}
-			else
-			{
-				$this->render('//site/message', array(
-					'title' => Yii::t('auth', 'recover'),
-					'message' => Yii::t('auth', 'code_expired')
-				));
-			}
-		}
+        $user = User::model()->findByPk($user);
+
+	    if ($user && $key)
+        {
+            $check = password_verify($user->id.$user->password.date("Y-m-d"), $key);
+
+	        if (isset($_POST['User']) && $user->validate)
+            {
+                $user->attributes = $_POST['User'];
+                $user->scenario = 'pswUpdate';
+                $user->password = $user->password1;
+                $user->save();
+                Yii::app()->user->setFlash('code_expired', Yii::t('auth', 'password_changed'));
+            }
+
+			if (!($user && $check))
+                Yii::app()->user->setFlash('code_expired', Yii::t('auth', 'code_expired'));
+        }
+
 		else
-			throw new CHttpException(404);
+			throw new CHttpException(404, 'Wrong code');
+
+        $this->render('//site/newpass', [
+                'model' => $user,
+            ]);
 	}
-
 	
-	public function actionConfirmation($key, $user_id) //TODO check to confirmed user against multiply use one confirmation link
+	public function actionConfirmation($key, $user_id)
 	{
-		$returnUrl = isset($_SESSION['last_order_url']) ? $_SESSION['last_order_url'] : Yii::app()->getHomeUrl();
+		$user = User::model()->findByPk($user_id); //TODO check available user with this ID
 
-		$result = User::tryConfirm($user_id, $key);
-		if ($result)
-		{
-			$identity=new UserIdentity('','');
-			$identity->forceId($user_id);
-			Yii::app()->user->login($identity);
-		}
-		
-		$this->render('confirm', [
+        if ($user) {
+            if (!$user->confirmed) {
+                $result = $user->tryConfirm($key);
+                if ($result) {
+                    $identity = new UserIdentity($user->login, '');
+                    //                $identity->forceId($user_id);
+                    $identity->forceId($user->id);
+                    $identity->setState('role', $user->role);
+                    Yii::app()->user->login($identity);
+                }
+            } else
+                $result = true; //TODO add status and message for reused confirm link
+        } else $result = false;
+
+
+        $returnUrl = isset($_SESSION['last_order_url']) ? $_SESSION['last_order_url'] : Yii::app()->getHomeUrl();
+
+        $this->render('confirm', [
 			'result'=>$result,
 			'uid' => $user_id,
 			'returnUrl' => $returnUrl
