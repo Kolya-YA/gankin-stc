@@ -56,7 +56,7 @@ class NewsController extends Controller
 
         $this->banners = Banner::model()->findAll([
             'limit'=> '2',
-            'order'=>'rand()',
+            'order'=>'rand()', //TODO optimize it
         ]);
 
         $this->render('view', [

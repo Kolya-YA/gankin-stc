@@ -33,6 +33,14 @@
 	<?php echo CHtml::encode($data->sex); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('created')); ?>:</b>
+	<?php echo CHtml::encode($data->created); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('updated')); ?>:</b>
+	<?php echo CHtml::encode($data->updated); ?>
+	<br />
+
 	<?php /*
 	<b><?php echo CHtml::encode($data->getAttributeLabel('phone')); ?>:</b>
 	<?php echo CHtml::encode($data->phone); ?>

@@ -31,5 +31,7 @@ $this->menu=array(
 		'sex',
 		'phone',
 		'city',
+        'created',
+        'updated'
     ],
 ]); ?>

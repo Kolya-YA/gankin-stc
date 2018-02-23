@@ -4,13 +4,12 @@
 /* @var $form CActiveForm */
 
 $this->pageTitle = Yii::app()->name . ' | Login';
-$this->breadcrumbs = array(
+$this->breadcrumbs = [
     'Login',
-);
+];
+
 ?>
-
 <div class="small-form">
-
     <h2 class="form-title"><?= Yii::t('auth', 'login') ?></h2>
 
     <?php $form = $this->beginWidget('CActiveForm', [

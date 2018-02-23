@@ -13,13 +13,15 @@
  * @property integer $sex
  * @property string $phone
  * @property string $city
+ * @property string $updated
+ * @property string $created
  * @property int $confirmed
  */
 class User extends CActiveRecord
 {
     public $password1;
     public $password2;
-    public $key; // key for password recovery
+    public $key; // key from email for password recovery
 
     /**
      * Returns the static model of the specified AR class.
@@ -92,6 +94,8 @@ class User extends CActiveRecord
             'sex' => 'Sex',
             'phone' => 'Phone',
             'city' => 'City',
+            'updated' => 'Updated',
+            'created' => 'Created',
         ];
     }
 
