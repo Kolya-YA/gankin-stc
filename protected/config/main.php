@@ -3,8 +3,7 @@
 Yii::setPathOfAlias('uploads',$_SERVER['DOCUMENT_ROOT'].'/media');
 
 //$db_host = substr($_SERVER['HTTP_HOST'], -6, 6) == '.local' ? 'localhost' : '78.108.80.119';
-$db_host = 'localhost';
-//$db_host = stripos($_SERVER['HTTP_HOST'],'ocal') ? 'localhost' : '78.108.80.119';
+$db_host = stripos($_SERVER['HTTP_HOST'],'ocal') ? 'localhost' : '78.108.80.119';
 
 return [
 	'language' => 'en',

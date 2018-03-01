@@ -136,10 +136,11 @@ class User extends CActiveRecord
     {
         if (!parent::beforeSave())
             return false;
-//		if ($this->password1)
-        $this->password = self::pwHash($this->password1);
-//		else
-//			unset($this->password);
+		if ($this->password1)
+        $this->password = password_hash($this->password1, PASSWORD_DEFAULT);
+//        $this->password = self::pwHash($this->password1);
+		else
+			unset($this->password2);
 
         return true;
     }

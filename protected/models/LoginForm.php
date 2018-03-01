@@ -57,9 +57,11 @@ class LoginForm extends CFormModel
 
             if ($authErrors) {
                 if ($authErrors == 3)
-                    $this->addError('password', "Account is not confirmed ($authErrors)."); //TODO add translate
+                    $this->addError('password', "Account is not confirmed."); //TODO add translate
+                else if ($authErrors == 4)
+                    $this->addError('password', "Your password is too old. Please update it."); //TODO add translate
                 else
-                    $this->addError('password', "Incorrect username or password  ($authErrors."); //TODO add translate
+                    $this->addError('password', "Incorrect username or password  ($authErrors)"); //TODO add translate
             }
         }
     }
