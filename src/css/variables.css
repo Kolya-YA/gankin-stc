@@ -3,9 +3,12 @@
     --body_bg: #f8f8f8;
     --main-blau: #71caf2;
     --main-yellow: #ffaa4b;
-    --menu-bg: #666666;
+    /*--menu-bg: #666666;*/
+    --menu-bg: #0891cc;
+    --menu-bottom-shadow: 0 0 15px 3px #777777;
     --menu-text-color: #dddddd;
     --menu-text-shadow: 0px 0px 10px #333333;
+    --menu-grey-text: #555555;
 
     --footer-bg: #28a1d5;
     --footer-text-color: white;

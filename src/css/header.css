@@ -2,7 +2,7 @@
     position: relative;
     margin-bottom: 20px;
     background-color: var(--menu-bg);
-    border-bottom: 5px solid var(--main-yellow);
+    box-shadow: var(--menu-bottom-shadow);
 }
 
 .page-header__wrapper {
@@ -137,7 +137,7 @@
 
 .main-nav-list .current a {
     background-color: var(--main-blau);
-    color: var(--menu-bg);
+    color: var(--menu-grey-text);
     text-shadow: unset;
 }
 
@@ -212,6 +212,7 @@
     }
 
     .top-logo__name {
+        display: none;
         margin: 15px 0 0 0;
         font-size: 26px;
 
