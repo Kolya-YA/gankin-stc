@@ -55,7 +55,7 @@ class User extends CActiveRecord
             ['email', 'required'],
             ['email', 'email'],
             ['email', 'length', 'max' => '255'],
-            ['email', 'unique'],
+            ['email', 'unique', 'except' => 'pswUpdate'],
             ['password1', 'required', 'on' => 'create, newReg, pswUpdate'],
             ['password1', 'length', 'min' => 6, 'max' => 32],
             ['password2', 'compare', 'compareAttribute' => 'password1', 'message' => Yii::t('auth', 'password_match'), 'on' => 'create, newReg, update, pswUpdate'],

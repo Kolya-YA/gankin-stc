@@ -165,19 +165,21 @@ class SiteController extends Controller
 
 	public function actionRecover($user = null, $key = null)
 	{
-        $user = User::model()->findByPk($user);
 
-	    if ($user && $key)
+	    if (($user = User::model()->findByPk($user)) && $key)
         {
             $check = password_verify($user->id.$user->password.date("Y-m-d"), $key);
 
-	        if (isset($_POST['User']) && $user->validate)
-            {
-                $user->attributes = $_POST['User'];
+	        if (isset($_POST['User']) && $check) {
                 $user->scenario = 'pswUpdate';
-                $user->password = $user->password1;
-                $user->save();
+                $user->attributes = $_POST['User'];
+                if ($user->update()) {
+//                if ($user->validate()) {
+
+//                $user->password = $user->password1;
+//                $user->save();
                 Yii::app()->user->setFlash('code_expired', Yii::t('auth', 'password_changed'));
+            }
             }
 
 			if (!($user && $check))
