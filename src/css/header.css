@@ -12,6 +12,7 @@
     padding: 0 1vw;
     display: flex;
     flex-direction: column;
+    background: no-repeat 75% 0 url(/images/kite-top-bg.svg);
 }
 
 .toggle-menu {
@@ -40,10 +41,10 @@
     text-transform: uppercase;
     color: #000000;
     background: rgba(256, 256, 256, .25);
-    border: 1px solid var(--main-yellow);
-    border-radius: 2px;
+    border-radius: 10px;
     margin: 0 3px;
     padding: 3px 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
 .lang-switch a:hover {
@@ -99,10 +100,13 @@
     margin: 0;
     margin-left: 30px;
     margin-bottom: 12px;
-    color: #333333;
-    -webkit-text-stroke: 1px #FFAA4B;
-    font-size: calc(32px + 2vw);
+    color: var(--menu-text-color);
+    font-size: calc(28px + 1.5vw);
     font-weight: 300;
+}
+
+.top-logo__name span {
+    color: var(--main-yellow);
 }
 
 .main-nav-list {

@@ -1,117 +1,128 @@
 img {
-	height: auto;
+    height: auto;
 }
 
 a[href^="tel:"] {
-	color: inherit;
-	text-decoration: none;
+    color: inherit;
+    text-decoration: none;
 }
 
 a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 h2 {
-	line-height: 1.4em;
-	font-size: 28px;
-	color: var(--main-blau);
-	font-weight: 300;
+    line-height: 1.4em;
+    font-size: 28px;
+    color: var(--main-blau);
+    font-weight: 300;
 }
 
 h3 {
-	line-height: 1.2em;
-	font-size: 20px;
-	font-weight: 300;
+    line-height: 1.2em;
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .inner-page__page-content p {
-	font-size: 16px;
-	line-height: 1.4em;
+    font-size: 16px;
+    line-height: 1.4em;
 }
 
 .inner-page__page-content a {
-	color: var(--main-blau);
-	cursor: pointer;
-	text-decoration: none;
+    color: var(--main-blau);
+    cursor: pointer;
+    text-decoration: none;
 }
 
 .inner-page__page-content a:hover,
 .inner-page__page-content a:focus {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 .button {
-	display: block;
-	width: 100%;
-	margin-top: 15px;
-	margin-bottom: 15px;
-	padding: 9px 12px;
-	font: inherit;
-	font-size: 18px;
-	color: #666666;
-	background-color: var(--main-blau);
-	text-align: center;
-	white-space: nowrap;
-	overflow: hidden;
-	text-overflow: ellipsis;
-	border-radius: 2px;
-	border: none;
-	transition: 200ms;
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding: 9px 12px;
+    font: inherit;
+    font-size: 18px;
+    color: #666666;
+    background-color: var(--main-blau);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    border-radius: 2px;
+    border: none;
+    transition: 200ms;
 }
 
 .button--duo {
-	font-size: 28px;
-  border-radius: 4px;
-  padding-top: 25px;
-  padding-bottom: 25px;
+    background-color: var(--yellow-button);
+    font-size: 28px;
+    border-radius: 4px;
+    padding-top: 25px;
+    padding-bottom: 25px;
 }
 
 .button:hover,
 .button:focus {
-	background-color: #28a1d5;
-	color: #cccccc;
-	transition: 200ms;
+    background-color: #28a1d5;
+    color: #cccccc;
+    transition: 200ms;
+}
+
+.button--duo:hover,
+.button--duo:focus {
+    color: #444;
+}
+
+.button--duo:hover,
+.button--duo:focus {
+    background-color: var(--yellow-button-hover);
 }
 
 .button:active {
-	color: var(--main-yellow);
-	background-color: var(--menu-bg);
-	transition: 200ms;
+    color: var(--main-yellow);
+    background-color: var(--menu-bg);
+    transition: 200ms;
 }
 
 /* /Old Button */
 
-a.link-3>span {
-	display: inline-block;
-	height: 5px;
-	width: 3px;
-	background: url(../images/marker-1.gif) 0 0 no-repeat;
-	margin: 5px 0 0 8px;
+a.link-3 > span {
+    display: inline-block;
+    height: 5px;
+    width: 3px;
+    background: url(../images/marker-1.gif) 0 0 no-repeat;
+    margin: 5px 0 0 8px;
 }
 
 a.link-3:hover {
-	text-decoration: underline;
+    text-decoration: underline;
 }
 
 a.link-4 {
-	color: #2e2e2e;
-	text-decoration: underline;
+    color: #2e2e2e;
+    text-decoration: underline;
 }
 
 a.link-4:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 a.link-pdf {
-	color: #2e2e2e;
-	line-height: 16px;
-	padding: 4px 27px 4px 0;
-	text-decoration: underline;
-	display: inline-block;
-	background: url(../images/pdf.png) right 0 no-repeat;
-	margin-bottom: 8px;
+    color: #2e2e2e;
+    line-height: 16px;
+    padding: 4px 27px 4px 0;
+    text-decoration: underline;
+    display: inline-block;
+    background: url(../images/pdf.png) right 0 no-repeat;
+    margin-bottom: 8px;
 }
 
 a.link-pdf:hover {
-	text-decoration: none;
+    text-decoration: none;
 }

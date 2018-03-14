@@ -1,7 +1,7 @@
 <?php
-//created with TranslatePhpMessage module 0.5 at November 3, 2017, 18:50:08
+//created with TranslatePhpMessage module 0.5 at March 9, 2018, 15:42:18
 return array (
-  'header_h1' => 'Surfing in Tarifa',
+  'header_h1' => 'Find your kite/windsurf school <span>quick</span>',
   'top' => 'Top',
   'phone' => '+34 633 611 907',
   'address' => 'Calle Antonio Maura 6 11380 Tarifa, Cádiz, Spain',

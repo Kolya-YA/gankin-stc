@@ -32,11 +32,11 @@
             window.cookieconsent.initialise({
                 "palette": {
                     "popup": {
-                        "background": "#eb6c44",
-                        "text": "#ffffff"
+                        "background": "#ccf9f6",
+                        "text": "#666666"
                     },
                     "button": {
-                        "background": "#f5d948"
+                        "background": "#f4d078"
                     }
                 },
                 "theme": "edgeless"
